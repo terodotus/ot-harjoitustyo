@@ -1,5 +1,5 @@
-#README.md file
-Tämä on repositorio Ohjelmistotekniikka-kurssille
+# README.md file
+## Repositorio Ohjelmistotekniikka-kurssille
 Tarkoitus on:
 * tuntea ohjelmistotuotantoprosessin vaiheet
 * olla tietoinen vesiputousmallin ja ketterän ohjelmistotuotannon luonteesta
