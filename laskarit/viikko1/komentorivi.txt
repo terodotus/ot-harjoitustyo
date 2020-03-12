@@ -1,0 +1,5 @@
+Folder PATH listing for volume Windows
+Volume serial number is 2C06-C277
+C:\USERS\TERO\OT-HARJOITUSTYO
++---laskarit
+    +---viikko1
