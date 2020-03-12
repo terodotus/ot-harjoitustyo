@@ -1,3 +1,50 @@
+commit b6eea12b22b81a08582ea6e5ff7f8965810dadcb
+Author: Tero Vuori <tero.vuori@outlook.com>
+Date:   Fri Mar 13 00:33:23 2020 +0200
+
+    README
+
+ README.md | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+commit d4f86516dc95a7ac87b189e822c402f3b7495d99
+Author: Tero Vuori <tero.vuori@outlook.com>
+Date:   Fri Mar 13 00:29:53 2020 +0200
+
+    README
+
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit e9c2621cb383ba3689dc1aca32d1244ad955d4e1
+Author: Tero Vuori <tero.vuori@outlook.com>
+Date:   Fri Mar 13 00:28:25 2020 +0200
+
+    README
+
+ README.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit 2b27a054f7a9ac9a03f95a69fbb408a3bab73edc
+Author: Tero Vuori <tero.vuori@outlook.com>
+Date:   Fri Mar 13 00:22:32 2020 +0200
+
+    README
+
+ README.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 73333b5ed9b490d00df6983477d68b01e0724bfb
+Author: Tero Vuori <tero.vuori@outlook.com>
+Date:   Fri Mar 13 00:20:24 2020 +0200
+
+    README
+
+ README.md                        | 6 ++++++
+ laskarit/viikko1/gitlog.txt      | 8 ++++++++
+ laskarit/viikko1/komentorivi.txt | 5 +++++
+ 3 files changed, 19 insertions(+)
+
 commit cbd3606159a174c5bd692c1d90596b1aac7ad426
 Author: Tero Vuori <tero.vuori@outlook.com>
 Date:   Thu Mar 12 23:38:16 2020 +0200
