@@ -4,7 +4,12 @@
 Tarkoitus on:
 * tuntea ohjelmistotuotantoprosessin vaiheet
 * olla tietoinen vesiputousmallin ja ketterän ohjelmistotuotannon luonteesta
+* tehdä harjoitustyö
 * jne
+
+## Harjoitustyö: Jääkaappi
+* [tuntikirjanpito.md](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/tuntikirjanpito.md)
+* [vaatimusmaarittely.md](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/vaatimusmaarittely.md)
 
 ## Tehtävät
 
