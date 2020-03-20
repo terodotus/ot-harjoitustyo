@@ -13,6 +13,6 @@ Tarkoitus on:
 * [komentorivi.txt](https://github.com/terodotus/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 ## Viikko2
-* Ruutukaappaus
+* Ruutukaappaus [testikattavuus_screenshot.jpg](https://github.com/terodotus/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus_screenshot.jpg)
 * Alustava vaatimusmäärittelydokumentti [vaatimusmaarittely.md](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/vaatimusmaarittely.md)
 
