@@ -1,13 +1,13 @@
-#JaakaappiTietokantaApp Vaatimusmäärittely
+# JaakaappiTietokantaApp Vaatimusmäärittely
 
-##Sovelluksen tarkoitus
+## Sovelluksen tarkoitus
 
-##Käyttäjät
+## Käyttäjät
 
-##Käyttöliittymäluonnos
+## Käyttöliittymäluonnos
 
-##Perusversion tarjoama toiminnallisuus
+## Perusversion tarjoama toiminnallisuus
 
-##Jatkokehitysideoita
+## Jatkokehitysideoita
 
 
