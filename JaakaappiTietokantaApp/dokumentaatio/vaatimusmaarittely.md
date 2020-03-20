@@ -7,6 +7,7 @@ Jääkaapin sisällön ajantasaisuudesta huolehtiva sovellus on todellinen klass
 Koska yhdellä jääkaapilla on yleensä varsin rajallinen määrä käyttäjia, on sovelluksella alkuvaiheessa vain yksi käyttäjärooli, eli normaali käyttäjä. Koska jääkaappien käyttäjillä kuitenkin saattaa olla tarvetta erilaisille rooleille tai vastuille, saatetaan sovellukselle myöhemmin lisätä pääkäyttäjä-rooli tai esimerkiksi eräänlainen katsoja-rooli, joka mahdollistaisi jääkaapin sisällön tarkastelun, mutta ei muutosten tekemistä sisältöön.
 
 ## Käyttöliittymäluonnos
+Käyttäjälle on tarjolla oletusjääkaappi, jonka voi ottaa käyttöön ja kustomoida omanlaisekseen. 
 
 ## Perusversion tarjoama toiminnallisuus
 Jääkaapissa on tuotteita. Tuotteilla on ominaisuuksia, kuten tuoteryhmä tai määrä. Käyttäjä pystyy sovelluksesta käsin katsomaan kaapin sisällön. Käyttäjä pystyy päivittämään tuotteet ja tuotteiden tiedot. Tiedot tallentuvat tietokantaan.
