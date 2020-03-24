@@ -8,6 +8,7 @@ Koska yhdellä jääkaapilla on yleensä varsin rajallinen määrä käyttäjia,
 
 ## Käyttöliittymäluonnos
 Käyttäjälle on tarjolla oletusjääkaappi, jonka voi ottaa käyttöön ja kustomoida omanlaisekseen. 
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/Jaakaappi_UI.jpg" width="750">
 
 ## Perusversion tarjoama toiminnallisuus
 Jääkaapissa on tuotteita. Tuotteilla on ominaisuuksia, kuten tuoteryhmä tai määrä. Käyttäjä pystyy sovelluksesta käsin katsomaan kaapin sisällön. Käyttäjä pystyy päivittämään tuotteet ja tuotteiden tiedot. Tiedot tallentuvat tietokantaan.
