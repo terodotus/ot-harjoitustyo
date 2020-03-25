@@ -5,12 +5,14 @@
  */
 package fridgeapp;
 
+import fridgeapp.ui.FridgeUI;
+
 /**
  *
  * @author Tero
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Kivaa!");
+        FridgeUI.main(args);
     }
 }

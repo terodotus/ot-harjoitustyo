@@ -16,8 +16,16 @@ public class FridgeUI extends Application{
 
     @Override
     public void start(Stage arg0) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Kivaa!");
     }
     
+    public static void main(String[] args) {
+        launch(args);
+    }
     
+    @Override
+    public void stop() {
+      // lopetustoimenpiteet täällä
+      System.out.println("App closing");
+    }    
 }
