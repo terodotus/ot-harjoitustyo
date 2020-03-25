@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author Tero
  */
-public class JaakaappiTietokantaAppTest {
+public class FridgeAppTest {
     
-    public JaakaappiTietokantaAppTest() {
+    public FridgeAppTest() {
     }
     
     @BeforeClass
