@@ -21,3 +21,8 @@ Tarkoitus on:
 * Ruutukaappaus [testikattavuus_screenshot.jpg](https://github.com/terodotus/ot-harjoitustyo/blob/master/laskarit/viikko2/testikattavuus_screenshot.jpg)
 * Alustava vaatimusmäärittelydokumentti [vaatimusmaarittely.md](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/vaatimusmaarittely.md)
 
+## Viikko3
+* Tehtava1, luokkakaavio [ ]
+* Tehtava2, luokkakaavio []
+* Tehtava3, sekvenssikaavio []
+* Tehtava4, sekvenssikaavio [] 
