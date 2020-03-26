@@ -22,7 +22,7 @@ Tarkoitus on:
 * Alustava vaatimusmäärittelydokumentti [vaatimusmaarittely.md](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/vaatimusmaarittely.md)
 
 ## Viikko3
-* Tehtava1, luokkakaavio [Lask3_Teht1_Luokkakaavio1.jpg] (https://github.com/terodotus/ot-harjoitustyo/blob/master/laskarit/viikko3/Lask3_Teht1_Luokkakaavio1.jpg)
-* Tehtava2, luokkakaavio [Lask3_Teht2_Luokkakaavio2.jpg] (https://github.com/terodotus/ot-harjoitustyo/blob/master/laskarit/viikko3/Lask3_Teht2_Luokkakaavio2.jpg)
+* Tehtava1, luokkakaavio [Lask3_Teht1_Luokkakaavio1.jpg](https://github.com/terodotus/ot-harjoitustyo/blob/master/laskarit/viikko3/Lask3_Teht1_Luokkakaavio1.jpg)
+* Tehtava2, luokkakaavio [Lask3_Teht2_Luokkakaavio2.jpg](https://github.com/terodotus/ot-harjoitustyo/blob/master/laskarit/viikko3/Lask3_Teht2_Luokkakaavio2.jpg)
 * Tehtava3, sekvenssikaavio []
 * Tehtava4, sekvenssikaavio [] 
