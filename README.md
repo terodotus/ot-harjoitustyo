@@ -24,5 +24,5 @@ Tarkoitus on:
 ## Viikko3
 * Tehtava1, luokkakaavio [Lask3_Teht1_Luokkakaavio1.jpg](https://github.com/terodotus/ot-harjoitustyo/blob/master/laskarit/viikko3/Lask3_Teht1_Luokkakaavio1.jpg)
 * Tehtava2, luokkakaavio [Lask3_Teht2_Luokkakaavio2.jpg](https://github.com/terodotus/ot-harjoitustyo/blob/master/laskarit/viikko3/Lask3_Teht2_Luokkakaavio2.jpg)
-* Tehtava3, sekvenssikaavio []
-* Tehtava4, sekvenssikaavio [] 
+* Tehtava3, sekvenssikaavio [Lask3_Teht3_Sekvenssikaavio3.jpg](https://github.com/terodotus/ot-harjoitustyo/blob/master/laskarit/viikko3/Lask3_Teht3_Sekvenssikaavio3.jpg)
+* Tehtava4, sekvenssikaavio [Lask3_Teht4_Sekvenssikaavio4.jpg](https://github.com/terodotus/ot-harjoitustyo/blob/master/laskarit/viikko3/Lask3_Teht4_Sekvenssikaavio4.jpg)
