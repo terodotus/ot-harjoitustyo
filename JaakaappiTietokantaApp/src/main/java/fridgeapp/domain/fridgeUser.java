@@ -29,9 +29,7 @@ public class fridgeUser {
     public void setUsername(String username) {
         this.username = username;
     }
-    
-    
-    
+     
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof fridgeUser)) {
