@@ -1,6 +1,9 @@
 
 package fridgeapp.domain;
 
+import fridgeapp.domain.*;
+import fridgeapp.dao.*;
+
 public class fridgeItem {
     private int id;
     private String content;
@@ -23,6 +26,14 @@ public class fridgeItem {
         this.content = content;
         this.user = user;
         this.defaultItem = false;
+    }
+
+    public fridgeUser getUser() {
+        return user;
+    }
+
+    public void setUser(fridgeUser user) {
+        this.user = user;
     }
 
     public int getId() {
@@ -56,7 +67,5 @@ public class fridgeItem {
     public void setDefaultItem(boolean defaultItem) {
         this.defaultItem = defaultItem;
     }
-    
-    
-        
+            
 }

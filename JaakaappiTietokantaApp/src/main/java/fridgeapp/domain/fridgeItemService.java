@@ -8,9 +8,9 @@ public class fridgeItemService {
     private fridgeUserDao userDao;
     private fridgeUser loggedIn;
     
-    public fridgeItemService(fridgeDao todoDao, fridgeUserDao userDao) {
+    public fridgeItemService(fridgeDao fridgeDao, fridgeUserDao userDao) {
         this.userDao = userDao;
-        this.fridgeDao = todoDao;
+        this.fridgeDao = fridgeDao;
     }
     
     public boolean createFridgeItem(String content) {

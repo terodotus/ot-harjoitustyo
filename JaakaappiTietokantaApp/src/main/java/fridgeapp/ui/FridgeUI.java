@@ -1,6 +1,7 @@
 
 package fridgeapp.ui;
 
+import fridgeapp.dao.FileFridgeUserDao;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.application.Application;
@@ -18,7 +19,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import fridgeapp.dao.fridgeUserDao;
+import fridgeapp.dao.*;
 import java.io.FileInputStream;
 import java.util.List;
 import java.util.Properties;
@@ -32,12 +33,11 @@ public class FridgeUI extends Application{
     private Scene newUserScene;
     private Scene loginScene;
     
+    private Label menuLabel = new Label();
     
     @Override
     public void init() throws Exception {
-        
     }
-    
     
     @Override
     public void start(Stage primaryStage) {               
@@ -49,23 +49,27 @@ public class FridgeUI extends Application{
         Label loginLabel = new Label("username");
         TextField usernameInput = new TextField();
         
-        // new createNewUserScene
+        inputPane.getChildren().addAll(loginLabel, usernameInput);
+        Label loginMessage = new Label();
         
-        VBox newUserPane = new VBox(10);
+        Button loginButton = new Button("login");
+        Button createButton = new Button("create new user");
         
+        loginButton.setOnAction(e->{
+        });  
         
-        // seutp primary stage
+        createButton.setOnAction(e->{
+        });  
         
-        primaryStage.setTitle("Items");
+        loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, createButton);       
+        
+        loginScene = new Scene(loginPane, 300, 250);    
+   
+        primaryStage.setTitle("Login");
         primaryStage.setScene(loginScene);
         primaryStage.show();
         primaryStage.setOnCloseRequest(e->{
             System.out.println("closing");
-            System.out.println(service.getLoggedUser());
-            if (service.getLoggedUser()!=null) {
-                e.consume();   
-            }
-            
         });
     }
 

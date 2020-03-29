@@ -40,5 +40,13 @@ public class FridgeAppTest {
     }
 
     @Test
-    public void hello() {}
+    public void test1() {
+    }
+    
+    @Test
+    public void test2() {
+        assertEquals(0, 0);
+    }
+    
+    
 }

@@ -11,6 +11,5 @@ public interface fridgeDao {
     List<fridgeItem> getAll();
 
     void setDone(int id) throws Exception;
-
     
 }
