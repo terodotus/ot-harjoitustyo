@@ -4,36 +4,24 @@ package fridgeapp.domain;
 import fridgeapp.domain.*;
 import fridgeapp.dao.*;
 
-public class fridgeItem {
+public class FridgeItem {
     private int id;
     private String content;
     private int amount;
     private boolean defaultItem;
-    private fridgeUser user;
     
-    public fridgeItem(){
-        
+    public FridgeItem(){
     }
     
-    public fridgeItem(int id, String content, boolean done, fridgeUser user) {
+    public FridgeItem(int id, String content, boolean done) {
         this.id = id;
         this.content = content;
         this.defaultItem = done;
-        this.user = user;
     }
     
-    public fridgeItem(String content, fridgeUser user) {
+    public FridgeItem(String content) {
         this.content = content;
-        this.user = user;
         this.defaultItem = false;
-    }
-
-    public fridgeUser getUser() {
-        return user;
-    }
-
-    public void setUser(fridgeUser user) {
-        this.user = user;
     }
 
     public int getId() {

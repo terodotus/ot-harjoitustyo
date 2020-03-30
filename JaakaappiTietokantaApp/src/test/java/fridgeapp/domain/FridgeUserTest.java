@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
  * @author Tero
  */
 public class FridgeUserTest {
-    fridgeUser user1;
+    FridgeUser user1;
     
     public FridgeUserTest() {
     }
@@ -32,7 +32,7 @@ public class FridgeUserTest {
     
     @Before
     public void setUp() {
-        user1=new fridgeUser("sepotus", "Seppo");
+        user1=new FridgeUser("sepotus", "Seppo");
     }
     
     @After

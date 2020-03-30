@@ -4,11 +4,11 @@ package fridgeapp.dao;
 import java.util.List;
 import fridgeapp.domain.*;
 
-public interface fridgeDao {
+public interface FridgeItemDao {
     
-    fridgeItem create(fridgeItem item) throws Exception;
+    FridgeItem create(FridgeItem item) throws Exception;
 
-    List<fridgeItem> getAll();
+    List<FridgeItem> getAll();
 
     void setDone(int id) throws Exception;
     

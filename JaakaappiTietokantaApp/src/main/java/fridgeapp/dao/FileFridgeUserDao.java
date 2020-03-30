@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Scanner;
 import fridgeapp.domain.*;
 
-public class FileFridgeUserDao implements fridgeUserDao {
-    private List<fridgeUser> users;
+public class FileFridgeUserDao implements FridgeUserDao {
+    private List<FridgeUser> users;
     private String file;
 
     public FileFridgeUserDao(String file) throws Exception {
@@ -18,7 +18,7 @@ public class FileFridgeUserDao implements fridgeUserDao {
             Scanner reader = new Scanner(new File(file));
             while (reader.hasNextLine()) {
                 String[] parts = reader.nextLine().split(";");
-                fridgeUser u = new fridgeUser(parts[0], parts[1]);
+                FridgeUser u = new FridgeUser(parts[0], parts[1]);
                 users.add(u);
             }
         } catch (Exception e) {
@@ -30,19 +30,19 @@ public class FileFridgeUserDao implements fridgeUserDao {
     
     private void save() throws Exception{
         try (FileWriter writer = new FileWriter(new File(file))) {
-            for (fridgeUser user : users) {
+            for (FridgeUser user : users) {
                 writer.write(user.getUsername() + ";" + user.getName() + "\n");
             }
         } 
     }
     
     @Override
-    public List<fridgeUser> getAll() {
+    public List<FridgeUser> getAll() {
         return users;
     }
     
     @Override
-    public fridgeUser findByUsername(String username) {
+    public FridgeUser findByUsername(String username) {
         return users.stream()
             .filter(u->u.getUsername()
             .equals(username))
@@ -51,7 +51,7 @@ public class FileFridgeUserDao implements fridgeUserDao {
     }
     
     @Override
-    public fridgeUser create(fridgeUser user) throws Exception {
+    public FridgeUser create(FridgeUser user) throws Exception {
         users.add(user);
         save();
         return user;

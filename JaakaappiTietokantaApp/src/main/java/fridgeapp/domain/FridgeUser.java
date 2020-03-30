@@ -1,16 +1,16 @@
 
 package fridgeapp.domain;
 
-public class fridgeUser {
+public class FridgeUser {
     private String name;
     private String username;
 
-    public fridgeUser(String username, String name) {
+    public FridgeUser(String username, String name) {
         this.name = name;
         this.username = username;
     }
     
-    public fridgeUser(){
+    public FridgeUser(){
     }
 
     public String getName() {
@@ -31,10 +31,10 @@ public class fridgeUser {
      
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof fridgeUser)) {
+        if (!(obj instanceof FridgeUser)) {
             return false;
         }
-        fridgeUser other = (fridgeUser) obj;
+        FridgeUser other = (FridgeUser) obj;
         return username.equals(other.username);
     }
     

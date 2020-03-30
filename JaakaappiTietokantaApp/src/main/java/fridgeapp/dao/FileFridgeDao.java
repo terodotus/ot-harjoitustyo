@@ -5,14 +5,14 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import fridgeapp.domain.fridgeItem;
-import fridgeapp.domain.fridgeUser;
+import fridgeapp.domain.FridgeItem;
+import fridgeapp.domain.FridgeUser;
 
-public class FileFridgeDao implements fridgeDao {
-    public List<fridgeItem> items;
+public class FileFridgeDao implements FridgeItemDao {
+    public List<FridgeItem> items;
     private String file;
 
-    public FileFridgeDao(String file, fridgeUserDao users) throws Exception {
+    public FileFridgeDao(String file, FridgeUserDao users) throws Exception {
         items = new ArrayList<>();
         this.file = file;
         try {
@@ -21,8 +21,8 @@ public class FileFridgeDao implements fridgeDao {
                 String[] parts = reader.nextLine().split(";");
                 int id = Integer.parseInt(parts[0]);
                 boolean done = Boolean.parseBoolean(parts[2]);
-                fridgeUser user = users.getAll().stream().filter(u->u.getUsername().equals(parts[3])).findFirst().orElse(null); 
-                fridgeItem item = new fridgeItem(id, parts[1], done, user);
+                FridgeUser user = users.getAll().stream().filter(u->u.getUsername().equals(parts[3])).findFirst().orElse(null); 
+                FridgeItem item = new FridgeItem(id, parts[1], done);
                 items.add(item);
             }
         } catch (Exception e) {
@@ -32,11 +32,17 @@ public class FileFridgeDao implements fridgeDao {
         
     }
     
-    private void save() throws Exception{
+    private void saveFridgeItem() throws Exception{
         try (FileWriter writer = new FileWriter(new File(file))) {
-            for (fridgeItem item : items) {
-                writer.write(item.getId() + ";" + item.getContent() + ";" + item.isDefaultItem() + ";" + item.getUser().getUsername() + "\n");
+            for (FridgeItem item : items) {
+                writer.write(item.getId() + ";" + item.getContent() + ";" + item.isDefaultItem() + ";"+"\n");
             }
+        }
+    }    
+    
+    private void saveFridge() throws Exception{
+        try (FileWriter writer = new FileWriter(new File(file))) {
+            
         }
     }    
     
@@ -45,15 +51,15 @@ public class FileFridgeDao implements fridgeDao {
     }
     
     @Override
-    public List<fridgeItem> getAll() {
+    public List<FridgeItem> getAll() {
         return items;
     }
     
     @Override
-    public fridgeItem create(fridgeItem item) throws Exception {
+    public FridgeItem create(FridgeItem item) throws Exception {
         item.setId(generateId());
         items.add(item);
-        save();
+        saveFridgeItem();
         return item;
     }   
 

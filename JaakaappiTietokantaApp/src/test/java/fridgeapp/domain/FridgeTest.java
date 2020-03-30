@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
  * @author Tero
  */
 public class FridgeTest {
-    fridgeUser user;
+    FridgeUser user;
     Fridge fridge;
     
     public FridgeTest() {
@@ -34,8 +34,8 @@ public class FridgeTest {
     
     @Before
     public void setUp() {
-        this.user=new fridgeUser();
-        ArrayList<fridgeItem>items=new ArrayList();
+        this.user=new FridgeUser();
+        ArrayList<FridgeItem>items=new ArrayList();
         this.fridge=new Fridge(user,items);
     }
     

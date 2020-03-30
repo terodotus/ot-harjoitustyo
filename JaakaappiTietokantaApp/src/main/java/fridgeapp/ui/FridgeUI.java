@@ -27,7 +27,7 @@ import static javafx.application.Application.launch;
 import fridgeapp.domain.*;
 
 public class FridgeUI extends Application{
-    private fridgeItemService service;
+    private FridgeItemService service;
     
     private Scene fridgeScene;
     private Scene newUserScene;
