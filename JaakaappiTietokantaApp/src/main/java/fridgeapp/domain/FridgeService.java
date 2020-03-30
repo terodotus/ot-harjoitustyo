@@ -3,13 +3,13 @@ package fridgeapp.domain;
 import fridgeapp.dao.*;
 import java.util.ArrayList;
 
-public class FridgeItemService {
+public class FridgeService {
     private FridgeItemDao fridgeItemDao;
     private FridgeUserDao userDao;
     private FridgeDao fridgeDao;
     private FridgeUser loggedIn;
     
-    public FridgeItemService(FridgeItemDao fridgeItemDao, FridgeUserDao userDao) {
+    public FridgeService(FridgeItemDao fridgeItemDao, FridgeUserDao userDao) {
         this.userDao = userDao;
         this.fridgeItemDao = fridgeItemDao;
     }

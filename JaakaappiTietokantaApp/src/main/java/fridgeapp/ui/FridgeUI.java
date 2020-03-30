@@ -27,7 +27,7 @@ import static javafx.application.Application.launch;
 import fridgeapp.domain.*;
 
 public class FridgeUI extends Application{
-    private FridgeItemService service;
+    private FridgeService service;
     
     private Scene fridgeScene;
     private Scene newUserScene;
@@ -78,9 +78,9 @@ public class FridgeUI extends Application{
       
       System.out.println("sovellus sulkeutuu");
     }    
-    
+/*    
     public static void main(String[] args) {
         launch(args);
     }
-    
+*/    
 }
