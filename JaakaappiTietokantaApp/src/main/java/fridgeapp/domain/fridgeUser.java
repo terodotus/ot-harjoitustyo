@@ -11,7 +11,6 @@ public class fridgeUser {
     }
     
     public fridgeUser(){
-        
     }
 
     public String getName() {
@@ -35,7 +34,6 @@ public class fridgeUser {
         if (!(obj instanceof fridgeUser)) {
             return false;
         }
-        
         fridgeUser other = (fridgeUser) obj;
         return username.equals(other.username);
     }

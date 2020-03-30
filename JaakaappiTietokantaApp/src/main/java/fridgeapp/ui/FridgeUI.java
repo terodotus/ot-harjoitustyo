@@ -75,7 +75,7 @@ public class FridgeUI extends Application{
 
     @Override
     public void stop() {
-      // tee lopetustoimenpiteet täällä
+      
       System.out.println("sovellus sulkeutuu");
     }    
     

@@ -28,9 +28,7 @@ public class fridgeItemService {
         if (user == null) {
             return false;
         }
-        
         loggedIn = user;
-        
         return true;
     }
     
@@ -48,7 +46,6 @@ public class fridgeItemService {
         } catch(Exception e) {
             return false;
         }
-
         return true;
     }
     
