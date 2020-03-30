@@ -11,7 +11,10 @@ Käyttäjälle on tarjolla oletusjääkaappi, jonka voi ottaa käyttöön ja kus
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/Jaakaappi_UI.jpg" width="750">
 
 ## Perusversion tarjoama toiminnallisuus
-Jääkaapissa on tuotteita. Tuotteilla on ominaisuuksia, kuten tuoteryhmä tai määrä. Käyttäjä pystyy sovelluksesta käsin katsomaan kaapin sisällön. Käyttäjä pystyy päivittämään tuotteet ja tuotteiden tiedot. Tiedot tallentuvat tietokantaan.
+Jääkaapissa on tuotteita. Tuotteilla on ominaisuuksia, kuten tuoteryhmä tai määrä. Käyttäjä pystyy sovelluksesta käsin katsomaan kaapin sisällön. Käyttäjä pystyy päivittämään tuotteet ja tuotteiden tiedot. Tiedot tallentuvat tietokantaan. Luokat:
+- Fridge: Jääkaappi, jolla on (yksi tai useampi) käyttäjä ja jossa on tuotteita (item)
+- fridgeItem: Tuote, jolla on nimi (String) ja määrä (int)
+- fridgeUser: Käyttäjä, jolla on nimi (String) ja käyttäjätunnus (String). Käyttäjällä voi olla yksi (tai useampi) jääkaappi.
 
 ## Jatkokehitysideoita
 Koska uudemmat jääkaapit voidaan rakentaa niin sanotuiksi monitoimilaitteiksi, eli niihin voidaan integroida esimerkiksi kameroita, äänitunnistusta, lukitusjärjestelmiä, ruuan pilaantumista tunnistavia järjestelmiä, parasta ennen -päiväyksen tunnistavia järjestelmiä, viivakoodin lukujärjestelmia yms., jää sovellukselle paljon jatkokehityspotentiaalia. Nämä upotetut järjestelmät vaativat tietenkin omat ohjaus- ja hallintasovelluksensa (embedded software). JaakaappiTietokantaApp-sovelluksen on taivuttava näihin myöhempiin lisäyksiin sitten, kun niiden aika on, ei vielä tässä projektissa.
