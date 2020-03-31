@@ -51,9 +51,10 @@ public class FridgeUI extends Application{
         
         inputPane.getChildren().addAll(loginLabel, usernameInput);
         Label loginMessage = new Label();
+        Label infotext = new Label("Manage your life and your delicious items!");
         
         Button loginButton = new Button("login");
-        Button createButton = new Button("create new user");
+        Button createButton = new Button("create  a new fridge user");
         
         loginButton.setOnAction(e->{
         });  
@@ -61,11 +62,11 @@ public class FridgeUI extends Application{
         createButton.setOnAction(e->{
         });  
         
-        loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, createButton);       
+        loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, createButton, new Label(" "), infotext);       
         
         loginScene = new Scene(loginPane, 300, 250);    
    
-        primaryStage.setTitle("Login");
+        primaryStage.setTitle("Login Your Frigde");
         primaryStage.setScene(loginScene);
         primaryStage.show();
         primaryStage.setOnCloseRequest(e->{
@@ -76,11 +77,11 @@ public class FridgeUI extends Application{
     @Override
     public void stop() {
       
-      System.out.println("sovellus sulkeutuu");
+      System.out.println("App closing!");
     }    
-/*    
+    
     public static void main(String[] args) {
         launch(args);
     }
-*/    
+    
 }
