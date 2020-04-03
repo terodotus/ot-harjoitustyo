@@ -1,12 +1,12 @@
 package fridgeapp.dao;
 
 import fridgeapp.domain.Fridge;
+import fridgeapp.domain.FridgeItem;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import fridgeapp.domain.FridgeItem;
 import fridgeapp.domain.FridgeUser;
 
 public class FileFridgeDao implements FridgeDao {
@@ -45,6 +45,11 @@ public class FileFridgeDao implements FridgeDao {
     
     @Override
     public Fridge create(Fridge fridge) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<FridgeItem> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -4,20 +4,19 @@ import fridgeapp.dao.*;
 import java.util.ArrayList;
 
 public class FridgeService {
-    private FridgeItemDao fridgeItemDao;
     private FridgeUserDao userDao;
     private FridgeDao fridgeDao;
     private FridgeUser loggedIn;
     
-    public FridgeService(FridgeItemDao fridgeItemDao, FridgeUserDao userDao) {
+    public FridgeService(FridgeDao fridgeItemDao, FridgeUserDao userDao) {
         this.userDao = userDao;
-        this.fridgeItemDao = fridgeItemDao;
+        this.fridgeDao = fridgeItemDao;
     }
     
-    public boolean createFridgeItem(String content) {
-        FridgeItem item = new FridgeItem(content);
+    public boolean createFridge(String content) {
+        Fridge fridge = new Fridge();
         try {   
-            fridgeItemDao.create(item);
+            fridgeDao.create(fridge);
         } catch (Exception ex) {
             return false;
         }

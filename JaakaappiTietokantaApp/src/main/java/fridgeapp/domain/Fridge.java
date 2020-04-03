@@ -13,6 +13,10 @@ public class Fridge {
         this.items=items;
         this.user=user;
     }
+    
+    public Fridge(){
+        
+    }
 
     public ArrayList<FridgeItem> getItems() {
         return items;

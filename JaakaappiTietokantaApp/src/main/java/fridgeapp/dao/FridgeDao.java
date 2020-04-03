@@ -7,6 +7,7 @@ package fridgeapp.dao;
 
 import fridgeapp.domain.Fridge;
 import fridgeapp.domain.FridgeItem;
+import java.util.List;
 
 /**
  *
@@ -15,4 +16,6 @@ import fridgeapp.domain.FridgeItem;
 public interface FridgeDao {
     
     Fridge create(Fridge fridge) throws Exception;
+    
+    List<FridgeItem> getAll();
 }
