@@ -2,23 +2,15 @@
 package fridgeapp.domain;
 
 public class FridgeUser {
-    private String name;
     private String username;
+    private String fridge;
 
-    public FridgeUser(String username, String name) {
-        this.name = name;
+    public FridgeUser(String username, String fridge) {
         this.username = username;
+        this.fridge = fridge;
     }
     
     public FridgeUser(){
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getUsername() {
@@ -28,6 +20,14 @@ public class FridgeUser {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public String getFridge() {
+        return fridge;
+    }
+
+    public void setFridge(String fridge) {
+        this.fridge = fridge;
+    }
      
     @Override
     public boolean equals(Object obj) {
@@ -35,7 +35,7 @@ public class FridgeUser {
             return false;
         }
         FridgeUser other = (FridgeUser) obj;
-        return username.equals(other.username);
+        return fridge.equals(other.fridge);
     }
     
 }

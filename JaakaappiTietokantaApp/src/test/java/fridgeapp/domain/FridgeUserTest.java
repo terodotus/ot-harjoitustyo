@@ -32,7 +32,7 @@ public class FridgeUserTest {
     
     @Before
     public void setUp() {
-        user1=new FridgeUser("sepotus", "Seppo");
+        user1=new FridgeUser("Seppo", "seponkaappi");
     }
     
     @After
@@ -41,6 +41,6 @@ public class FridgeUserTest {
 
     @Test
     public void userIsCreated() {
-        assertEquals("Seppo", user1.getName());
+        assertEquals("Seppo", user1.getUsername());
     }
 }

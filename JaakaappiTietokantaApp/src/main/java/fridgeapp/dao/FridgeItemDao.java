@@ -11,7 +11,7 @@ import java.util.List;
 
 interface FridgeItemDao {
     
-    Fridge create(FridgeItem fridgeItem) throws Exception;
+    FridgeItem create(FridgeItem fridgeItem) throws Exception;
     
     List<FridgeItem> getAll();
     

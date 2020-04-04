@@ -6,7 +6,7 @@
 package fridgeapp.dao;
 
 import fridgeapp.domain.*;
-import fridgeapp.domain.FridgeItem;
+import fridgeapp.dao.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -41,11 +41,26 @@ public class FileFridgeItemDao implements FridgeItemDao{
         }
         
     }
+    
+    private int generateId() {
+        return items.size() + 1;
+    }
+    
+    private void save() throws Exception{
+        try (FileWriter writer = new FileWriter(new File(file))) {
+            for (FridgeItem item : items) {
+                writer.write(item.getId() + ";" + item.getContent() + ";" + item.getAmount() + ";" + item.getUser().getUsername() + "\n");
+            }
+        }
+    }    
 
     @Override
-    public Fridge create(FridgeItem fridgeItem) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public FridgeItem create(FridgeItem item) throws Exception {
+        item.setId(generateId());
+        items.add(item);
+        save();
+        return item;
+    }   
 
     @Override
     public List<FridgeItem> getAll() {

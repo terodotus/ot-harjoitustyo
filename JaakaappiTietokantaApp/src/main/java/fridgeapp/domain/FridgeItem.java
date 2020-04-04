@@ -47,4 +47,13 @@ public class FridgeItem {
         this.amount = amount;
     }
 
+    public FridgeUser getUser() {
+        return user;
+    }
+
+    public void setUser(FridgeUser user) {
+        this.user = user;
+    }
+    
+
 }

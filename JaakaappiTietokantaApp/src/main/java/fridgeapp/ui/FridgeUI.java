@@ -46,7 +46,7 @@ public class FridgeUI extends Application{
         VBox loginPane = new VBox(10);
         HBox inputPane = new HBox(10);
         loginPane.setPadding(new Insets(10));
-        Label loginLabel = new Label("username");
+        Label loginLabel = new Label("myFridge");
         TextField usernameInput = new TextField();
         
         inputPane.getChildren().addAll(loginLabel, usernameInput);
