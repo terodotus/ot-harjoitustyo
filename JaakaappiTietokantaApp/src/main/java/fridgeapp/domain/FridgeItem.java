@@ -19,6 +19,13 @@ public class FridgeItem {
         this.user=user;
     }
     
+    public FridgeItem(int id, String content,int amount,FridgeUser user) {
+        this.id = id;
+        this.content = content;
+        this.amount=amount;
+        this.user=user;
+    }
+    
     public FridgeItem(String content) {
         this.content = content;
     }
@@ -53,6 +60,15 @@ public class FridgeItem {
 
     public void setUser(FridgeUser user) {
         this.user = user;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof FridgeItem)) {
+            return false;
+        }
+        FridgeItem other = (FridgeItem) obj;
+        return id == other.id;
     }
     
 

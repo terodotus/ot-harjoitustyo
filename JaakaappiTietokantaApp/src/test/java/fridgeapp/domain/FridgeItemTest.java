@@ -32,4 +32,11 @@ public class FridgeItemTest {
     @Test
     public void hello() {
     }
+    
+    @Test
+    public void equalWhenSameId() {
+        FridgeItem item1 = new FridgeItem(1, null, 1, null);
+        FridgeItem item2 = new FridgeItem(1, null, 1, null);
+        assertTrue(item1.equals(item2));
+    }
 }

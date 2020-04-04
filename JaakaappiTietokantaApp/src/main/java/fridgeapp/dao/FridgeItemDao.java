@@ -15,6 +15,6 @@ interface FridgeItemDao {
     
     List<FridgeItem> getAll();
     
-    void setAmount(int id) throws Exception;
+    void setAmount(int id, int amount) throws Exception;
     
 }
