@@ -14,8 +14,9 @@ public class Fridge {
         this.user=user;
     }
     
-    public Fridge(){
-        
+    public Fridge(FridgeUser user){
+        this.user=user;
+        this.items=new ArrayList();
     }
 
     public ArrayList<FridgeItem> getItems() {

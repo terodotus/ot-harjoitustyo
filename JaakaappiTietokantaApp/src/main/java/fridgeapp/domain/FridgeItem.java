@@ -8,20 +8,19 @@ public class FridgeItem {
     private int id;
     private String content;
     private int amount;
-    private boolean defaultItem;
-    
+    private FridgeUser user;
+        
     public FridgeItem(){
     }
     
-    public FridgeItem(int id, String content, boolean done) {
+    public FridgeItem(int id, String content,FridgeUser user) {
         this.id = id;
         this.content = content;
-        this.defaultItem = done;
+        this.user=user;
     }
     
     public FridgeItem(String content) {
         this.content = content;
-        this.defaultItem = false;
     }
 
     public int getId() {
@@ -48,12 +47,4 @@ public class FridgeItem {
         this.amount = amount;
     }
 
-    public boolean isDefaultItem() {
-        return defaultItem;
-    }
-
-    public void setDefaultItem(boolean defaultItem) {
-        this.defaultItem = defaultItem;
-    }
-            
 }

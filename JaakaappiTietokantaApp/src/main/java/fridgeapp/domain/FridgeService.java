@@ -13,8 +13,8 @@ public class FridgeService {
         this.fridgeDao = fridgeItemDao;
     }
     
-    public boolean createFridge(String content) {
-        Fridge fridge = new Fridge();
+    public boolean createFridge(FridgeUser user) {
+        Fridge fridge = new Fridge(user);
         try {   
             fridgeDao.create(fridge);
         } catch (Exception ex) {
