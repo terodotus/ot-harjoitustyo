@@ -7,7 +7,7 @@
 | 28.3  |  4   | project structure planning, studying for dependencies |
 | 29.3  |  4   | trials for classes and methods, and internal structure |
 |  3.4  |  3   | studying dao design model approach |
-|       |      |  |
+|  4.4  |  2   | implementing file storing and getting from file functions |
 |       |      |  |
 |       |      |  |
 |       |      |  |
