@@ -1,32 +1,24 @@
 
 package fridgeapp.domain;
+
 import fridgeapp.dao.*;
+import fridgeapp.domain.*;
 import java.util.ArrayList;
 
 public class FridgeService {
-    private FridgeUserDao userDao;
-    private FridgeDao fridgeDao;
+    private FridgeUserDao fridgeUserDao;
+    private FridgeItemDao fridgeItemDao;
     private FridgeUser loggedIn;
     
-    public FridgeService(FridgeDao fridgeItemDao, FridgeUserDao userDao) {
-        this.userDao = userDao;
-        this.fridgeDao = fridgeItemDao;
+    public FridgeService(FridgeItemDao fridgeItemDao, FridgeUserDao userDao) {
+        this.fridgeUserDao = userDao;
+        this.fridgeItemDao = fridgeItemDao;
     }
     
-    public boolean createFridge(FridgeUser user) {
-        Fridge fridge = new Fridge(user);
+    public boolean createFridgeItem(String content) {
+        FridgeItem item = new FridgeItem(content, loggedIn);
         try {   
-            fridgeDao.create(fridge);
-        } catch (Exception ex) {
-            return false;
-        }
-        return true;
-    }
-    
-    public boolean createFridge(ArrayList items) {
-        Fridge fridge = new Fridge(loggedIn,items);
-        try {   
-            fridgeDao.create(fridge);
+            fridgeItemDao.create(item);
         } catch (Exception ex) {
             return false;
         }
@@ -34,7 +26,7 @@ public class FridgeService {
     }
     
     public boolean login(String username) {
-        FridgeUser user = userDao.findByUsername(username);
+        FridgeUser user = fridgeUserDao.findByUsername(username);
         if (user == null) {
             return false;
         }
@@ -47,12 +39,12 @@ public class FridgeService {
     }
     
      public boolean createUser(String username, String name)  {   
-        if (userDao.findByUsername(username) != null) {
+        if (fridgeUserDao.findByUsername(username) != null) {
             return false;
         }
         FridgeUser user = new FridgeUser(username, name);
         try {
-            userDao.create(user);
+            fridgeUserDao.create(user);
         } catch(Exception e) {
             return false;
         }

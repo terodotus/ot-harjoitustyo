@@ -13,6 +13,12 @@ public class FridgeItem {
     public FridgeItem(){
     }
     
+    public FridgeItem(String content, FridgeUser user){
+        this.content=content;
+        this.user=user;
+        this.amount=0;
+    }
+    
     public FridgeItem(int id, String content,FridgeUser user) {
         this.id = id;
         this.content = content;

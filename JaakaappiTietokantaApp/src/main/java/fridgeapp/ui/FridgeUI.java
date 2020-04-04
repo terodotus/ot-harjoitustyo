@@ -27,7 +27,7 @@ import static javafx.application.Application.launch;
 import fridgeapp.domain.*;
 
 public class FridgeUI extends Application{
-    private FridgeService service;
+    private FridgeService fridgeService;
     
     private Scene fridgeScene;
     private Scene newUserScene;
@@ -37,6 +37,16 @@ public class FridgeUI extends Application{
     
     @Override
     public void init() throws Exception {
+        Properties properties = new Properties();
+
+        properties.load(new FileInputStream("config.properties"));
+        
+        String userFile = properties.getProperty("userFile");
+        String fridgeItemFile = properties.getProperty("fridgeItemFile");
+            
+        FileFridgeUserDao fridgeUserDao = new FileFridgeUserDao(userFile);
+        FileFridgeItemDao fridgeItemDao = new FileFridgeItemDao(fridgeItemFile, fridgeUserDao);
+        fridgeService = new FridgeService(fridgeItemDao, fridgeUserDao);
     }
     
     @Override

@@ -9,6 +9,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class FridgeItemTest {
+    private FridgeItem item1;
+    private FridgeItem item2;
     
     public FridgeItemTest() {
     }
@@ -23,6 +25,8 @@ public class FridgeItemTest {
     
     @Before
     public void setUp() {
+        item1 = new FridgeItem(1, null, 1, null);
+        item2 = new FridgeItem(1, null, 1, null);
     }
     
     @After
@@ -31,12 +35,16 @@ public class FridgeItemTest {
 
     @Test
     public void hello() {
+        
+    }
+    
+    @Test
+    public void fridgeItemIsCreated() {
+        assertFalse(item1.equals(null));
     }
     
     @Test
     public void equalWhenSameId() {
-        FridgeItem item1 = new FridgeItem(1, null, 1, null);
-        FridgeItem item2 = new FridgeItem(1, null, 1, null);
         assertTrue(item1.equals(item2));
     }
 }

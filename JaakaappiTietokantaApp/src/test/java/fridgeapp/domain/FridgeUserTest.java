@@ -18,6 +18,8 @@ import static org.junit.Assert.*;
  */
 public class FridgeUserTest {
     FridgeUser user1;
+    FridgeUser user2;
+    FridgeUser user3;
     
     public FridgeUserTest() {
     }
@@ -33,6 +35,8 @@ public class FridgeUserTest {
     @Before
     public void setUp() {
         user1=new FridgeUser("Seppo", "seponkaappi");
+        user2=new FridgeUser("Teppo", "teponkaappi");
+        user3=new FridgeUser("Teppo", "teponkaappi");
     }
     
     @After
@@ -41,6 +45,35 @@ public class FridgeUserTest {
 
     @Test
     public void userIsCreated() {
+        assertFalse(user1.equals(null));
+    }
+    
+    @Test
+    public void getUserNameWorking() {
         assertEquals("Seppo", user1.getUsername());
     }
+    
+    @Test
+    public void setUserNameWorking() {
+        user1.setUsername("Matti");
+        assertEquals("Matti", user1.getUsername());
+    }
+    
+    @Test
+    public void equalWhenSameUsername() {
+        assertTrue(user2.equals(user3));
+    }
+    
+    @Test
+    public void getFridgeWorking() {
+        assertEquals("seponkaappi", user1.getFridge());
+    }
+    
+    @Test
+    public void setFridgeWorking() {
+        user2.setFridge("matinkaappi");
+        assertEquals("matinkaappi", user2.getFridge());
+    }
+    
+
 }
