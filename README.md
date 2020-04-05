@@ -6,7 +6,7 @@
 * laskarit yms maeriaali omassa kansiossaan
 
 ## Harjoitustyö: FridgeApp (Jääkaappi)
-* koodi [Fridge](https://github.com/terodotus/ot-harjoitustyo/tree/master/JaakaappiTietokantaApp)
+* koodi [FridgeApp](https://github.com/terodotus/ot-harjoitustyo/tree/master/JaakaappiTietokantaApp)
 * [tuntikirjanpito.md](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/tuntikirjanpito.md)
 * [vaatimusmaarittely.md](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/vaatimusmaarittely.md)
 
