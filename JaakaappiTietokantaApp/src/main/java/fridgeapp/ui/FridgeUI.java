@@ -54,10 +54,10 @@ public class FridgeUI extends Application{
         HBox box = new HBox(10);
         Label label  = new Label(item.toString());
         label.setMinHeight(28);
-        Button button = new Button("set amount to zero");
-        int newAmount=0;
+        Button button = new Button("set amount");
+        TextField newAmountInput = new TextField();
         button.setOnAction(e->{
-            fridgeService.setAmount(item.getId(),newAmount);
+            fridgeService.setAmount(item.getId(),Integer.valueOf(newAmountInput.getText()));
             restoreFridge();
         });
                 
@@ -65,7 +65,7 @@ public class FridgeUI extends Application{
         HBox.setHgrow(spacer, Priority.ALWAYS);
         box.setPadding(new Insets(0,5,0,5));
         
-        box.getChildren().addAll(label, spacer, button);
+        box.getChildren().addAll(label, spacer, newAmountInput,button);
         return box;
     }
     
@@ -104,7 +104,7 @@ public class FridgeUI extends Application{
                 primaryStage.setScene(fridgeScene);  
                 usernameInput.setText("");
             } else {
-                loginMessage.setText("use does not exist");
+                loginMessage.setText("user does not exist");
                 loginMessage.setTextFill(Color.RED);
             }      
         });  
@@ -132,7 +132,7 @@ public class FridgeUI extends Application{
         HBox newNamePane = new HBox(10);
         newNamePane.setPadding(new Insets(10));
         TextField newNameInput = new TextField();
-        Label newNameLabel = new Label("name");
+        Label newNameLabel = new Label("Your Fridge Name");
         newNameLabel.setPrefWidth(100);
         newNamePane.getChildren().addAll(newNameLabel, newNameInput);        
         
@@ -169,7 +169,7 @@ public class FridgeUI extends Application{
         
         ScrollPane fridgeItemScollbar = new ScrollPane();       
         BorderPane mainPane = new BorderPane(fridgeItemScollbar);
-        fridgeScene = new Scene(mainPane, 300, 250);
+        fridgeScene = new Scene(mainPane, 500, 300);
                 
         HBox menuPane = new HBox(10);    
         Region menuSpacer = new Region();
@@ -185,13 +185,13 @@ public class FridgeUI extends Application{
         Button createItem = new Button("create");
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
-        TextField newItemInput = new TextField();
-        TextField newAmountInput = new TextField();
+        TextField newItemInput = new TextField("set item");
+        TextField newAmountInput = new TextField("set amount");
         createForm.getChildren().addAll(newItemInput, newAmountInput, spacer, createItem);
         
         fridgeSectors = new VBox(10);
-        fridgeSectors.setMaxWidth(280);
-        fridgeSectors.setMinWidth(280);
+        fridgeSectors.setMaxWidth(480);
+        fridgeSectors.setMinWidth(480);
         restoreFridge();
         
         fridgeItemScollbar.setContent(fridgeSectors);
@@ -200,7 +200,8 @@ public class FridgeUI extends Application{
         
         createItem.setOnAction(e->{
             fridgeService.createFridgeItem(newItemInput.getText(), Integer.valueOf(newAmountInput.getText()));
-            newItemInput.setText("");       
+            newItemInput.setText(""); 
+            newAmountInput.setText("");
             restoreFridge();
         });
         

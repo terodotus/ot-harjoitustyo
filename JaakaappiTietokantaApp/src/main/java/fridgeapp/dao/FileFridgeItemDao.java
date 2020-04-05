@@ -56,6 +56,14 @@ public class FileFridgeItemDao implements FridgeItemDao{
 
     @Override
     public FridgeItem create(FridgeItem item) throws Exception {
+        for(FridgeItem savedItem: this.items){
+            if(savedItem.getUser().equals(item.getUser())&&savedItem.getContent().equals(item.getContent())){
+                savedItem.setAmount(savedItem.getAmount()+item.getAmount());
+                save();
+                return savedItem;
+            } 
+                
+        }
         item.setId(generateId());
         items.add(item);
         save();
