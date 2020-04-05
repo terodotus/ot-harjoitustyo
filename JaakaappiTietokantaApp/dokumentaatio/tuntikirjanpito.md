@@ -1,6 +1,5 @@
 # työaikakirjanpito
 
-| päivä | aika | mitä tein  |
 |  date | time | description  |
 | :----:|:-----| :-----|
 | 20.3. |  3   | alustava vaatimusmäärittely ja mavenin opettelua |
