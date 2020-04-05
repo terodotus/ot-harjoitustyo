@@ -19,13 +19,19 @@ public class FridgeItem {
         this.amount=0;
     }
     
+    public FridgeItem(String content, int amount, FridgeUser user){
+        this.content=content;
+        this.user=user;
+        this.amount=amount;
+    }
+    
     public FridgeItem(int id, String content,FridgeUser user) {
         this.id = id;
         this.content = content;
         this.user=user;
     }
     
-    public FridgeItem(int id, String content,int amount,FridgeUser user) {
+    public FridgeItem(int id, String content, int amount, FridgeUser user) {
         this.id = id;
         this.content = content;
         this.amount=amount;

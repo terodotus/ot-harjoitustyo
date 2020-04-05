@@ -186,7 +186,8 @@ public class FridgeUI extends Application{
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
         TextField newItemInput = new TextField();
-        createForm.getChildren().addAll(newItemInput, spacer, createItem);
+        TextField newAmountInput = new TextField();
+        createForm.getChildren().addAll(newItemInput, newAmountInput, spacer, createItem);
         
         fridgeSectors = new VBox(10);
         fridgeSectors.setMaxWidth(280);
@@ -198,7 +199,7 @@ public class FridgeUI extends Application{
         mainPane.setTop(menuPane);
         
         createItem.setOnAction(e->{
-            fridgeService.createFridgeItem(newItemInput.getText());
+            fridgeService.createFridgeItem(newItemInput.getText(), Integer.valueOf(newAmountInput.getText()));
             newItemInput.setText("");       
             restoreFridge();
         });
@@ -209,7 +210,7 @@ public class FridgeUI extends Application{
    
         // seutp primary stage
         
-        primaryStage.setTitle("Todos");
+        primaryStage.setTitle("Your Fridge Items");
         primaryStage.setScene(loginScene);
         primaryStage.show();
         primaryStage.setOnCloseRequest(e->{

@@ -27,6 +27,16 @@ public class FridgeService {
         return true;
     }
     
+    public boolean createFridgeItem(String content,int amount) {
+        FridgeItem item = new FridgeItem(content, amount, loggedIn);
+        try {   
+            fridgeItemDao.create(item);
+        } catch (Exception ex) {
+            return false;
+        }
+        return true;
+    }
+    
     public boolean login(String username) {
         FridgeUser user = fridgeUserDao.findByUsername(username);
         if (user == null) {

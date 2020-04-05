@@ -1,1 +1,4 @@
 1;maito;0;tervuor
+2;maito;0;kakku1
+3;maito;0;tervuor
+4;maito;0;tervuor
