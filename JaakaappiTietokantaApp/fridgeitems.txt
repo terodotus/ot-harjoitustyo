@@ -2,3 +2,10 @@
 2;maito;0;kakku1
 3;maito;0;tervuor
 4;maito;0;tervuor
+5;maito;0;tervour
+6;piimä;0;tervour
+7;naudanjauheliha;0;tervour
+8;maito;0;tervour
+9;maito;0;tervuor
+10;piimä;0;tervuor
+11;piimä;0;tervuor

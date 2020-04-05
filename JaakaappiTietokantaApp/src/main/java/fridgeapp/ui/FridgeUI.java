@@ -52,7 +52,7 @@ public class FridgeUI extends Application{
     
     public Node createFridgeSector(FridgeItem item) {
         HBox box = new HBox(10);
-        Label label  = new Label(item.getContent());
+        Label label  = new Label(item.toString());
         label.setMinHeight(28);
         Button button = new Button("set amount to zero");
         int newAmount=0;
@@ -167,8 +167,8 @@ public class FridgeUI extends Application{
         
         // main scene
         
-        ScrollPane todoScollbar = new ScrollPane();       
-        BorderPane mainPane = new BorderPane(todoScollbar);
+        ScrollPane fridgeItemScollbar = new ScrollPane();       
+        BorderPane mainPane = new BorderPane(fridgeItemScollbar);
         fridgeScene = new Scene(mainPane, 300, 250);
                 
         HBox menuPane = new HBox(10);    
@@ -194,7 +194,7 @@ public class FridgeUI extends Application{
         fridgeSectors.setMinWidth(280);
         restoreFridge();
         
-        todoScollbar.setContent(fridgeSectors);
+        fridgeItemScollbar.setContent(fridgeSectors);
         mainPane.setBottom(createForm);
         mainPane.setTop(menuPane);
         

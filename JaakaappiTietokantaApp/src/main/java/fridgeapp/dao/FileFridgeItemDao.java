@@ -32,7 +32,7 @@ public class FileFridgeItemDao implements FridgeItemDao{
                 
                 int amount = Integer.valueOf(parts[2]);
                 FridgeUser user = users.getAll().stream().filter(u->u.getUsername().equals(parts[3])).findFirst().orElse(null); 
-                FridgeItem item = new FridgeItem(id, parts[1], user);
+                FridgeItem item = new FridgeItem(id, parts[1], amount, user);
                 items.add(item);
             }
         } catch (Exception e) {

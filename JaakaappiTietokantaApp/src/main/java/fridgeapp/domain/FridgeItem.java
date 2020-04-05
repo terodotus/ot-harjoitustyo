@@ -75,6 +75,11 @@ public class FridgeItem {
     }
     
     @Override
+    public String toString(){
+        return this.getContent()+", "+this.getAmount();
+    }
+    
+    @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof FridgeItem)) {
             return false;
