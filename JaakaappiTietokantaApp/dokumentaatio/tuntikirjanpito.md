@@ -9,8 +9,8 @@
 |  3.4  |  3   | studying dao design model approach |
 |  4.4  |  2   | implementing file storing and getting from file functions |
 |  5.4  |  5   | UI learning and implementing |
+|       |  2   | editing documentation |
 |       |      |  |
 |       |      |  |
 |       |      |  |
-|       |      |  |
-| yht   |      |  | 
+| yht   |  25  |  | 
