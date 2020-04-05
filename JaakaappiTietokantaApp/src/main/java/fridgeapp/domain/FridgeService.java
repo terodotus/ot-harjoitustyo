@@ -4,6 +4,8 @@ package fridgeapp.domain;
 import fridgeapp.dao.*;
 import fridgeapp.domain.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class FridgeService {
     private FridgeUserDao fridgeUserDao;
@@ -38,7 +40,7 @@ public class FridgeService {
         loggedIn = null;  
     }
     
-     public boolean createUser(String username, String name)  {   
+    public boolean createUser(String username, String name)  {   
         if (fridgeUserDao.findByUsername(username) != null) {
             return false;
         }
@@ -50,12 +52,30 @@ public class FridgeService {
         }
         return true;
     }
-    
+     
+    public List<FridgeItem> getActualContent() {
+        if (loggedIn == null) {
+            return new ArrayList<>();
+        }
+          
+        return fridgeItemDao.getAll()
+            .stream()
+            .filter(t-> t.getUser().equals(loggedIn))
+            .filter(t->t.getAmount()>0)
+            .collect(Collectors.toList());
+    }
+   
+   
     public FridgeUser getLoggedUser() {
         return loggedIn;
     }
     
-     
+    public void setAmount(int id, int newAmount) {
+        try {
+            fridgeItemDao.setAmount(id,newAmount);
+        } catch (Exception ex) {
+        }
+    } 
 
      
 }

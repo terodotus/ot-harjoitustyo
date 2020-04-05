@@ -33,6 +33,7 @@ public class FridgeUI extends Application{
     private Scene newUserScene;
     private Scene loginScene;
     
+    private VBox fridgeSectors;
     private Label menuLabel = new Label();
     
     @Override
@@ -47,6 +48,34 @@ public class FridgeUI extends Application{
         FileFridgeUserDao fridgeUserDao = new FileFridgeUserDao(userFile);
         FileFridgeItemDao fridgeItemDao = new FileFridgeItemDao(fridgeItemFile, fridgeUserDao);
         fridgeService = new FridgeService(fridgeItemDao, fridgeUserDao);
+    }
+    
+    public Node createFridgeSector(FridgeItem item) {
+        HBox box = new HBox(10);
+        Label label  = new Label(item.getContent());
+        label.setMinHeight(28);
+        Button button = new Button("set amount to zero");
+        int newAmount=0;
+        button.setOnAction(e->{
+            fridgeService.setAmount(item.getId(),newAmount);
+            restoreFridge();
+        });
+                
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+        box.setPadding(new Insets(0,5,0,5));
+        
+        box.getChildren().addAll(label, spacer, button);
+        return box;
+    }
+    
+    public void restoreFridge() {
+        fridgeSectors.getChildren().clear();     
+
+        List<FridgeItem> actualItems = fridgeService.getActualContent();
+        actualItems.forEach(todo->{
+            fridgeSectors.getChildren().add(createFridgeSector(todo));
+        });     
     }
     
     @Override

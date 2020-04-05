@@ -32,11 +32,6 @@ public class FridgeItemTest {
     @After
     public void tearDown() {
     }
-
-    @Test
-    public void hello() {
-        
-    }
     
     @Test
     public void fridgeItemIsCreated() {
