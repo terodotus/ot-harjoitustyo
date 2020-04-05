@@ -73,8 +73,8 @@ public class FridgeUI extends Application{
         fridgeSectors.getChildren().clear();     
 
         List<FridgeItem> actualItems = fridgeService.getActualContent();
-        actualItems.forEach(todo->{
-            fridgeSectors.getChildren().add(createFridgeSector(todo));
+        actualItems.forEach(item->{
+            fridgeSectors.getChildren().add(createFridgeSector(item));
         });     
     }
     
@@ -96,20 +96,129 @@ public class FridgeUI extends Application{
         Button createButton = new Button("create  a new fridge user");
         
         loginButton.setOnAction(e->{
+            String username = usernameInput.getText();
+            menuLabel.setText(username + " logged in...");
+            if (fridgeService.login(username) ){
+                loginMessage.setText("");
+                restoreFridge();
+                primaryStage.setScene(fridgeScene);  
+                usernameInput.setText("");
+            } else {
+                loginMessage.setText("use does not exist");
+                loginMessage.setTextFill(Color.RED);
+            }      
         });  
-        
+
         createButton.setOnAction(e->{
+            usernameInput.setText("");
+            primaryStage.setScene(newUserScene); 
         });  
         
         loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, createButton, new Label(" "), infotext);       
         
-        loginScene = new Scene(loginPane, 300, 250);    
+        loginScene = new Scene(loginPane, 300, 250);  
+        
+        // new createNewUserScene
+        
+        VBox newUserPane = new VBox(10);
+        
+        HBox newUsernamePane = new HBox(10);
+        newUsernamePane.setPadding(new Insets(10));
+        TextField newUsernameInput = new TextField(); 
+        Label newUsernameLabel = new Label("username");
+        newUsernameLabel.setPrefWidth(100);
+        newUsernamePane.getChildren().addAll(newUsernameLabel, newUsernameInput);
+     
+        HBox newNamePane = new HBox(10);
+        newNamePane.setPadding(new Insets(10));
+        TextField newNameInput = new TextField();
+        Label newNameLabel = new Label("name");
+        newNameLabel.setPrefWidth(100);
+        newNamePane.getChildren().addAll(newNameLabel, newNameInput);        
+        
+        Label userCreationMessage = new Label();
+        
+        Button createNewUserButton = new Button("create");
+        createNewUserButton.setPadding(new Insets(10));
+
+        createNewUserButton.setOnAction(e->{
+            String username = newUsernameInput.getText();
+            String name = newNameInput.getText();
    
-        primaryStage.setTitle("Login Your Frigde");
+            if ( username.length()==2 || name.length()<2 ) {
+                userCreationMessage.setText("username or name too short");
+                userCreationMessage.setTextFill(Color.RED);  
+            } 
+            if (username.contains(";")||username.contains(":")){
+                userCreationMessage.setText("username contains illegal characters (%#;&)");
+                userCreationMessage.setTextFill(Color.RED);
+            
+            } else if (fridgeService.createUser(username, name) ){
+                userCreationMessage.setText("");                
+                loginMessage.setText("new user created");
+                loginMessage.setTextFill(Color.GREEN);
+                primaryStage.setScene(loginScene);      
+            } else {
+                userCreationMessage.setText("username has to be unique");
+                userCreationMessage.setTextFill(Color.RED);        
+            }
+ 
+        });  
+        
+        // main scene
+        
+        ScrollPane todoScollbar = new ScrollPane();       
+        BorderPane mainPane = new BorderPane(todoScollbar);
+        fridgeScene = new Scene(mainPane, 300, 250);
+                
+        HBox menuPane = new HBox(10);    
+        Region menuSpacer = new Region();
+        HBox.setHgrow(menuSpacer, Priority.ALWAYS);
+        Button logoutButton = new Button("logout");      
+        menuPane.getChildren().addAll(menuLabel, menuSpacer, logoutButton);
+        logoutButton.setOnAction(e->{
+            fridgeService.logout();
+            primaryStage.setScene(loginScene);
+        });        
+        
+        HBox createForm = new HBox(10);    
+        Button createItem = new Button("create");
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+        TextField newItemInput = new TextField();
+        createForm.getChildren().addAll(newItemInput, spacer, createItem);
+        
+        fridgeSectors = new VBox(10);
+        fridgeSectors.setMaxWidth(280);
+        fridgeSectors.setMinWidth(280);
+        restoreFridge();
+        
+        todoScollbar.setContent(fridgeSectors);
+        mainPane.setBottom(createForm);
+        mainPane.setTop(menuPane);
+        
+        createItem.setOnAction(e->{
+            fridgeService.createFridgeItem(newItemInput.getText());
+            newItemInput.setText("");       
+            restoreFridge();
+        });
+        
+        newUserPane.getChildren().addAll(userCreationMessage, newUsernamePane, newNamePane, createNewUserButton); 
+       
+        newUserScene = new Scene(newUserPane, 300, 250);
+   
+        // seutp primary stage
+        
+        primaryStage.setTitle("Todos");
         primaryStage.setScene(loginScene);
         primaryStage.show();
         primaryStage.setOnCloseRequest(e->{
             System.out.println("closing");
+            System.out.println(fridgeService.getLoggedUser());
+            if (fridgeService.getLoggedUser()!=null) {
+                e.consume();   
+            }
+            
         });
     }
 
