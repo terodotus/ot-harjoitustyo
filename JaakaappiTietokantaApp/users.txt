@@ -1,1 +1,2 @@
 Tero;Teronkaappi
+Seppo;Seponkaappi

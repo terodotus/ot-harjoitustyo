@@ -23,21 +23,14 @@ public class FileFridgeDao implements FridgeDao {
                 int id = Integer.parseInt(parts[0]);
                 boolean done = Boolean.parseBoolean(parts[2]);
                 FridgeUser user = users.getAll().stream().filter(u->u.getUsername().equals(parts[3])).findFirst().orElse(null); 
-                FridgeItem item = new FridgeItem(id, parts[1],user);
+                FridgeItem item = new FridgeItem(id, parts[1], user);
                 items.add(item);
             }
         } catch (Exception e) {
             FileWriter writer = new FileWriter(new File(file));
             writer.close();
-        }
-        
+        }   
     }
-    
-    private void saveFridge() throws Exception{
-        try (FileWriter writer = new FileWriter(new File(file))) {
-            
-        }
-    }    
     
     private int generateId() {
         return items.size() + 1;

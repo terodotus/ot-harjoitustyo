@@ -85,7 +85,7 @@ public class FridgeUI extends Application{
         VBox loginPane = new VBox(10);
         HBox inputPane = new HBox(10);
         loginPane.setPadding(new Insets(10));
-        Label loginLabel = new Label("myFridge");
+        Label loginLabel = new Label("Username");
         TextField usernameInput = new TextField();
         
         inputPane.getChildren().addAll(loginLabel, usernameInput);
@@ -96,7 +96,7 @@ public class FridgeUI extends Application{
         Button createButton = new Button("create  a new fridge user");
         
         loginButton.setOnAction(e->{
-            String username = usernameInput.getText();
+            String username = usernameInput.getText().trim();
             menuLabel.setText(username + " logged in...");
             if (fridgeService.login(username) ){
                 loginMessage.setText("");
@@ -199,7 +199,7 @@ public class FridgeUI extends Application{
         mainPane.setTop(menuPane);
         
         createItem.setOnAction(e->{
-            fridgeService.createFridgeItem(newItemInput.getText(), Integer.valueOf(newAmountInput.getText()));
+            fridgeService.createFridgeItem(newItemInput.getText().trim(), Integer.valueOf(newAmountInput.getText().trim()));
             newItemInput.setText(""); 
             newAmountInput.setText("");
             restoreFridge();

@@ -6,17 +6,17 @@ import fridgeapp.domain.FridgeUser;
 import java.util.ArrayList;
 
 public class Fridge {
-    private ArrayList<FridgeItem>items;
+    private ArrayList<FridgeItem> items;
     private FridgeUser user;
     
-    public Fridge(FridgeUser user, ArrayList items){
-        this.items=items;
-        this.user=user;
+    public Fridge(FridgeUser user, ArrayList items) {
+        this.items = items;
+        this.user = user;
     }
     
-    public Fridge(FridgeUser user){
-        this.user=user;
-        this.items=new ArrayList();
+    public Fridge(FridgeUser user) {
+        this.user = user;
+        this.items =  new ArrayList();
     }
 
     public ArrayList<FridgeItem> getItems() {

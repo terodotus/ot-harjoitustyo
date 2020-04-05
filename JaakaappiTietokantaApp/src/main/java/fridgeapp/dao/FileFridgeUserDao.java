@@ -28,7 +28,7 @@ public class FileFridgeUserDao implements FridgeUserDao {
         
     }
     
-    private void save() throws Exception{
+    private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (FridgeUser user : users) {
                 writer.write(user.getUsername() + ";" + user.getFridge() + "\n");

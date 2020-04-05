@@ -25,9 +25,9 @@ public class FridgeService {
             return false;
         }
         return true;
-    }
+    } 
     
-    public boolean createFridgeItem(String content,int amount) {
+    public boolean createFridgeItem(String content, int amount) {
         FridgeItem item = new FridgeItem(content, amount, loggedIn);
         try {   
             fridgeItemDao.create(item);
@@ -57,7 +57,7 @@ public class FridgeService {
         FridgeUser user = new FridgeUser(username, name);
         try {
             fridgeUserDao.create(user);
-        } catch(Exception e) {
+        } catch (Exception e) {
             return false;
         }
         return true;
@@ -70,11 +70,10 @@ public class FridgeService {
           
         return fridgeItemDao.getAll()
             .stream()
-            .filter(t-> t.getUser().equals(loggedIn))
-            .filter(t->t.getAmount()>0)
+            .filter(t -> t.getUser().equals(loggedIn))
+            .filter(t -> t.getAmount()>0)
             .collect(Collectors.toList());
     }
-   
    
     public FridgeUser getLoggedUser() {
         return loggedIn;
@@ -82,10 +81,9 @@ public class FridgeService {
     
     public void setAmount(int id, int newAmount) {
         try {
-            fridgeItemDao.setAmount(id,newAmount);
+            fridgeItemDao.setAmount(id, newAmount);
         } catch (Exception ex) {
         }
     } 
 
-     
 }

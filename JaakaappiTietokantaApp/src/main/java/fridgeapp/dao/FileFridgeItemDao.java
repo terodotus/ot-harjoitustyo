@@ -17,7 +17,7 @@ import java.util.Scanner;
  *
  * @author Tero
  */
-public class FileFridgeItemDao implements FridgeItemDao{
+public class FileFridgeItemDao implements FridgeItemDao {
     public List<FridgeItem> items;
     private String file;
     
@@ -46,7 +46,7 @@ public class FileFridgeItemDao implements FridgeItemDao{
         return items.size() + 1;
     }
     
-    private void save() throws Exception{
+    private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (FridgeItem item : items) {
                 writer.write(item.getId() + ";" + item.getContent() + ";" + item.getAmount() + ";" + item.getUser().getUsername() + "\n");
@@ -56,9 +56,9 @@ public class FileFridgeItemDao implements FridgeItemDao{
 
     @Override
     public FridgeItem create(FridgeItem item) throws Exception {
-        for(FridgeItem savedItem: this.items){
-            if(savedItem.getUser().equals(item.getUser())&&savedItem.getContent().equals(item.getContent())){
-                savedItem.setAmount(savedItem.getAmount()+item.getAmount());
+        for (FridgeItem savedItem: this.items) {
+            if (savedItem.getUser().equals(item.getUser()) && savedItem.getContent().equals(item.getContent())) {
+                savedItem.setAmount(savedItem.getAmount() + item.getAmount());
                 save();
                 return savedItem;
             } 

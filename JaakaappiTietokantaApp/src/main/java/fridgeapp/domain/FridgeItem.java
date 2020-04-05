@@ -10,32 +10,32 @@ public class FridgeItem {
     private int amount;
     private FridgeUser user;
         
-    public FridgeItem(){
+    public FridgeItem() {
     }
     
-    public FridgeItem(String content, FridgeUser user){
-        this.content=content;
-        this.user=user;
-        this.amount=0;
+    public FridgeItem(String content, FridgeUser user) {
+        this.content = content;
+        this.user = user;
+        this.amount = 0;
     }
     
-    public FridgeItem(String content, int amount, FridgeUser user){
-        this.content=content;
-        this.user=user;
-        this.amount=amount;
+    public FridgeItem(String content, int amount, FridgeUser user) {
+        this.content = content;
+        this.user = user;
+        this.amount = amount;
     }
     
-    public FridgeItem(int id, String content,FridgeUser user) {
+    public FridgeItem(int id, String content, FridgeUser user) {
         this.id = id;
         this.content = content;
-        this.user=user;
+        this.user = user;
     }
     
     public FridgeItem(int id, String content, int amount, FridgeUser user) {
         this.id = id;
         this.content = content;
-        this.amount=amount;
-        this.user=user;
+        this.amount = amount;
+        this.user = user;
     }
     
     public FridgeItem(String content) {
@@ -75,8 +75,8 @@ public class FridgeItem {
     }
     
     @Override
-    public String toString(){
-        return this.getContent()+", "+this.getAmount();
+    public String toString() {
+        return this.getContent() + ", " + this.getAmount();
     }
     
     @Override

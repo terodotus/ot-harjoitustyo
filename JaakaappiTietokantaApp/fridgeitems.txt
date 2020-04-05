@@ -1,2 +1,2 @@
-1;maito;0;Tero
-2;piimä;0;Tero
+1;maito;9;Seppo
+2;piimä;7;Seppo
