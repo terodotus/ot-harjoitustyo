@@ -57,7 +57,11 @@ public class FridgeUI extends Application{
         Button button = new Button("set amount");
         TextField newAmountInput = new TextField();
         button.setOnAction(e->{
-            fridgeService.setAmount(item.getId(),Integer.valueOf(newAmountInput.getText()));
+            int newAmount=Integer.valueOf(newAmountInput.getText());
+            if(newAmount<0) {
+                newAmount=0;
+            }
+            fridgeService.setAmount(item.getId(),newAmount);
             restoreFridge();
         });
                 
@@ -78,10 +82,7 @@ public class FridgeUI extends Application{
         });     
     }
     
-    @Override
-    public void start(Stage primaryStage) {               
-        // login scene
-        
+    public Scene loginScene(Stage primaryStage, Label loginMessage) {
         VBox loginPane = new VBox(10);
         HBox inputPane = new HBox(10);
         loginPane.setPadding(new Insets(10));
@@ -89,7 +90,7 @@ public class FridgeUI extends Application{
         TextField usernameInput = new TextField();
         
         inputPane.getChildren().addAll(loginLabel, usernameInput);
-        Label loginMessage = new Label();
+        
         Label infotext = new Label("Manage your life and your delicious items!");
         
         Button loginButton = new Button("login");
@@ -117,11 +118,12 @@ public class FridgeUI extends Application{
         loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, createButton, new Label(" "), infotext);       
         
         loginScene = new Scene(loginPane, 300, 250);  
-        
-        // new createNewUserScene
+        return loginScene;
+    }
+    
+    public Scene createNewUserScene(Stage primaryStage, Label loginMessage) {
         
         VBox newUserPane = new VBox(10);
-        
         HBox newUsernamePane = new HBox(10);
         newUsernamePane.setPadding(new Insets(10));
         TextField newUsernameInput = new TextField(); 
@@ -164,9 +166,34 @@ public class FridgeUI extends Application{
             }
  
         });  
+        newUserPane.getChildren().addAll(userCreationMessage, newUsernamePane, newNamePane, createNewUserButton); 
+       
+        newUserScene = new Scene(newUserPane, 300, 250);
+        return newUserScene;
+    }
+    
+    @Override
+    public void start(Stage primaryStage) { 
+        Label loginMessage = new Label();
+        loginScene(primaryStage, loginMessage);
+        createNewUserScene(primaryStage, loginMessage);
+        createfridgeScene(primaryStage, loginMessage);
         
-        // main scene
-        
+        primaryStage.setTitle("Your Fridge Items");
+        primaryStage.setScene(loginScene);
+        primaryStage.show();
+        primaryStage.setOnCloseRequest(e->{
+            System.out.println("closing");
+            System.out.println(fridgeService.getLoggedUser());
+            if (fridgeService.getLoggedUser()!=null) {
+                e.consume();   
+            }
+            
+        });
+    }    
+
+// fridge scene
+    public Scene createfridgeScene(Stage primaryStage, Label loginMessage) {   
         ScrollPane fridgeItemScollbar = new ScrollPane();       
         BorderPane mainPane = new BorderPane(fridgeItemScollbar);
         fridgeScene = new Scene(mainPane, 500, 300);
@@ -204,24 +231,7 @@ public class FridgeUI extends Application{
             newAmountInput.setText("");
             restoreFridge();
         });
-        
-        newUserPane.getChildren().addAll(userCreationMessage, newUsernamePane, newNamePane, createNewUserButton); 
-       
-        newUserScene = new Scene(newUserPane, 300, 250);
-   
-        // seutp primary stage
-        
-        primaryStage.setTitle("Your Fridge Items");
-        primaryStage.setScene(loginScene);
-        primaryStage.show();
-        primaryStage.setOnCloseRequest(e->{
-            System.out.println("closing");
-            System.out.println(fridgeService.getLoggedUser());
-            if (fridgeService.getLoggedUser()!=null) {
-                e.consume();   
-            }
-            
-        });
+        return fridgeScene;
     }
 
     @Override

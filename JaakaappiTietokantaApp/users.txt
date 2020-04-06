@@ -1,2 +1,5 @@
 Tero;Teronkaappi
 Seppo;Seponkaappi
+Terotin;terottimenkaappi
+Terotus;terotuskaappi
+Jukka;jukankaappi

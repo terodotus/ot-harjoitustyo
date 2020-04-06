@@ -1,2 +1,9 @@
 1;maito;9;Seppo
 2;piimä;7;Seppo
+3;maito;8;Tero
+4;piimä;8;Tero
+5;maito;0;Terotin
+6;kinkku;0;Tero
+7;maito;5;Terotus
+8;mansikka;10;Tero
+9;voi;2;Jukka
