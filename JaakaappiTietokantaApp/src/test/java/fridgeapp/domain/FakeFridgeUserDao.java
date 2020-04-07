@@ -1,34 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package fridgeapp.domain;
 
-import fridgeapp.dao.FridgeItemDao;
 import fridgeapp.dao.FridgeUserDao;
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Tero
- */
 public class FakeFridgeUserDao implements FridgeUserDao{
-
+    List<FridgeUser> users = new ArrayList<>();
+    
+    public FakeFridgeUserDao() {
+        users.add(new FridgeUser("testaaja", "PakastajaElvi"));
+    }
+    
     @Override
     public FridgeUser create(FridgeUser user) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        users.add(user);
+        return user;
     }
 
     @Override
     public FridgeUser findByUsername(String username) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return users.stream().filter(u->u.getUsername().equals(username)).findFirst().orElse(null);
     }
 
     @Override
     public List<FridgeUser> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return users;
     }
 
-    
 }

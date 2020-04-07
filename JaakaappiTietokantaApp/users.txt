@@ -3,3 +3,4 @@ Seppo;Seponkaappi
 Terotin;terottimenkaappi
 Terotus;terotuskaappi
 Jukka;jukankaappi
+Turo;turonkaappi

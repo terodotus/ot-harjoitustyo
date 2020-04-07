@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package fridgeapp.dao;
 
 import java.io.File;
@@ -16,7 +12,9 @@ import static org.junit.Assert.*;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 import fridgeapp.domain.*;
-import fridgeapp.dao.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.List;
 
 public class FileFridgeItemDaoTest {
     @Rule
@@ -25,33 +23,30 @@ public class FileFridgeItemDaoTest {
     File userFile;  
     FridgeItemDao dao;    
     
-    public FileFridgeItemDaoTest() {
-    }
-    
     @BeforeClass
     public static void setUpClass() {
-        
     }
     
     @AfterClass
     public static void tearDownClass() {
     }
-/*    
+    
     @Before
     public void setUp() throws Exception {
         userFile = testFolder.newFile("testfile_users.txt");  
-        FridgeUserDao userDao = new FakeFridgeUserDao();
-        userDao.create(new FridgeUser("testertester", "Teppo Testaaja"));
+        FridgeUserDao fridgeUserDao = new FakeFridgeUserDao();
+        fridgeUserDao.create(new FridgeUser("testaaja", "Pakastaja Elvi"));
         
         try (FileWriter file = new FileWriter(userFile.getAbsolutePath())) {
-            file.write("1;siivoa;false;testertester\n");
+            file.write("1;maito;9;testaaja\n");
         }
         
-        dao = new FileFridgeItemDao(userFile.getAbsolutePath(), userDao);        
+        dao = new FileFridgeItemDao(userFile.getAbsolutePath(), fridgeUserDao);        
     }
-*/    
+    
     @After
     public void tearDown() {
+        userFile.delete();
     }
 
     @Test
