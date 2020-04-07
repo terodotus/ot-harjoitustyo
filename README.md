@@ -8,7 +8,7 @@
 # Harjoitustyö: FridgeApp (Jääkaappi)
 * koodi [FridgeApp](https://github.com/terodotus/ot-harjoitustyo/tree/master/JaakaappiTietokantaApp)
 
-##Documentation
+### Documentation
 * [Arkkitehtuurikuvaus](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/arkkitehtuuri.md)
 * [tuntikirjanpito](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/tuntikirjanpito.md)
 * [vaatimusmaarittely](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/vaatimusmaarittely.md)
