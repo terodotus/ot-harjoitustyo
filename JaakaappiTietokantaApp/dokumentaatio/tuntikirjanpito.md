@@ -11,7 +11,7 @@
 |  4.4  |  2   | implementing file storing and getting from file functions |
 |  5.4  |  5   | UI learning and implementing |
 |       |  2   | editing documentation |
+|  6.4  |  4   | ui trials |
 |       |      |  |
 |       |      |  |
-|       |      |  |
-| yht   |  25  |  | 
+| yht   |  32  |  | 
