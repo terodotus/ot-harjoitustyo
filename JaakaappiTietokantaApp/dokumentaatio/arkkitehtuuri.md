@@ -13,6 +13,7 @@ fridgeapp.dao
 Käyttöliittymä tarjoaa mahdollisuuden luoda käyttäjän, kirjautua ohjelmaan ja hallita oman jääkaapin sisältöä. Kukin näistä toiminnoista on omassa näkymässään.
 
 ## Sovelluslogiikka
+Ohjelman tärkeimmät käsitteet ovat fridgeUser ja fridgeItem. FridgeUser kuvaa ohjelman käyttäjää, jolla on tiettyjä ominaisuuksia. FridgeItem kuvaa yksittäistä tuotetta jääkaapissa, jolla on ominaisuuksia, kuten esimerkiksi määrä.
 
 ## Tietojen pysyväistallennus
 Tietojen pysyväistallennus on toistaiseksi hoidettu samassa kansiossa olevien tekstitiedostojen avulla. Saatetaan muuttaa H2 tietokannanhallintajärjestelmää hyödyntäväksi tietokannaksi.
