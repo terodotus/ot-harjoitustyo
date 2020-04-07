@@ -12,6 +12,6 @@
 |  5.4  |  5   | UI learning and implementing |
 |       |  2   | editing documentation |
 |  6.4  |  4   | ui trials |
+|  7.4  |  5   | More testing, documentation, reporting |
 |       |      |  |
-|       |      |  |
-| yht   |  32  |  | 
+| yht   |  37  |  | 
