@@ -58,9 +58,9 @@ public class FileFridgeItemDao implements FridgeItemDao {
     public FridgeItem create(FridgeItem item) throws Exception {
         for (FridgeItem savedItem: this.items) {
             if (savedItem.getUser().equals(item.getUser()) && savedItem.getContent().equals(item.getContent())) {
-                int newAmount=savedItem.getAmount() + item.getAmount();
-                if (newAmount<0) {
-                    newAmount=0;
+                int newAmount = savedItem.getAmount() + item.getAmount();
+                if (newAmount < 0) {
+                    newAmount = 0;
                 }
                 savedItem.setAmount(newAmount);
                 save();

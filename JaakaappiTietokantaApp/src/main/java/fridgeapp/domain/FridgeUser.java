@@ -1,7 +1,7 @@
 
 package fridgeapp.domain;
 
-public class FridgeUser {
+public class FridgeUser implements FridgeUserInterface {
     private String username;
     private String fridge;
 
@@ -13,18 +13,22 @@ public class FridgeUser {
     public FridgeUser(){
     }
 
+    @Override
     public String getUsername() {
         return username;
     }
 
+    @Override
     public void setUsername(String username) {
         this.username = username;
     }
 
+    @Override
     public String getFridge() {
         return fridge;
     }
 
+    @Override
     public void setFridge(String fridge) {
         this.fridge = fridge;
     }

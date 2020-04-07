@@ -71,7 +71,7 @@ public class FridgeService {
         return fridgeItemDao.getAll()
             .stream()
             .filter(t -> t.getUser().equals(loggedIn))
-            .filter(t -> t.getAmount()>0)
+            .filter(t -> t.getAmount() > 0)
             .collect(Collectors.toList());
     }
    
