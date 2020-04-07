@@ -5,7 +5,7 @@
 * dokumentaatio
 * laskarit yms materiaali omassa kansiossaan
 
-# Harjoitustyö: FridgeApp (Jääkaappi)
+## Harjoitustyö: FridgeApp (Jääkaappi)
 * koodi [FridgeApp](https://github.com/terodotus/ot-harjoitustyo/tree/master/JaakaappiTietokantaApp)
 
 ### Documentation
