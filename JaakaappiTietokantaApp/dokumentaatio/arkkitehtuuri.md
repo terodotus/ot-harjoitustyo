@@ -4,11 +4,9 @@
 Sovellus toimii kolmella tasolla ja lisäksi on tietenkin ohjelman käynnistävä pääohjelma main. Ylimpänä on käyttöliittymäluokka fridgeapp.UI, joka vastaa käyttöliittymästä. Sitä seuraa luokka fridgeapp.domain, jossa ovat ohjelman tärkeimmät toiminnalliset luokat, kuten käyttäjää kuvaava FridgeUser ja yksittäistä jääkaapissa säilytettävää tuotetta kuvaava FridgeItem. Alimpana on luokka dao, jossa ovat tietojen pysyväistallennuksesta vastaavat luokat.
 
 fridgeapp.UI
-|
-|
+ |
 fridgeapp.domain
-|
-|
+ |
 fridgeapp.dao
 
 ## User Interface
