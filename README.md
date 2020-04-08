@@ -16,9 +16,9 @@
 ### Komentorivitoiminnot
 #### Testaus
 Luokille laaditut testit suoritetaan komennolla:
-...
+```
 mvn test
-...
+```
 Testikattavuusraportti onnistuu komennolla:
 ```
 mvn test jacoco:report
