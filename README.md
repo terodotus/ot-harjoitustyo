@@ -19,13 +19,16 @@ Luokille laaditut testit suoritetaan komennolla:
 ```
 mvn test
 ```
+
 Testikattavuusraportti onnistuu komennolla:
 ```
 mvn test jacoco:report
 ```
+
 Checkstyle.xml tiedostoon koodatut tarkistukset ajetaan komennolla:
 ```
 mvn jxr:jxr checkstyle:checkstyle
+```
 
 #### Jar-tiedoston generointi
 Suoritettavan jar-tiedoston voi generoida target-hakemistoon komennolla:
