@@ -15,10 +15,15 @@
 
 ### Komentorivitoiminnot
 #### Testaus
+Luokille laaditut testit suoritetaan komennolla:
+...
+mvn test
+...
 Testikattavuusraportti onnistuu komennolla:
 ```
-mvn jacoco:report
+mvn test jacoco:report
 ```
+Checkstyle 
 
 #### Jar-tiedoston generointi
 
