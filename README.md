@@ -23,7 +23,18 @@ Testikattavuusraportti onnistuu komennolla:
 ```
 mvn test jacoco:report
 ```
-Checkstyle 
+Checkstyle.xml tiedostoon koodatut tarkistukset ajetaan komennolla:
+```
+mvn jxr:jxr checkstyle:checkstyle
 
 #### Jar-tiedoston generointi
+Suoritettavan jar-tiedoston voi generoida target-hakemistoon komennolla:
+```
+mvn package
+```
+Silloin target kansioon syntyy tiedosto: "FridgeApp-1.0-SNAPSHOT.jar", jonka voi suorittaa komennolla:
+```
+java -jar FridgeApp-1.0-SNAPSHOT.jar
+```
+
 
