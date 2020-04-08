@@ -12,8 +12,8 @@
 * [Arkkitehtuurikuvaus](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/arkkitehtuuri.md)
 * [tuntikirjanpito](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/tuntikirjanpito.md)
 * [vaatimusmaarittely](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/vaatimusmaarittely.md)
-[Käyttöohje]
-[Testausdokumentti]
+* [Käyttöohje](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/kayttoohje.md)
+* [Testausdokumentti](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/testaus.md)
 
 ### Komentorivitoiminnot
 #### Testaus
