@@ -13,3 +13,12 @@
 * [tuntikirjanpito](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/tuntikirjanpito.md)
 * [vaatimusmaarittely](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/vaatimusmaarittely.md)
 
+### Komentorivitoiminnot
+#### Testaus
+Testikattavuusraportti onnistuu komennolla:
+```
+mvn jacoco:report
+```
+
+#### Jar-tiedoston generointi
+
