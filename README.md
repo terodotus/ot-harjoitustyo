@@ -15,6 +15,8 @@
 * [Käyttöohje](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/kayttoohje.md)
 * [Testausdokumentti](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/testaus.md)
 
+### Release
+
 ### Komentorivitoiminnot
 #### Testaus
 Luokille laaditut testit suoritetaan komennolla:
