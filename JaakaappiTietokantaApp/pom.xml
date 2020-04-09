@@ -88,7 +88,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>FridgeApp.Main</mainClass>
+                                    <mainClass>fridgeapp.Main</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

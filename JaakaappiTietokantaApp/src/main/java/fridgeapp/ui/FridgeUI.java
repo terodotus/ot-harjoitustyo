@@ -63,12 +63,10 @@ public class FridgeUI extends Application {
             }
             fridgeService.setAmount(item.getId(), newAmount);
             restoreFridge();
-        });
-                
+        });      
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
         box.setPadding(new Insets(0, 5, 0, 5));
-        
         box.getChildren().addAll(label, spacer, newAmountInput, button);
         return box;
     }
@@ -116,7 +114,6 @@ public class FridgeUI extends Application {
         });  
         
         loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, createButton, new Label(" "), infotext);       
-        
         loginScene = new Scene(loginPane, 400, 300);  
         return loginScene;
     }
@@ -188,7 +185,6 @@ public class FridgeUI extends Application {
             if (fridgeService.getLoggedUser() != null) {
                 e.consume();   
             }
-            
         });
     }    
 
