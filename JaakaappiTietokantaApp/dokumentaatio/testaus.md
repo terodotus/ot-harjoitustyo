@@ -5,5 +5,7 @@ The FridgeApp testing is tested with automatized unit testing throughout the dev
 
 ## Unit testing and integration testing
 
+### Code coverage
+
 ## System testing
 The FridgeApp system testing is handled manually by the developer. The app has been downloaded and installed by using the given [user guide documentation](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/kayttoohje.md). 
