@@ -141,15 +141,11 @@ public class FridgeUI extends Application {
         createNewUserButton.setPadding(new Insets(10));
 
         createNewUserButton.setOnAction(e -> {
-            String username = newUsernameInput.getText();
-            String name = newNameInput.getText();
+            String username = newUsernameInput.getText().strip();
+            String name = newNameInput.getText().strip();
    
-            if (username.length() < 2 || name.length() < 2) {
-                userCreationMessage.setText("username or name too short");
-                userCreationMessage.setTextFill(Color.RED);  
-            } 
-            if (username.contains(";") || username.contains(":") || username.contains(" ") || name.contains(";")) {
-                userCreationMessage.setText("username or fridge name contains illegal characters (%#;&)");
+            if (username.length() < 4 || name.length() < 4 || username.contains(";") || username.contains(":") || username.contains(" ") || name.contains(";")) {
+                userCreationMessage.setText("username or fridge name too short or contains illegal characters (%#;&)");
                 userCreationMessage.setTextFill(Color.RED);
             
             } else if (fridgeService.createUser(username, name)) {

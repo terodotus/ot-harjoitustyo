@@ -1,0 +1,2 @@
+1;maito;6;Tero
+2;piimä;5;Tero
