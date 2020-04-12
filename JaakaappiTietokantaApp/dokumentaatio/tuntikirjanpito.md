@@ -13,5 +13,8 @@
 |       |  2   | editing documentation |
 |  6.4  |  4   | ui trials |
 |  7.4  |  5   | More testing, documentation, reporting |
+| 10.4  |  5   | bug correction, testing |
+| 11.4  |  3   | studying for sw internal structure and saving program information |
+| 12.4  |  5   | editing documentation |
 |       |      |  |
-| yht   |  37  |  | 
+| yht   |  50  |  | 
