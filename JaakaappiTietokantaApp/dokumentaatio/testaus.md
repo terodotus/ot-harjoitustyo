@@ -11,7 +11,7 @@ Statement (line) covrage is measured by using the Jacoco. the status is as follo
 
 ## System testing
 
-###Installation and integration testing for releases
+### Installation and integration testing for releases
 The FridgeApp system testing is handled manually by the developer. The app has been downloaded and installed by using the given [user guide documentation](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/kayttoohje.md). 
 
 
