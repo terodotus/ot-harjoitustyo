@@ -15,7 +15,9 @@ java -jar fridgeapp.jar
 ````
 
 ## Log in
-In log in scene, you may log in to the fridgeapp. That is possible after having a username.
+In log in scene, you may log in to the fridgeapp. That is possible after having a username. if you need a new username, please press the "create a new fridge user" -button.
+After having a username, you may login with your username.
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/loginScene2.jpg" width="400">
 
 ## Create a new user
 You need to have a username to use the fridgeapp. This can be done in the create a new user -scene.
