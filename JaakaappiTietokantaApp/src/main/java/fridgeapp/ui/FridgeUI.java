@@ -25,8 +25,6 @@ import java.util.List;
 import java.util.Properties;
 import static javafx.application.Application.launch;
 import fridgeapp.domain.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class FridgeUI extends Application {
     private FridgeService fridgeService;
@@ -215,16 +213,15 @@ public class FridgeUI extends Application {
 
         addFridgeButton.setOnAction(e -> {
             String newFridgeName = newFridgeInput.getText().strip();
-            if (newFridgeName.equals("set fridgeName") || newFridgeName.length() < 3 || newFridgeName.contains(";")) {
-                
-            } else {
+            if (!newFridgeName.equals("set fridgeName") || newFridgeName.length() > 3 || !newFridgeName.contains(";")) {
                 try {
-                    fridgeService.createNewFridgeForLoggedInUser(newFridgeName);
+                    boolean createNewFridgeForLoggedInUser = fridgeService.createNewFridgeForLoggedInUser(newFridgeName);
                 } catch (Exception ex) {
-                    Logger.getLogger(FridgeUI.class.getName()).log(Level.SEVERE, null, ex);
+                    ex.printStackTrace();
                 }
-                newFridgeInput.setText("");
-            }
+            } 
+            newFridgeInput.setText("");
+            
                                     
         });
 

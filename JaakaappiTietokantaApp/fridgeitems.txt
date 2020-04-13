@@ -1,7 +1,7 @@
-1;maito;2;Tero;Teronkaappi1
+1;maito;3;Tero;Teronkaappi1
 2;juusto;3;Tero;Teronkaappi1
-3;peruna;5;Tero;Teronkaappi1
-4;piimä;3;Tero;Teronkaappi1
+3;peruna;6;Tero;Teronkaappi1
+4;piimä;11;Tero;Teronkaappi1
 5;maito;1;Seppo;Seponkaappi4
 6;maito;1;Teppo;Teponkaappi2
 7;maito;4;Tero;Teronkaappi2
@@ -22,3 +22,6 @@
 22;Orange juice;3;John;JohnsFridge3
 23;Non-alcoholic beer;2;John;JohnsFridge3
 24;ham;3;John;JohnsFridge3
+25;jugurtti;5;Tero;Teronkaappi1
+26;kanafile;5;Seppo;Seponkaappi2
+27;Milk;3;William;WilliamsFridge1
