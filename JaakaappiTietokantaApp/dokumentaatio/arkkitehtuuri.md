@@ -23,11 +23,11 @@ Tietojen pysyväistallennus on toistaiseksi hoidettu samassa kansiossa olevien t
 ## Tiedostot
 Users are saved to the users.txt file:
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/userfile.jpg" width=400 >
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/userfile.jpg" width=500 >
 
 All the fridge items are saved to the fridgeitems.txt file:
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/fridgeitemsfile.jpg" width=400 >
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/fridgeitemsfile.jpg" width=500 >
 
 ## Testaus
 Testien rivikattavuus on nyt noin 40%. Kattavuutta laajennetaan kaikilla tavoilla koko ajan. Tarkoitus olisi tehdä ns test driven mallilla, mutta siinä ei tällä hetkellä aivan olla. 
