@@ -47,7 +47,7 @@ You can have many fridges but first your default fridge is logged in:
 
 If you need to add something to your fridge, use the input text fields on bottom of the scene:
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene2.jpg width="400">
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene2.jpg" width="400">
                                                                                                                                           
 
 
