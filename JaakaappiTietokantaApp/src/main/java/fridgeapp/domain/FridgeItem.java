@@ -15,7 +15,7 @@ public class FridgeItem {
         this.content = content;
         this.user = user;
         this.amount = amount;
-        this.fridge=fridge;
+        this.fridge = fridge;
     }
     
     public FridgeItem(int id, String content, int amount, FridgeUser user) {

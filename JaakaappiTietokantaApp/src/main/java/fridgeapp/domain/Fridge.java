@@ -9,7 +9,7 @@ public class Fridge {
     private String fridgeName;
     
     public Fridge(String fridgeName) {
-        this.fridgeName=fridgeName;
+        this.fridgeName = fridgeName;
     }
 
     public String getFridgeName() {

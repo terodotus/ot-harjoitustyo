@@ -22,7 +22,7 @@ public class FileFridgeUserDao implements FridgeUserDao {
                 if (parts.length >= 2) {
                     for (int i = 2; i < parts.length; i++) {
                         u.addFridge(parts[i]);
-                        }
+                    }
                 }
                 users.add(u);
             }
@@ -37,7 +37,7 @@ public class FileFridgeUserDao implements FridgeUserDao {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (FridgeUser user : users) {
                 writer.write(user.getUsername() + ";");
-                for(int i=0; i < user.getFridges().size(); i++) {
+                for (int i = 0; i < user.getFridges().size(); i++) {
                     writer.write(user.getFridges().get(i) + ";");
                 }
                 writer.write("\n");

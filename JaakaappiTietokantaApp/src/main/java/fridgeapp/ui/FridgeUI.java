@@ -195,7 +195,7 @@ public class FridgeUI extends Application {
         HBox menuPane = new HBox(10); 
 //        HBox fridgePane = new HBox(10);
         Button changeFridgeButton = new Button("other fridge");
-        Button addFridgeButton = new Button ("add fridge");
+        Button addFridgeButton = new Button("add fridge");
         TextField newFridgeInput = new TextField("set fridgeName");
         Region menuSpacer = new Region();
         HBox.setHgrow(menuSpacer, Priority.ALWAYS);
@@ -259,8 +259,7 @@ public class FridgeUI extends Application {
 
     @Override
     public void stop() {
-      
-      System.out.println("App closing!");
+        System.out.println("App closing!");
     }    
     
     public static void main(String[] args) {

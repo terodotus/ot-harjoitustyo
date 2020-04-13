@@ -37,7 +37,7 @@ public class FridgeUser {
     }
 
     public boolean addFridge(Fridge fridge) {
-        if(this.fridges.contains(fridge)) {
+        if (this.fridges.contains(fridge)) {
             return false;
         } else {
             this.fridges.add(fridge);
@@ -47,7 +47,7 @@ public class FridgeUser {
     
     public boolean addFridge(String fridgename) {
         for (Fridge fridge: this.fridges) {
-            if(fridge.getFridgeName().equals(fridgename)) {
+            if (fridge.getFridgeName().equals(fridgename)) {
                 return false;
             }
         } 
@@ -56,17 +56,17 @@ public class FridgeUser {
     }
     
     public Fridge getNextFridge(String fridgeName) {
-        if(this.fridges.size() <= 1) {
+        if (this.fridges.size() <= 1) {
             return this.fridges.get(0);
         } 
-        int number=0;
+        int number = 0;
         for (int i = 0; i < this.fridges.size(); i++) {
-            if(this.fridges.get(i).getFridgeName().equals(fridgeName)) {
-                number=i;
+            if (this.fridges.get(i).getFridgeName().equals(fridgeName)) {
+                number = i;
             }
         }    
-        if(number < this.fridges.size()-1){
-            return this.fridges.get(number+1);
+        if (number < this.fridges.size() - 1){
+            return this.fridges.get(number + 1);
         } else {
             return this.fridges.get(0);
         }
@@ -74,7 +74,7 @@ public class FridgeUser {
     
     public Fridge getFridgeByFridgeName(String fridgeName) {
         for (Fridge fridge: this.fridges) {
-            if (fridge.getFridgeName().equals(fridgeName)){
+            if (fridge.getFridgeName().equals(fridgeName)) {
                 return fridge;
             }
         }

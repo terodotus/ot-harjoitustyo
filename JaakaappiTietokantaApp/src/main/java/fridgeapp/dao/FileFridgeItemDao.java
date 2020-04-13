@@ -50,7 +50,7 @@ public class FileFridgeItemDao implements FridgeItemDao {
     @Override
     public FridgeItem create(FridgeItem item) throws Exception {
         for (FridgeItem savedItem: this.items) {
-            if (savedItem.getUser().equals(item.getUser()) && savedItem.getFridge().equals(item.getFridge())&& savedItem.getContent().equals(item.getContent())) {
+            if (savedItem.getUser().equals(item.getUser()) && savedItem.getFridge().equals(item.getFridge()) && savedItem.getContent().equals(item.getContent())) {
                 int newAmount = savedItem.getAmount() + item.getAmount();
                 if (newAmount < 0) {
                     newAmount = 0;
@@ -74,7 +74,7 @@ public class FileFridgeItemDao implements FridgeItemDao {
     public Fridge getByUsernameAndName(String userName, String fridgename) {
         Fridge returnable = null;
         for (FridgeItem item: this.items) {
-            if(item.getUser().getUsername().equals(userName) && item.getFridge().getFridgeName().equals(fridgename)) {
+            if (item.getUser().getUsername().equals(userName) && item.getFridge().getFridgeName().equals(fridgename)) {
                 returnable = item.getFridge();
             }
         }
@@ -82,10 +82,10 @@ public class FileFridgeItemDao implements FridgeItemDao {
     }
     
     public int getFridgeNumberByUsernameAndName(String userName, String fridgename) {
-        int number=0;
+        int number = 0;
         for (int i = 0; i < this.items.size(); i++) {
-            if(this.items.get(i).getUser().getUsername().equals(userName) && this.items.get(i).getFridge().getFridgeName().equals(fridgename)) {
-                number=i;
+            if (this.items.get(i).getUser().getUsername().equals(userName) && this.items.get(i).getFridge().getFridgeName().equals(fridgename)) {
+                number = i;
             }
         }
         return number;
