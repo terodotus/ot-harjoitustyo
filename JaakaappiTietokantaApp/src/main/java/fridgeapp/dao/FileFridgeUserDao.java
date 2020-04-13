@@ -19,6 +19,11 @@ public class FileFridgeUserDao implements FridgeUserDao {
             while (reader.hasNextLine()) {
                 String[] parts = reader.nextLine().split(";");
                 FridgeUser u = new FridgeUser(parts[0], parts[1]);
+                if (parts.length >= 2) {
+                    for (int i = 2; i < parts.length; i++) {
+                        u.addFridge(parts[i]);
+                        }
+                }
                 users.add(u);
             }
         } catch (Exception e) {
@@ -31,7 +36,11 @@ public class FileFridgeUserDao implements FridgeUserDao {
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (FridgeUser user : users) {
-                writer.write(user.getUsername() + ";" + user.getFridge() + "\n");
+                writer.write(user.getUsername() + ";");
+                for(int i=0; i < user.getFridges().size(); i++) {
+                    writer.write(user.getFridges().get(i) + ";");
+                }
+                writer.write("\n");
             }
         } 
     }
@@ -55,5 +64,18 @@ public class FileFridgeUserDao implements FridgeUserDao {
         users.add(user);
         save();
         return user;
-    }    
+    } 
+    
+    @Override
+    public void updateUserFridges(FridgeUser user) throws Exception {
+        for (FridgeUser fridgeUser: this.users) {
+            if (fridgeUser.getUsername().equals(user.getUsername())) {
+                for (Fridge fridge: user.getFridges()) {
+                    fridgeUser.addFridge(fridge);
+                }
+            }
+        }
+        save();
+    }
+    
 }

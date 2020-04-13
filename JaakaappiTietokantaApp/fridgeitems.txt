@@ -1,2 +1,24 @@
-1;maito;6;Tero
-2;piimä;5;Tero
+1;maito;2;Tero;Teronkaappi1
+2;juusto;3;Tero;Teronkaappi1
+3;peruna;5;Tero;Teronkaappi1
+4;piimä;3;Tero;Teronkaappi1
+5;maito;1;Seppo;Seponkaappi4
+6;maito;1;Teppo;Teponkaappi2
+7;maito;4;Tero;Teronkaappi2
+8;piimä;4;Tero;Teronkaappi2
+9;juusto;4;Tero;Teronkaappi2
+10;maito;3;Seppo;Seponkaappi1
+11;porkkana;5;Seppo;Seponkaappi1
+12;Porkkana;5;Teppo;Teponkaappi1
+13;milk;6;John;JohnsFridge1
+14;cheese;1;John;JohnsFridge1
+15;potato;6;John;JohnsFridge1
+16;Orange juice;2;John;JohnsFridge1
+17;Beef;2;John;JohnsFridge1
+18;Eggs;12;John;JohnsFridge1
+19;Milk;5;John;JohnsFridge3
+20;Cheese;2;John;JohnsFridge3
+21;potato;5;John;JohnsFridge3
+22;Orange juice;3;John;JohnsFridge3
+23;Non-alcoholic beer;2;John;JohnsFridge3
+24;ham;3;John;JohnsFridge3

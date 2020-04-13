@@ -1,36 +1,88 @@
 
 package fridgeapp.domain;
 
-public class FridgeUser implements FridgeUserInterface {
-    private String username;
-    private String fridge;
+import java.util.ArrayList;
+import java.util.List;
 
-    public FridgeUser(String username, String fridge) {
+public class FridgeUser {
+    private String username;
+    private List<Fridge> fridges;
+
+    public FridgeUser(String username, Fridge fridge) {
         this.username = username;
-        this.fridge = fridge;
+        this.fridges = new ArrayList();
+        this.fridges.add(fridge);
     }
     
-    public FridgeUser(){
+    public FridgeUser(String username, String fridgeName) {
+        this.username = username;
+        this.fridges = new ArrayList();
+        this.fridges.add(new Fridge(fridgeName));
     }
 
-    @Override
     public String getUsername() {
         return username;
     }
 
-    @Override
     public void setUsername(String username) {
         this.username = username;
     }
 
-    @Override
-    public String getFridge() {
-        return fridge;
+    public List<Fridge> getFridges() {
+        return fridges;
+    }
+    
+    public Fridge getDefaultFridge() {
+        return this.getFridges().get(0);
     }
 
-    @Override
-    public void setFridge(String fridge) {
-        this.fridge = fridge;
+    public void setFridge(Fridge fridge) {
+        this.fridges.add(fridge);
+    }
+    
+    public boolean addFridge(Fridge fridge) {
+        if(this.fridges.contains(fridge)) {
+            return false;
+        } else {
+            this.fridges.add(fridge);
+            return true;
+        }
+    }
+    
+    public boolean addFridge(String fridgename) {
+        for (Fridge fridge: this.fridges) {
+            if(fridge.getFridgeName().equals(fridgename)) {
+                return false;
+            }
+        } 
+        this.fridges.add(new Fridge(fridgename));
+        return true;
+    }
+    
+    public Fridge getNextFridge(String fridgeName) {
+        if(this.fridges.size() <= 1) {
+            return this.fridges.get(0);
+        } 
+        int number=0;
+        for (int i = 0; i < this.fridges.size(); i++) {
+            if(this.fridges.get(i).getFridgeName().equals(fridgeName)) {
+                number=i;
+            }
+        }    
+        if(number < this.fridges.size()-1){
+            return this.fridges.get(number+1);
+        } else {
+            return this.fridges.get(0);
+        }
+    }
+    
+    public Fridge getFridgeByFridgeName(String fridgeName) {
+        for (Fridge fridge: this.fridges) {
+            if (fridge.getFridgeName().equals(fridgeName)){
+                return fridge;
+            }
+        }
+        return null;
     }
      
     @Override
@@ -39,7 +91,12 @@ public class FridgeUser implements FridgeUserInterface {
             return false;
         }
         FridgeUser other = (FridgeUser) obj;
-        return fridge.equals(other.fridge);
+        return username.equals(other.getUsername());
+    }
+    
+    @Override
+    public String toString() {
+        return this.getUsername();
     }
     
 }

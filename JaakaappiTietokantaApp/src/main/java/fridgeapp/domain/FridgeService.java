@@ -11,24 +11,37 @@ public class FridgeService {
     private FridgeUserDao fridgeUserDao;
     private FridgeItemDao fridgeItemDao;
     private FridgeUser loggedIn;
+    private Fridge loggedInFridge;
     
     public FridgeService(FridgeItemDao fridgeItemDao, FridgeUserDao userDao) {
         this.fridgeUserDao = userDao;
         this.fridgeItemDao = fridgeItemDao;
+        
     }
     
-    public boolean createFridgeItem(String content) {
-        FridgeItem item = new FridgeItem(content, loggedIn);
-        try {   
-            fridgeItemDao.create(item);
-        } catch (Exception ex) {
-            return false;
-        }
-        return true;
-    } 
+    public FridgeUser getLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(FridgeUser loggedIn) {
+        this.loggedIn = loggedIn;
+    }
+
+    public Fridge getLoggedInFridge() {
+        return loggedInFridge;
+    }
+
+    public void setLoggedInFridge(Fridge loggedInFridge) {
+        this.loggedInFridge = loggedInFridge;
+    }
     
+    public Fridge nextFridgeActivate() {
+        Fridge nextFridge = loggedIn.getNextFridge(loggedInFridge.getFridgeName());
+        return nextFridge;
+    }
+        
     public boolean createFridgeItem(String content, int amount) {
-        FridgeItem item = new FridgeItem(content, amount, loggedIn);
+        FridgeItem item = new FridgeItem(content, amount, loggedIn, loggedInFridge);
         try {   
             fridgeItemDao.create(item);
         } catch (Exception ex) {
@@ -43,23 +56,46 @@ public class FridgeService {
             return false;
         }
         loggedIn = user;
+        loggedInFridge = user.getDefaultFridge();
+        return true;
+    }
+    
+    public boolean login(String username, String fridgeName) {
+        FridgeUser user = fridgeUserDao.findByUsername(username);
+        if (user == null) {
+            return false;
+        }
+        loggedIn = user;
+        loggedInFridge = user.getFridgeByFridgeName(fridgeName);
         return true;
     }
     
     public void logout() {
-        loggedIn = null;  
+        loggedIn = null; 
+        loggedInFridge = null;
     }
     
-    public boolean createUser(String username, String name)  {   
+    public boolean createUser(String username, String fridgeName)  {   
         if (fridgeUserDao.findByUsername(username) != null) {
             return false;
         }
-        FridgeUser user = new FridgeUser(username, name);
+        FridgeUser user = new FridgeUser(username, fridgeName);
         try {
             fridgeUserDao.create(user);
         } catch (Exception e) {
             return false;
         }
+        return true;
+    }
+    
+    public boolean createNewFridgeForLoggedInUser(String fridgeName) throws Exception {
+        for (Fridge fridge: loggedIn.getFridges()) {
+            if (fridge.getFridgeName().equals(fridgeName)) {
+                return false;
+            }
+        }
+        loggedIn.addFridge(fridgeName);
+        fridgeUserDao.updateUserFridges(loggedIn);
         return true;
     }
      
@@ -71,6 +107,7 @@ public class FridgeService {
         return fridgeItemDao.getAll()
             .stream()
             .filter(t -> t.getUser().equals(loggedIn))
+            .filter(t -> t.getFridge().equals(loggedInFridge))
             .filter(t -> t.getAmount() > 0)
             .collect(Collectors.toList());
     }

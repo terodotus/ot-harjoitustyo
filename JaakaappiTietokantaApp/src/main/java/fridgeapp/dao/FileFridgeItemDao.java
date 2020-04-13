@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package fridgeapp.dao;
 
 import fridgeapp.domain.*;
@@ -13,10 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- *
- * @author Tero
- */
 public class FileFridgeItemDao implements FridgeItemDao {
     public List<FridgeItem> items;
     private String file;
@@ -31,8 +23,9 @@ public class FileFridgeItemDao implements FridgeItemDao {
                 int id = Integer.parseInt(parts[0]);
                 
                 int amount = Integer.valueOf(parts[2]);
-                FridgeUser user = users.getAll().stream().filter(u->u.getUsername().equals(parts[3])).findFirst().orElse(null); 
-                FridgeItem item = new FridgeItem(id, parts[1], amount, user);
+                FridgeUser user = users.getAll().stream().filter(u -> u.getUsername().equals(parts[3])).findFirst().orElse(null);
+                Fridge fridge = user.getFridgeByFridgeName(parts[4]);
+                FridgeItem item = new FridgeItem(id, parts[1], amount, user, fridge);
                 items.add(item);
             }
         } catch (Exception e) {
@@ -49,7 +42,7 @@ public class FileFridgeItemDao implements FridgeItemDao {
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (FridgeItem item : items) {
-                writer.write(item.getId() + ";" + item.getContent() + ";" + item.getAmount() + ";" + item.getUser().getUsername() + "\n");
+                writer.write(item.getId() + ";" + item.getContent() + ";" + item.getAmount() + ";" + item.getUser().getUsername() + ";" + item.getFridge() + "\n");
             }
         }
     }    
@@ -57,7 +50,7 @@ public class FileFridgeItemDao implements FridgeItemDao {
     @Override
     public FridgeItem create(FridgeItem item) throws Exception {
         for (FridgeItem savedItem: this.items) {
-            if (savedItem.getUser().equals(item.getUser()) && savedItem.getContent().equals(item.getContent())) {
+            if (savedItem.getUser().equals(item.getUser()) && savedItem.getFridge().equals(item.getFridge())&& savedItem.getContent().equals(item.getContent())) {
                 int newAmount = savedItem.getAmount() + item.getAmount();
                 if (newAmount < 0) {
                     newAmount = 0;
@@ -77,6 +70,26 @@ public class FileFridgeItemDao implements FridgeItemDao {
     @Override
     public List<FridgeItem> getAll() {
         return items;
+    }
+    
+    public Fridge getByUsernameAndName(String userName, String fridgename) {
+        Fridge returnable = null;
+        for (FridgeItem item: this.items) {
+            if(item.getUser().getUsername().equals(userName) && item.getFridge().getFridgeName().equals(fridgename)) {
+                returnable = item.getFridge();
+            }
+        }
+        return returnable;
+    }
+    
+    public int getFridgeNumberByUsernameAndName(String userName, String fridgename) {
+        int number=0;
+        for (int i = 0; i < this.items.size(); i++) {
+            if(this.items.get(i).getUser().getUsername().equals(userName) && this.items.get(i).getFridge().getFridgeName().equals(fridgename)) {
+                number=i;
+            }
+        }
+        return number;
     }
 
     @Override

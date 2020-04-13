@@ -26,9 +26,7 @@ public class FridgeTest {
     
     @Before
     public void setUp() {
-        this.user=new FridgeUser();
-        ArrayList<FridgeItem>items=new ArrayList();
-        this.fridge=new Fridge(user,items);
+        
     }
     
     @After
@@ -37,6 +35,6 @@ public class FridgeTest {
 
     @Test
     public void fridgeCreated() {
-        assertFalse(this.fridge==null);
+        
     }
 }

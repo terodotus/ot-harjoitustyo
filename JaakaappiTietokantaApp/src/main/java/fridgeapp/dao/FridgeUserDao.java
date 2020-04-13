@@ -10,4 +10,6 @@ public interface FridgeUserDao {
 
     List<FridgeUser> getAll();
     
+    void updateUserFridges(FridgeUser user) throws Exception ;
+    
 }

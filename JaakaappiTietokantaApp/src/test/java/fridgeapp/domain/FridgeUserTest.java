@@ -58,14 +58,9 @@ public class FridgeUserTest {
     
     @Test
     public void getFridgeWorking() {
-        assertEquals("seponkaappi", user1.getFridge());
+        assertEquals("seponkaappi", user1.getFridges().get(0).toString());
     }
     
-    @Test
-    public void setFridgeWorking() {
-        user2.setFridge("matinkaappi");
-        assertEquals("matinkaappi", user2.getFridge());
-    }
     
 
 }
