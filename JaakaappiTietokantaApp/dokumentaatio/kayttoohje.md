@@ -27,6 +27,9 @@ After having a username, you may login with your username.
 ## Create a new user
 You need to have a username to use the fridgeapp. This can be done in the create a new user -scene.
 
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserScene2.jpg" width="400">
+
+
 ## Fridge scene
 You may manage your fridge in the fridge scene. You can add and remove items and maange the amount of items in your fridge.
 
