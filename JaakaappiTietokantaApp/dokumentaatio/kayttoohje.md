@@ -29,6 +29,15 @@ You need to have a username to use the fridgeapp. This can be done in the create
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserScene2.jpg" width="400">
 
+If you try to use illegal characters or too short username or fridge name, an error message is given:
+
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserSceneError.jpg" width="400">
+
+In case, you try to create a user that already exists, an error message is given as well:
+
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserSceneUniqueUserName.jpg" width="400">
+
+
 
 ## Fridge scene
 You may manage your fridge in the fridge scene. You can add and remove items and maange the amount of items in your fridge.
