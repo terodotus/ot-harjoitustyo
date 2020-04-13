@@ -178,8 +178,8 @@ public class FridgeUI extends Application {
         primaryStage.show();
         primaryStage.setOnCloseRequest(e -> {
             System.out.println("closing");
-            System.out.println(fridgeService.getLoggedUser());
-            if (fridgeService.getLoggedUser() != null) {
+            System.out.println(fridgeService.getLoggedIn());
+            if (fridgeService.getLoggedIn() != null) {
                 e.consume();   
             }
         });

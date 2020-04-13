@@ -9,11 +9,11 @@ public class FakeFridgeUserDao implements FridgeUserDao{
     List<FridgeUser> users = new ArrayList<>();
     
     public FakeFridgeUserDao() {
-        users.add(new FridgeUser("testaaja", "PakastajaElvi"));
+        users.add(new FridgeUser("Elvi", "Pakastajankaappi1"));
     }
     
     @Override
-    public FridgeUser create(FridgeUser user) throws Exception {
+    public FridgeUser create(FridgeUser user) {
         users.add(user);
         return user;
     }
@@ -30,7 +30,13 @@ public class FakeFridgeUserDao implements FridgeUserDao{
 
     @Override
     public void updateUserFridges(FridgeUser user) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (FridgeUser fridgeUser: this.users) {
+            if (fridgeUser.getUsername().equals(user.getUsername())) {
+                for (Fridge fridge: user.getFridges()) {
+                    fridgeUser.addFridge(fridge);
+                }
+            }
+        }
     }
 
 }

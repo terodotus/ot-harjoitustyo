@@ -26,9 +26,9 @@ public class FridgeUserTest {
     
     @Before
     public void setUp() {
-        user1=new FridgeUser("Seppo", "seponkaappi");
-        user2=new FridgeUser("Teppo", "teponkaappi");
-        user3=new FridgeUser("Teppo", "teponkaappi");
+        user1=new FridgeUser("Seppo", "seponkaappi1");
+        user2=new FridgeUser("Teppo", "teponkaappi1");
+        user3=new FridgeUser("Teppo", "teponkaappi1");
     }
     
     @After
@@ -57,10 +57,70 @@ public class FridgeUserTest {
     }
     
     @Test
-    public void getFridgeWorking() {
-        assertEquals("seponkaappi", user1.getFridges().get(0).toString());
+    public void notEqualWhenDifferent() {
+        assertFalse(user1.equals(user2));
     }
     
+    @Test
+    public void getFridgeWorking() {
+        assertEquals("seponkaappi1", user1.getFridges().get(0).toString());
+    }
     
+    @Test
+    public void addFridgeStringWorking() {
+        user1.addFridge("seponkaappi2");
+        assertEquals(2, user1.getFridges().size());
+    }
+    
+    @Test
+    public void addFridgeStringWorking2() {
+        user1.addFridge("seponkaappi2");
+        assertEquals("seponkaappi2", user1.getFridges().get(1).getFridgeName());
+    }
+    
+    @Test
+    public void addFridgeFridgeWorking() {
+        user1.addFridge(new Fridge("seponkaappi2"));
+        assertEquals(2, user1.getFridges().size());
+    }
+    
+    @Test
+    public void addFridgeFridgeWorking2() {
+        user1.addFridge(new Fridge("seponkaappi2"));
+        assertEquals("seponkaappi2", user1.getFridges().get(1).getFridgeName());
+    }
 
+    @Test
+    public void getNextFridgeWorking() {
+        Fridge seponToinenFridge = new Fridge("seponkaappi2");
+        user1.addFridge(seponToinenFridge);
+        assertEquals(seponToinenFridge, user1.getNextFridge("seponkaappi1"));
+    }
+    
+    @Test
+    public void getNextFridgeWorking2() {
+        Fridge seponToinenFridge = new Fridge("seponkaappi2");
+        user1.addFridge(seponToinenFridge);
+        assertEquals("seponkaappi1", user1.getNextFridge("seponkaappi2").getFridgeName());
+    }
+    
+    @Test
+    public void getFridgeByFridgeNameWorking() {
+        Fridge seponToinenFridge = new Fridge("seponkaappi2");
+        user1.addFridge(seponToinenFridge);
+        assertEquals(seponToinenFridge, user1.getFridgeByFridgeName("seponkaappi2"));
+    }
+    
+    @Test
+    public void getFridgeByFridgeNameWorking2() {
+        Fridge seponToinenFridge = new Fridge("seponkaappi2");
+        user1.addFridge(seponToinenFridge);
+        assertEquals(null, user1.getFridgeByFridgeName("teponkaappi2"));
+    }
+    
+    @Test
+    public void toStringWorking() {
+        assertEquals("Seppo", user1.toString());
+    }
+    
 }

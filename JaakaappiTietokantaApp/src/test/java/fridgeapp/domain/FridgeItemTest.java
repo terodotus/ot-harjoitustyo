@@ -13,6 +13,7 @@ public class FridgeItemTest {
     private FridgeItem item2;
     private FridgeItem item3;
     private FridgeItem item4;
+    private FridgeUser user;
     
     public FridgeItemTest() {
     }
@@ -27,10 +28,12 @@ public class FridgeItemTest {
     
     @Before
     public void setUp() {
-        item1 = new FridgeItem(1, null, 1, null);
-        item2 = new FridgeItem(1, null, 1, null);
-        item3 = new FridgeItem(2, "maito", 5, null);
-        item4 = new FridgeItem(3, "piimä", 8, null);
+        user = new FridgeUser("Elvi", "Elvinkaappi");
+        item1 = new FridgeItem(1, "juusto", 1, user);
+        item2 = new FridgeItem(1, "juusto", 1, user);
+        item3 = new FridgeItem(2, "maito", 5, user);
+        item4 = new FridgeItem(3, "piimä", 8, user);
+        
     }
     
     @After
@@ -46,6 +49,12 @@ public class FridgeItemTest {
     public void equalWhenSameId() {
         assertTrue(item1.equals(item2));
     }
+    
+    @Test
+    public void NotEqualWhenDifferent() {
+        assertFalse(item1.equals(item3));
+    }
+    
     
     @Test
     public void getContentFunctions() {
@@ -64,4 +73,25 @@ public class FridgeItemTest {
         assertEquals(10, item4.getAmount());
     }
     
+    @Test
+    public void getAmountFunctions() {
+        assertEquals(8, item4.getAmount());
+    }
+    
+    @Test
+    public void getFridgeFunctions() {
+        assertEquals(user.getDefaultFridge(), item4.getFridge());
+    }
+    
+    @Test
+    public void getUserFunctions() {
+        assertEquals(user, item4.getUser());
+    }
+    
+    @Test
+    public void setUserFunctions() {
+        FridgeUser user2 = new FridgeUser("Teppo", "Teponkaappi1");
+        item4.setUser(user2);
+        assertEquals(user2, item4.getUser());
+    }
 }

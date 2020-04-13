@@ -36,10 +36,6 @@ public class FridgeUser {
         return this.getFridges().get(0);
     }
 
-    public void setFridge(Fridge fridge) {
-        this.fridges.add(fridge);
-    }
-    
     public boolean addFridge(Fridge fridge) {
         if(this.fridges.contains(fridge)) {
             return false;

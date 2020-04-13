@@ -10,8 +10,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class FridgeTest {
-    FridgeUser user;
-    Fridge fridge;
+    Fridge fridge1;
+    Fridge fridge2;
     
     public FridgeTest() {
     }
@@ -26,7 +26,8 @@ public class FridgeTest {
     
     @Before
     public void setUp() {
-        
+        fridge1=new Fridge("JohnsFridge1");
+        fridge2=new Fridge("ElvinKaappi2");
     }
     
     @After
@@ -35,6 +36,23 @@ public class FridgeTest {
 
     @Test
     public void fridgeCreated() {
-        
+        assertFalse(fridge1.equals(null));
     }
+    
+    @Test
+    public void toStringWorks() {
+        assertEquals("ElvinKaappi2", fridge2.toString());
+    }
+    
+    @Test
+    public void setFridgeNameWorks() {
+        fridge1.setFridgeName("WilliamsFridge");
+        assertEquals("WilliamsFridge", fridge1.toString());
+    }
+    
+    @Test
+    public void getFridgeNameWorks() {
+        assertEquals("JohnsFridge1", fridge1.toString());
+    }
+    
 }

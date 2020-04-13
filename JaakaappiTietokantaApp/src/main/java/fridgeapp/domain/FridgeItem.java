@@ -10,22 +10,7 @@ public class FridgeItem {
     private int amount;
     private FridgeUser user;
     private Fridge fridge;
-        
-    public FridgeItem() {
-    }
-    
-    public FridgeItem(String content, FridgeUser user) {
-        this.content = content;
-        this.user = user;
-        this.amount = 0;
-    }
-    
-    public FridgeItem(String content, int amount, FridgeUser user) {
-        this.content = content;
-        this.user = user;
-        this.amount = amount;
-    }
-    
+ 
     public FridgeItem(String content, int amount, FridgeUser user, Fridge fridge) {
         this.content = content;
         this.user = user;
@@ -33,24 +18,12 @@ public class FridgeItem {
         this.fridge=fridge;
     }
     
-    public FridgeItem(String content, int amount, FridgeUser user, String fridgeName) {
-        this.content = content;
-        this.user = user;
-        this.amount = amount;
-        this.fridge=user.getDefaultFridge();
-    }
-    
-    public FridgeItem(int id, String content, FridgeUser user) {
-        this.id = id;
-        this.content = content;
-        this.user = user;
-    }
-    
     public FridgeItem(int id, String content, int amount, FridgeUser user) {
         this.id = id;
         this.content = content;
         this.amount = amount;
         this.user = user;
+        this.fridge = user.getDefaultFridge();
     }
     
     public FridgeItem(int id, String content, int amount, FridgeUser user, Fridge fridge) {
@@ -75,10 +48,6 @@ public class FridgeItem {
 
     public void setFridge(Fridge fridge) {
         this.fridge = fridge;
-    }
-
-    public FridgeItem(String content) {
-        this.content = content;
     }
 
     public int getId() {

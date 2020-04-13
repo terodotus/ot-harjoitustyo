@@ -12,7 +12,7 @@ public class FakeFridgeItemDao implements FridgeItemDao{
         this.items = new ArrayList<>();
     }
     @Override
-    public FridgeItem create(FridgeItem fridgeItem) throws Exception {
+    public FridgeItem create(FridgeItem fridgeItem) {
         fridgeItem.setId(items.size()+1);
         this.items.add(fridgeItem);
         return fridgeItem;

@@ -16,15 +16,10 @@ public class FridgeService {
     public FridgeService(FridgeItemDao fridgeItemDao, FridgeUserDao userDao) {
         this.fridgeUserDao = userDao;
         this.fridgeItemDao = fridgeItemDao;
-        
     }
     
     public FridgeUser getLoggedIn() {
         return loggedIn;
-    }
-
-    public void setLoggedIn(FridgeUser loggedIn) {
-        this.loggedIn = loggedIn;
     }
 
     public Fridge getLoggedInFridge() {
@@ -112,10 +107,6 @@ public class FridgeService {
             .collect(Collectors.toList());
     }
    
-    public FridgeUser getLoggedUser() {
-        return loggedIn;
-    }
-    
     public void setAmount(int id, int newAmount) {
         try {
             fridgeItemDao.setAmount(id, newAmount);

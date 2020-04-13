@@ -59,7 +59,6 @@ public class FileFridgeItemDao implements FridgeItemDao {
                 save();
                 return savedItem;
             } 
-                
         }
         item.setId(generateId());
         items.add(item);
