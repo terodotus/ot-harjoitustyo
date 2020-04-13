@@ -48,12 +48,21 @@ You can have many fridges but first your default fridge is logged in:
 If you need to add something to your fridge, use the input text fields on bottom of the scene:
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene2.jpg" width="600">
-                                                                                                                                          
+ 
+You may also need to update the amount of your item time to time. You may use the "set amount" -button, or even the create button with change amount.
+
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene3.jpg" width="600">
+
+if you have many fridges to manage, you may add them to the app by using the "add fridge" -button. Put the name of the new fridge to the text field to the left from the "add fridge" -button.
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene4.jpg" width="600">
 
+You can have as many fridges as you need.
+
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene5.jpg" width="600">
+
+You can add all your items to the fridge app.
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene7.jpg" width="600">
 
+When you want to close the fridge app, press the "logout" -button in the fridge scene. You will end up to the login scene where you can close the fridge app by pressing the "x" in the upper right corner of the scene. 
