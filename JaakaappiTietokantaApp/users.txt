@@ -1,6 +1,0 @@
-Tero;Teronkaappi1;Teronkaappi2;Teronkaappi3;Teronkaappi4;Teronkaappi5;
-Seppo;Seponkaappi1;Seponkaappi2;Seponkaappi3;Seponkaappi4;
-Teppo;Teponkaappi1;Teponkaappi2;Teponkaappi3;
-Matti;Matinkaappi1;
-John;JohnsFridge1;JohnsFridge2;JohnsFridge3;JohnsFridge4;
-William;WilliamsFridge1;
