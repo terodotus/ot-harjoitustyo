@@ -65,7 +65,7 @@ public class FridgeUser {
                 number = i;
             }
         }    
-        if (number < this.fridges.size() - 1){
+        if (number < this.fridges.size() - 1) {
             return this.fridges.get(number + 1);
         } else {
             return this.fridges.get(0);
