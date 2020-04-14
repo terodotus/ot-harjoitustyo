@@ -8,7 +8,7 @@ The FridgeApp testing is tested with automatized unit testing throughout the dev
 ### Code coverage
 Statement (line) covrage is measured by using the Jacoco. the status is as follows:
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/JacocoTestCoverage_1304.jpg" width=750 >
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/JacocoTestCoverage_1304.jpg" width=950 >
 
 ## System testing
 
