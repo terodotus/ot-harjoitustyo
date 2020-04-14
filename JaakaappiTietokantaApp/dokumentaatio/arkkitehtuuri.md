@@ -33,3 +33,13 @@ All the fridge items are saved to the fridgeitems.txt file:
 ## Testaus
 Testien rivikattavuus on nyt noin 44%. Kattavuutta laajennetaan kaikilla tavoilla koko ajan. Tarkoitus olisi tehdä ns test driven mallilla, mutta siinä ei tällä hetkellä aivan olla. 
 
+## Toiminnallisuuksia
+Alla olevassa sekvenssikaaviokuvassa kuvataan tilanne, jossa käyttäjä:
+- käynnistää FridgeApp -sovelluksen
+- kirjautuu sisään käyttäjällä "John" ja oletuskaapilla "JohnsFridge"
+- lisää JohnsFridgeen FridgeItemit: "milk, 2", sekä "butter, 1".
+- käyttäjä lisää itselleen toisen jääkaapin: "JohnsFridge2"
+- käyttäjä ("John") lisää toiseen jääkaappiinsa ("JohnsFridge2") FridgeItemin "milk, 2"
+
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/Sekvenssikaavio1.jpg" width=900 >
+
