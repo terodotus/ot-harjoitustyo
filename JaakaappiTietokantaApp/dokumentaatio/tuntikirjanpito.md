@@ -16,5 +16,6 @@
 | 10.4  |  5   | bug correction, testing |
 | 11.4  |  3   | studying for sw internal structure and saving program information |
 | 12.4  |  5   | editing documentation |
+| 13.4  |  6   | Multifridge functionality added, testing coverage improved, documentation added |
 |       |      |  |
-| yht   |  50  |  | 
+| yht   |  56  |  | 
