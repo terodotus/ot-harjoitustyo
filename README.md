@@ -16,6 +16,7 @@
 * [Testausdokumentti](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/testaus.md)
 
 ### Release
+* [week 5 release](https://github.com/terodotus/ot-harjoitustyo/releases/tag/week5)
 
 ### Komentorivitoiminnot
 #### Testaus
