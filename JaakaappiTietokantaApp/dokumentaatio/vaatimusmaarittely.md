@@ -9,7 +9,7 @@ Koska yhdellä jääkaapilla on yleensä varsin rajallinen määrä käyttäjia,
 ## Käyttöliittymäluonnos
 Kun uusi käyttäjä luodaan on käyttäjälle on tarjolla oletusjääkaappi, jonka voi ottaa käyttöön ja kustomoida omanlaisekseen. Kirjauduttuaan ohjelmaan, käyttäjä voi myös lisätä jääkaappeja tarvittaessa (esimerkiksi kesämökin jääkaappi, tai työtilan jääkaappi, alakerran jääkaappi jne.) 
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeAppLuokkakaavio.jpg" width=500 >
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/UserInterfaceDraft01.jpg" width=500 >
 
 ## Perusversion tarjoama toiminnallisuus
 Jääkaapissa on tuotteita. Tuotteilla on ominaisuuksia, kuten määrä. Käyttäjä pystyy sovelluksesta käsin katsomaan kaapin sisällön. Käyttäjä pystyy päivittämään tuotteet ja tuotteiden tiedot. Tiedot tallennetaan ja niihin voidaan jälleen palata uudelleen. Luokat:
