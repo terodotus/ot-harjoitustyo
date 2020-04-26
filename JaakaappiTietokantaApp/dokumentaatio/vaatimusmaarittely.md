@@ -8,6 +8,7 @@ Koska yhdellä jääkaapilla on yleensä varsin rajallinen määrä käyttäjia,
 
 ## Käyttöliittymäluonnos
 Kun uusi käyttäjä luodaan on käyttäjälle on tarjolla oletusjääkaappi, jonka voi ottaa käyttöön ja kustomoida omanlaisekseen. Kirjauduttuaan ohjelmaan, käyttäjä voi myös lisätä jääkaappeja tarvittaessa (esimerkiksi kesämökin jääkaappi, tai työtilan jääkaappi, alakerran jääkaappi jne.) 
+
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeAppLuokkakaavio.jpg" width=500 >
 
 ## Perusversion tarjoama toiminnallisuus
