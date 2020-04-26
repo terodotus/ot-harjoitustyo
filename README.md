@@ -45,4 +45,12 @@ Silloin target kansioon syntyy tiedosto: "FridgeApp-1.0-SNAPSHOT.jar", jonka voi
 java -jar FridgeApp-1.0-SNAPSHOT.jar
 ```
 
+#### JavaDoc
+JavaDoc documentation generation can be found in target/site/apidocs/index.html after running command:
+```
+mvn javadoc:javadoc
+```
+
+
+
 
