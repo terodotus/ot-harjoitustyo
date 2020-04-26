@@ -17,5 +17,5 @@
 | 11.4  |  3   | studying for sw internal structure and saving program information |
 | 12.4  |  5   | editing documentation |
 | 13.4  |  6   | Multifridge functionality added, testing coverage improved, documentation added |
-|       |      |  |
-| yht   |  56  |  | 
+| 26.4  |  4   | Studying and implementing Javadoc to the Fridgeapp, documentation |
+| yht   |  60  |  | 
