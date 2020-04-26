@@ -3,8 +3,6 @@ package fridgeapp.ui;
 
 import fridgeapp.dao.FileFridgeUserDao;
 import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;

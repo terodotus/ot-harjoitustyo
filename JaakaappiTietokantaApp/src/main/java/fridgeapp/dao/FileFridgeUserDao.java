@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Scanner;
 import fridgeapp.domain.*;
 
+/**
+ * class for managing and saving information of FridgeUsers and their Fridges
+ */
 public class FileFridgeUserDao implements FridgeUserDao {
     private List<FridgeUser> users;
     private String file;

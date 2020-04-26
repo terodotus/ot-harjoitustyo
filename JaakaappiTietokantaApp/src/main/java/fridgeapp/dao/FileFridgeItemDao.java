@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * class for managing and saving information of FridgeItems
+ */
 public class FileFridgeItemDao implements FridgeItemDao {
     public List<FridgeItem> items;
     private String file;

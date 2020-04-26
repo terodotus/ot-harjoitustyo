@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * class for actions in fridges, fridgeItems, and users
+ */
 public class FridgeService {
     private FridgeUserDao fridgeUserDao;
     private FridgeItemDao fridgeItemDao;
@@ -18,10 +21,18 @@ public class FridgeService {
         this.fridgeItemDao = fridgeItemDao;
     }
     
+ /**
+ * method returns current loggedIn user
+ * @return loggedIn
+ */
     public FridgeUser getLoggedIn() {
         return loggedIn;
     }
 
+/**
+ * method returns current loggedInFridge of loggedInUser
+ * @return loggedInFridge
+ */    
     public Fridge getLoggedInFridge() {
         return loggedInFridge;
     }
@@ -29,12 +40,20 @@ public class FridgeService {
     public void setLoggedInFridge(Fridge loggedInFridge) {
         this.loggedInFridge = loggedInFridge;
     }
-    
+
+/**
+ * method returns current next fridge of loggedInUser from fridges list of that user
+ * @return loggedIn
+ */        
     public Fridge nextFridgeActivate() {
         Fridge nextFridge = loggedIn.getNextFridge(loggedInFridge.getFridgeName());
         return nextFridge;
     }
-        
+/**
+ * method created a new fridgeItem if not yet existing in fridge with same name; returns true if creates
+ * @return true
+ * @see FridgeItemDao
+ */          
     public boolean createFridgeItem(String content, int amount) {
         FridgeItem item = new FridgeItem(content, amount, loggedIn, loggedInFridge);
         try {   

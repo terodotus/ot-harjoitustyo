@@ -4,6 +4,9 @@ package fridgeapp.domain;
 import fridgeapp.domain.*;
 import fridgeapp.dao.*;
 
+/**
+ * class for conceptualizing fridgeItems
+ */
 public class FridgeItem {
     private int id;
     private String content;

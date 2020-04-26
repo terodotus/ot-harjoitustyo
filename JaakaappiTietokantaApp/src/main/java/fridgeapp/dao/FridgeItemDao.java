@@ -5,6 +5,9 @@ import fridgeapp.domain.Fridge;
 import fridgeapp.domain.FridgeItem;
 import java.util.List;
 
+/**
+ * Interface for managing FridgeItems
+ */
 public interface FridgeItemDao {
     
     FridgeItem create(FridgeItem fridgeItem) throws Exception;

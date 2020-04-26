@@ -4,6 +4,9 @@ package fridgeapp.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * class for conceptualizing fridgeUsers
+ */
 public class FridgeUser {
     private String username;
     private List<Fridge> fridges;

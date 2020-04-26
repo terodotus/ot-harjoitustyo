@@ -5,6 +5,9 @@ import fridgeapp.domain.FridgeItem;
 import fridgeapp.domain.FridgeUser;
 import java.util.ArrayList;
 
+/**
+ * class for conceptualizing fridges
+ */
 public class Fridge {
     private String fridgeName;
     
