@@ -18,4 +18,7 @@
 | 12.4  |  5   | editing documentation |
 | 13.4  |  6   | Multifridge functionality added, testing coverage improved, documentation added |
 | 26.4  |  4   | Studying and implementing Javadoc to the Fridgeapp, documentation |
+| 27.4  |  4   | Documentation, UI details, javadoc | 
+|    |    |  | 
+|    |    |  | 
 | yht   |  60  |  | 
