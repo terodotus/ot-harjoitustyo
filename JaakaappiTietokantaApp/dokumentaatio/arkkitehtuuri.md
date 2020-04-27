@@ -5,8 +5,10 @@ Sovellus toimii kolmella tasolla ja lisäksi on tietenkin ohjelman käynnistäv�
 
 fridgeapp.UI
  |
+ 
 fridgeapp.domain
  |
+ 
 fridgeapp.dao
 
 ## User Interface
