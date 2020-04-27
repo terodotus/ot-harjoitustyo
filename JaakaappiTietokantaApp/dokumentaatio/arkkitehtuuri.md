@@ -12,7 +12,7 @@ Status: osin toteutettu. Vasta erittäin yksinkertainen käyttöliittymä.
 ## Sovelluslogiikka
 Ohjelman tärkeimmät käsitteet ovat fridgeUser, fridge ja fridgeItem. FridgeUser kuvaa ohjelman käyttäjää, jolla on tiettyjä ominaisuuksia. Fridge kuvaa jääkaappia, joita voi yhdellä käyttäjällä olla useita. FridgeItem kuvaa yksittäistä tuotetta jääkaapissa, jolla on ominaisuuksia, kuten esimerkiksi määrä. Tuotteita voi olla monta käyttäjän monessa jääkaapissa.
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeAppLuokkakaavio.jpg" width=500 >
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeAppLuokkakaavio_2704.jpg" width=500 >
 
 ## Tietojen pysyväistallennus
 Tietojen pysyväistallennus on toistaiseksi hoidettu samassa kansiossa olevien tekstitiedostojen avulla. Saatetaan muuttaa H2 tietokannanhallintajärjestelmää hyödyntäväksi tietokannaksi. Käyttäjästä tallennetaan username sekä eri jääkaappien nimet user.txt-tiedostoon. Fridge itemit tallennetaan fridgeitems.txt-tiedostoon, jonne tallentuu kunkin itemin id, content, amount, user, ja fridge eli missä jääkaapissa tuote on.
