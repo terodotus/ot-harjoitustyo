@@ -13,7 +13,7 @@ import java.util.Scanner;
  * class for managing and saving information of FridgeItems
  */
 public class FileFridgeItemDao implements FridgeItemDao {
-    public List<FridgeItem> items;
+    private List<FridgeItem> items;
     private String file;
     
     public FileFridgeItemDao(String file, FridgeUserDao users) throws Exception {
@@ -37,11 +37,17 @@ public class FileFridgeItemDao implements FridgeItemDao {
         }
         
     }
-    
+/**
+ * method to generate id for a fridgeItem;
+ * @return next id number
+ */    
     private int generateId() {
         return items.size() + 1;
     }
-    
+
+/**
+ * method for saving all FridgeItems to file;
+ */    
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (FridgeItem item : items) {
@@ -50,6 +56,11 @@ public class FileFridgeItemDao implements FridgeItemDao {
         }
     }    
 
+/**
+ * method for creating a new fridge item to file by giving it as parameter
+ * @param item (FridgeItem)
+ * @return FridgeItem
+ */     
     @Override
     public FridgeItem create(FridgeItem item) throws Exception {
         for (FridgeItem savedItem: this.items) {
@@ -69,12 +80,22 @@ public class FileFridgeItemDao implements FridgeItemDao {
         return item;
     }   
 
+/**
+ * method for getting all FridgeItems
+ * @return items
+ */     
     @Override
     public List<FridgeItem> getAll() {
         return items;
     }
-    
-    public Fridge getByUsernameAndName(String userName, String fridgename) {
+
+/**
+ * method for getting Fridge by username and fridgeName;
+ * @param userName (String)
+ * @param fridgename (String)
+ * @return Fridge
+ */     
+    public Fridge getByUsernameAndFridgeName(String userName, String fridgename) {
         Fridge returnable = null;
         for (FridgeItem item: this.items) {
             if (item.getUser().getUsername().equals(userName) && item.getFridge().getFridgeName().equals(fridgename)) {
@@ -83,8 +104,13 @@ public class FileFridgeItemDao implements FridgeItemDao {
         }
         return returnable;
     }
-    
-    public int getFridgeNumberByUsernameAndName(String userName, String fridgename) {
+/**
+ * method for getting fridge number by username and fridgeName;
+ * @param userName (String)
+ * @param fridgename (String)
+ * @return int (fridge number)
+ */        
+    public int getFridgeNumberByUsernameAndFridgeName(String userName, String fridgename) {
         int number = 0;
         for (int i = 0; i < this.items.size(); i++) {
             if (this.items.get(i).getUser().getUsername().equals(userName) && this.items.get(i).getFridge().getFridgeName().equals(fridgename)) {
@@ -94,6 +120,11 @@ public class FileFridgeItemDao implements FridgeItemDao {
         return number;
     }
 
+/**
+ * method for setting and saving the given new amount for a fridgeItem;
+ * @param id (int)
+ * @param amount (int)
+ */      
     @Override
     public void setAmount(int id, int amount) throws Exception {
         for (FridgeItem t : items) {

@@ -52,6 +52,8 @@ public class FridgeService {
 /**
  * method created a new fridgeItem if not yet existing in fridge with same name; returns true if creates
  * @return true
+ * @param content (String)
+ * @param amount (int)
  * @see FridgeItemDao
  */          
     public boolean createFridgeItem(String content, int amount) {
@@ -67,6 +69,7 @@ public class FridgeService {
 /**
  * method to login with username(String); returns true if login; return false if username does not exist
  * @return true
+ * @param username (String)
  * @see FridgeUserDao
  */      
     public boolean login(String username) {
@@ -82,6 +85,8 @@ public class FridgeService {
  /**
  * method to login with username(String) and fridgeName(String); returns true if login; return false if username does not exist
  * @return true
+ * @param username (String)
+ * @param fridgeName (String)
  * @see FridgeUserDao
  */       
     public boolean login(String username, String fridgeName) {
@@ -105,7 +110,9 @@ public class FridgeService {
 /**
  * method for creating a new user with username(String), fridgeName(String); return false if user already existing with the same username;
  * return true if successful
- * @return
+ * @return true if successful
+ * @param username (String)
+ * @param fridgeName (String)
  * @see FridgeUserDao
  */       
     public boolean createUser(String username, String fridgeName)  {   
@@ -122,8 +129,8 @@ public class FridgeService {
     }
 /**
  * method for creating a new fridge for loggedIn user with fridgeName(String); return false if user already has existing fridge with the same fridgeName;
- * return true if successful
- * @return
+ * @return true if successful
+ * @param fridgeName (String)
  * @see FridgeUserDao
  */        
     public boolean createNewFridgeForLoggedInUser(String fridgeName) throws Exception {
@@ -156,7 +163,8 @@ public class FridgeService {
     }
 /**
  * method for setting amount for a fridgeItems with id and new amount as inputs;
- * @return void
+ * @param id (int)
+ * @param newAmount (int)
  * @see FridgeUserDao
  */     
     public void setAmount(int id, int newAmount) {

@@ -44,7 +44,7 @@ public class FridgeUser {
 
 /**
  * method for adding a new fridge for this.user fridge(Fridge) as input
- * @param Fridge 
+ * @param fridge (Fridge)
  * @return true if successful, false if fridge with same name already existing
  */    
     public boolean addFridge(Fridge fridge) {
@@ -73,7 +73,7 @@ public class FridgeUser {
 
 /**
  * method for getting the next fridge from this.users fridge-list; fridgeName(String) as input
- * @param fridgename(String)
+ * @param fridgeName (String)
  * @return the next fridge from the list (or the same fridge if only one existing)
  */     
     public Fridge getNextFridge(String fridgeName) {
@@ -94,7 +94,7 @@ public class FridgeUser {
     }
 /**
  * method for getting the fridge from this.users fridge-list with fridgeName(String) as input
- * @param fridgeName(String)
+ * @param fridgeName (String)
  * @return the fridge from the list with that fridgeName which was given
  */       
     public Fridge getFridgeByFridgeName(String fridgeName) {
