@@ -35,7 +35,7 @@ All the fridge items are saved to the fridgeitems.txt file:
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/fridgeitemsfile.jpg" width=500 >
 
 ## Testaus
-Testien rivikattavuus on nyt noin 44%. Kattavuutta laajennetaan kaikilla tavoilla koko ajan. Tarkoitus olisi tehdä ns test driven mallilla, mutta siinä ei tällä hetkellä aivan olla. 
+Testien rivikattavuus on nyt noin 75%. Kattavuutta laajennetaan kaikilla tavoilla koko ajan. Tarkoitus olisi tehdä ns test driven mallilla, mutta siinä ei tällä hetkellä aivan olla. 
 
 ## Toiminnallisuuksia
 Alla olevassa sekvenssikaaviokuvassa kuvataan tilanne, jossa käyttäjä:
