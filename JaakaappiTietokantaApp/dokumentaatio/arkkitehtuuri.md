@@ -3,15 +3,7 @@
 ## Structure
 Sovellus toimii kolmella tasolla ja lisäksi on tietenkin ohjelman käynnistävä pääohjelma main. Ylimpänä on käyttöliittymäluokka fridgeapp.UI, joka vastaa käyttöliittymästä. Sitä seuraa luokka fridgeapp.domain, jossa ovat ohjelman tärkeimmät toiminnalliset luokat, kuten käyttäjää kuvaava FridgeUser ja yksittäistä jääkaapissa säilytettävää tuotetta kuvaava FridgeItem. Alimpana on luokka dao, jossa ovat tietojen pysyväistallennuksesta vastaavat luokat.
 
-fridgeapp.UI
-
-   |
- 
-fridgeapp.domain
-
-   |
- 
-fridgeapp.dao
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/PakkausRakenne.jpg" width=400 >
 
 ## User Interface
 Käyttöliittymä tarjoaa mahdollisuuden luoda käyttäjän, kirjautua ohjelmaan ja hallita omien jääkaappien sisältöjä. Kukin näistä toiminnoista on omassa näkymässään.
