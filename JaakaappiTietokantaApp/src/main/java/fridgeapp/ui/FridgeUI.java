@@ -189,9 +189,7 @@ public class FridgeUI extends Application {
         BorderPane mainPane = new BorderPane(fridgeItemScollbar);
         fridgeScene = new Scene(mainPane, 600, 400);
         
-                
         HBox menuPane = new HBox(10); 
-//        HBox fridgePane = new HBox(10);
         Button changeFridgeButton = new Button("other fridge");
         Button addFridgeButton = new Button("add fridge");
         TextField newFridgeInput = new TextField("set fridgeName");
@@ -199,10 +197,7 @@ public class FridgeUI extends Application {
         HBox.setHgrow(menuSpacer, Priority.ALWAYS);
         Button logoutButton = new Button("logout");      
         menuPane.getChildren().addAll(menuLabel, menuSpacer, newFridgeInput, addFridgeButton, changeFridgeButton, logoutButton);
-//        menuLabel.setText(fridgeService.getLoggedIn().getUsername() + " logged in " + fridgeService.getLoggedInFridge().toString());
-//        TextField activeFridge = new TextField(fridgeService.getLoggedUser().getDefaultFridge().toString());
-//        fridgePane.getChildren().addAll(activeFridge, changeFridgeButton);
-        
+
         changeFridgeButton.setOnAction(e-> {
             fridgeService.setLoggedInFridge(fridgeService.nextFridgeActivate());
             menuLabel.setText(fridgeService.getLoggedIn() + " logged in " + fridgeService.getLoggedInFridge());
@@ -218,9 +213,7 @@ public class FridgeUI extends Application {
                     ex.printStackTrace();
                 }
             } 
-            newFridgeInput.setText("");
-            
-                                    
+            newFridgeInput.setText("");                                    
         });
 
         logoutButton.setOnAction(e-> {
@@ -244,7 +237,6 @@ public class FridgeUI extends Application {
         fridgeItemScollbar.setContent(fridgeSectors);
         mainPane.setBottom(createForm);
         mainPane.setTop(menuPane);
-//        mainPane.setCenter(fridgePane);
         
         createItem.setOnAction(e-> {
             fridgeService.createFridgeItem(newItemInput.getText().trim(), Integer.valueOf(newAmountInput.getText().trim()));

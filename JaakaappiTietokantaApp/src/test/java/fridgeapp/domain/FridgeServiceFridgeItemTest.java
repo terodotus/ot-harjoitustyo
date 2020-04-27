@@ -2,6 +2,8 @@
 package fridgeapp.domain;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -35,7 +37,11 @@ public class FridgeServiceFridgeItemTest {
         FridgeUser u2 = new FridgeUser("Tellervo", "Tellervonkaappi1");
         fridgeUserDao.create(u1);
         fridgeUserDao.create(u2);        
-        fridgeItemDao.create(new FridgeItem(1, "maito", 5, u1));
+        try {
+            fridgeItemDao.create(new FridgeItem(1, "maito", 5, u1));
+        } catch (Exception ex) {
+            Logger.getLogger(FridgeServiceFridgeItemTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @After
@@ -131,5 +137,13 @@ public class FridgeServiceFridgeItemTest {
         service.login("Teuvo");
         assertFalse(service.createNewFridgeForLoggedInUser("Teuvonkaappi1"));
     }
+    
+    @Test
+    public void getByNameAndUsernameWorks() throws Exception {
+        Fridge fridge = fridgeItemDao.getByUsernameAndName("Teuvo", "Teuvonkaappi1");
+        assertEquals("Teuvonkaappi1", fridge.getFridgeName());
+    }
+    
+    
     
 }

@@ -1,8 +1,6 @@
 
 package fridgeapp.dao;
 
-import java.io.File;
-import java.io.FileWriter;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -21,7 +19,7 @@ public class FileFridgeItemDaoTest {
     public TemporaryFolder testFolder = new TemporaryFolder();    
   
     File userFile;  
-    FridgeItemDao dao;    
+    FridgeItemDao fridgeItemDao;    
     
     @BeforeClass
     public static void setUpClass() {
@@ -35,13 +33,13 @@ public class FileFridgeItemDaoTest {
     public void setUp() throws Exception {
         userFile = testFolder.newFile("testfile_users.txt");  
         FridgeUserDao fridgeUserDao = new FakeFridgeUserDao();
-        fridgeUserDao.create(new FridgeUser("testaaja", "Pakastaja Elvi"));
+        fridgeUserDao.create(new FridgeUser("testaaja", "TestaajanKaappi1"));
         
         try (FileWriter file = new FileWriter(userFile.getAbsolutePath())) {
-            file.write("1;maito;9;testaaja\n");
+            file.write("1;maito;9;testaaja;TestaajanKaappi1\n");
         }
         
-        dao = new FileFridgeItemDao(userFile.getAbsolutePath(), fridgeUserDao);        
+        fridgeItemDao = new FileFridgeItemDao(userFile.getAbsolutePath(), fridgeUserDao);        
     }
     
     @After
@@ -50,5 +48,45 @@ public class FileFridgeItemDaoTest {
     }
 
     @Test
-    public void hello() {}
+    public void fridgeItemAmountCanBeSet() throws Exception {
+        fridgeItemDao.setAmount(1, 100);
+        FridgeItem item = fridgeItemDao.getAll().get(0);
+        assertEquals(100, item.getAmount());
+    } 
+    
+    @Test
+    public void fridgeItemsAreReadCorrectlyFromFile() {
+        List<FridgeItem> items = fridgeItemDao.getAll();
+        assertEquals(1, items.size());
+        FridgeItem item = items.get(0);
+        assertEquals("maito", item.getContent());
+        assertEquals(9, item.getAmount());
+        assertEquals(1, item.getId());
+        assertEquals("testaaja", item.getUser().getUsername());
+        assertEquals("TestaajanKaappi1", item.getFridge().getFridgeName());
+    }    
+    
+    @Test
+    public void createdFridgeItemsListed() throws Exception {    
+        fridgeItemDao.create(new FridgeItem(2, "mehu", 3, new FridgeUser("testaaja2", "Testaaja2nKaappi1")));
+        
+        List<FridgeItem> items = fridgeItemDao.getAll();
+        assertEquals(2, items.size());
+        FridgeItem item = items.get(1);
+        assertEquals("mehu", item.getContent());
+        assertEquals(3, item.getAmount());
+        assertNotEquals(1, item.getId());
+        assertEquals("testaaja2", item.getUser().getUsername());
+    }   
+    
+    @Test
+    public void createdFridgeItemsAreNotCreatedAgain() throws Exception {  
+        FridgeItem testedItem = new FridgeItem(2, "mehu", 3, new FridgeUser("testaaja2", "Testaaja2nKaappi1"));
+        fridgeItemDao.create(testedItem);
+        List<FridgeItem> items = fridgeItemDao.getAll();
+        assertEquals(2, items.size());
+        fridgeItemDao.create(testedItem);
+        assertEquals(2, items.size());
+    }   
+    
 }

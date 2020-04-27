@@ -30,7 +30,10 @@ public class FridgeUser {
     public void setUsername(String username) {
         this.username = username;
     }
-
+/**
+ * method for getting all fridges as a list from this.user
+ * @return all fridges as a list
+ */   
     public List<Fridge> getFridges() {
         return fridges;
     }
@@ -39,6 +42,11 @@ public class FridgeUser {
         return this.getFridges().get(0);
     }
 
+/**
+ * method for adding a new fridge for this.user fridge(Fridge) as input
+ * @param Fridge 
+ * @return true if successful, false if fridge with same name already existing
+ */    
     public boolean addFridge(Fridge fridge) {
         if (this.fridges.contains(fridge)) {
             return false;
@@ -47,17 +55,27 @@ public class FridgeUser {
             return true;
         }
     }
-    
-    public boolean addFridge(String fridgename) {
+
+/**
+ * method for adding a new fridge for this.user fridgeName(String) as input
+ * @param fridgeName(String)
+ * @return true if successful, false if fridge with same name already existing
+ */      
+    public boolean addFridge(String fridgeName) {
         for (Fridge fridge: this.fridges) {
-            if (fridge.getFridgeName().equals(fridgename)) {
+            if (fridge.getFridgeName().equals(fridgeName)) {
                 return false;
             }
         } 
-        this.fridges.add(new Fridge(fridgename));
+        this.fridges.add(new Fridge(fridgeName));
         return true;
     }
-    
+
+/**
+ * method for getting the next fridge from this.users fridge-list; fridgeName(String) as input
+ * @param fridgename(String)
+ * @return the next fridge from the list (or the same fridge if only one existing)
+ */     
     public Fridge getNextFridge(String fridgeName) {
         if (this.fridges.size() <= 1) {
             return this.fridges.get(0);
@@ -74,7 +92,11 @@ public class FridgeUser {
             return this.fridges.get(0);
         }
     }
-    
+/**
+ * method for getting the fridge from this.users fridge-list with fridgeName(String) as input
+ * @param fridgeName(String)
+ * @return the fridge from the list with that fridgeName which was given
+ */       
     public Fridge getFridgeByFridgeName(String fridgeName) {
         for (Fridge fridge: this.fridges) {
             if (fridge.getFridgeName().equals(fridgeName)) {

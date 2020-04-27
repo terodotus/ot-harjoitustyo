@@ -1,6 +1,8 @@
 
 package fridgeapp.domain;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -59,5 +61,17 @@ public class FridgeServiceFridgeUserTest {
         assertFalse(result);
         
         assertEquals(null, service.getLoggedIn());
-    }    
+    }  
+    
+    @Test
+    public void nextFridgeActivateWorks() {
+        service.login("Elvi");
+        try {
+            service.createNewFridgeForLoggedInUser("Pakastajankaappi2");
+        } catch (Exception ex) {
+            Logger.getLogger(FridgeServiceFridgeUserTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        assertEquals("Pakastajankaappi2", service.nextFridgeActivate().getFridgeName());
+    }
+    
 }

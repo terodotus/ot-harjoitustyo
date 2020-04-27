@@ -16,13 +16,16 @@ public class Fridge {
     }
 
     public String getFridgeName() {
-        return fridgeName;
+        return this.fridgeName;
     }
 
     public void setFridgeName(String fridgeName) {
         this.fridgeName = fridgeName;
     }
-    
+
+/**
+ * method for giving String-form for fridges (fridgeName)
+ */    
     public String toString() {
         return this.getFridgeName();
     }

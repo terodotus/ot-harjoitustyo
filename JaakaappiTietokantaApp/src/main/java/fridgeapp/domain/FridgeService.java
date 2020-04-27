@@ -63,7 +63,12 @@ public class FridgeService {
         }
         return true;
     }
-    
+
+/**
+ * method to login with username(String); returns true if login; return false if username does not exist
+ * @return true
+ * @see FridgeUserDao
+ */      
     public boolean login(String username) {
         FridgeUser user = fridgeUserDao.findByUsername(username);
         if (user == null) {
@@ -73,7 +78,12 @@ public class FridgeService {
         loggedInFridge = user.getDefaultFridge();
         return true;
     }
-    
+
+ /**
+ * method to login with username(String) and fridgeName(String); returns true if login; return false if username does not exist
+ * @return true
+ * @see FridgeUserDao
+ */       
     public boolean login(String username, String fridgeName) {
         FridgeUser user = fridgeUserDao.findByUsername(username);
         if (user == null) {
@@ -83,12 +93,21 @@ public class FridgeService {
         loggedInFridge = user.getFridgeByFridgeName(fridgeName);
         return true;
     }
-    
+/**
+ * method for logout user;
+ * @see FridgeUserDao
+ */      
     public void logout() {
         loggedIn = null; 
         loggedInFridge = null;
     }
     
+/**
+ * method for creating a new user with username(String), fridgeName(String); return false if user already existing with the same username;
+ * return true if successful
+ * @return
+ * @see FridgeUserDao
+ */       
     public boolean createUser(String username, String fridgeName)  {   
         if (fridgeUserDao.findByUsername(username) != null) {
             return false;
@@ -101,7 +120,12 @@ public class FridgeService {
         }
         return true;
     }
-    
+/**
+ * method for creating a new fridge for loggedIn user with fridgeName(String); return false if user already has existing fridge with the same fridgeName;
+ * return true if successful
+ * @return
+ * @see FridgeUserDao
+ */        
     public boolean createNewFridgeForLoggedInUser(String fridgeName) throws Exception {
         for (Fridge fridge: loggedIn.getFridges()) {
             if (fridge.getFridgeName().equals(fridgeName)) {
@@ -112,7 +136,12 @@ public class FridgeService {
         fridgeUserDao.updateUserFridges(loggedIn);
         return true;
     }
-     
+    
+/**
+ * method for getting all fridgeItems of current loggedIn user and loggedIn fridge;
+ * @return list of FridgeItems
+ * @see FridgeUserDao
+ */         
     public List<FridgeItem> getActualContent() {
         if (loggedIn == null) {
             return new ArrayList<>();
@@ -125,7 +154,11 @@ public class FridgeService {
             .filter(t -> t.getAmount() > 0)
             .collect(Collectors.toList());
     }
-   
+/**
+ * method for setting amount for a fridgeItems with id and new amount as inputs;
+ * @return void
+ * @see FridgeUserDao
+ */     
     public void setAmount(int id, int newAmount) {
         try {
             fridgeItemDao.setAmount(id, newAmount);

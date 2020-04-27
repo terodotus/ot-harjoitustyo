@@ -85,11 +85,17 @@ public class FridgeItem {
         this.user = user;
     }
     
+/**
+ * method for giving String-form for fridgeItems ("content, amount")
+ */    
     @Override
     public String toString() {
         return this.getContent() + ", " + this.getAmount();
     }
-    
+
+/**
+ * method returning the equivalence of fridgeItems
+ */        
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof FridgeItem)) {
