@@ -1,0 +1,2 @@
+1;milk;1;John;JohnsFridge1
+2;orangejuice;1;John;JohnsFridge1
