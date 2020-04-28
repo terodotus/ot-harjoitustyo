@@ -20,7 +20,7 @@ Luokat:
 
 ### Viikolle 6 lisättyjä toiminnallisuuksia:
 - Käyttäjä voi vaihtaa uudemman jääkaapin oletusjääkaapiksi (default fridge) (TEHTY w06)
-- Käyttäjä voi poistaa jääkaappinsa (paitsi yksi jääkaappi pitää jäädä) (TEHTY w06)
+- Käyttäjä voi poistaa jääkaappinsa. Samalla poistuvat kaikki siellä olevat sisällöt (paitsi yksi jääkaappi pitää jäädä) (TEHTY w06)
 
 ## Jatkokehitysideoita
 Koska uudemmat jääkaapit voidaan rakentaa niin sanotuiksi monitoimilaitteiksi, eli niihin voidaan integroida esimerkiksi kameroita, äänitunnistusta, lukitusjärjestelmiä, ruuan pilaantumista tunnistavia järjestelmiä, parasta ennen -päiväyksen tunnistavia järjestelmiä, viivakoodin lukujärjestelmia yms., jää sovellukselle paljon jatkokehityspotentiaalia. Nämä upotetut järjestelmät vaativat tietenkin omat ohjaus- ja hallintasovelluksensa (embedded software), sekä integroidut sensorit (lämpömittari, kamera, hahmontunnistus, yms). JaakaappiTietokantaApp-sovelluksen on taivuttava näihin myöhempiin lisäyksiin sitten, kun niiden aika on, ei vielä tässä projektissa.
