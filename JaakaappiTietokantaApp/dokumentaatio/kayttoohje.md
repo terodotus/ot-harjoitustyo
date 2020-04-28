@@ -40,7 +40,7 @@ In case, you try to create a user that already exists, an error message is given
 
 
 ## Fridge scene
-You may manage your fridge in the fridge scene. You can add and remove items and maange the amount of items in your fridge. 
+You may manage your fridge in the fridge scene. You can add and remove items and manage the amount of items in your fridge. 
 You can have many fridges but first your default fridge is logged in:
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene1_2804.jpg" width="600">
@@ -53,11 +53,11 @@ You may also need to update the amount of your item time to time. You may use th
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene3_2804.jpg" width="600">
 
-if you have many fridges to manage, you may add them to the app by using the "add fridge" -button. Put the name of the new fridge to the text field to the left from the "add fridge" -button.
+if you have many fridges to manage, you may add them to the app by using the "add fridge" -button. Put the name of the new fridge to the text field to the left from the "add fridge" -button. They are all visible on the right.
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene4_2804.jpg" width="600">
 
-You can have as many fridges as you need.
+You can have as many fridges as you need. They are all visible on the right.
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene5_2804.jpg" width="600">
 
