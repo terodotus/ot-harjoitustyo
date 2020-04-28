@@ -12,10 +12,15 @@ Kun uusi käyttäjä luodaan on käyttäjälle on tarjolla oletusjääkaappi, jo
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/UserInterfaceDraft01.jpg" width=800 >
 
 ## Perusversion tarjoama toiminnallisuus
-Jääkaapissa on tuotteita. Tuotteilla on ominaisuuksia, kuten määrä. Käyttäjä pystyy sovelluksesta käsin katsomaan kaapin sisällön. Käyttäjä pystyy päivittämään tuotteet ja tuotteiden tiedot. Tiedot tallennetaan ja niihin voidaan jälleen palata uudelleen. Luokat:
+Jääkaapissa on tuotteita. Tuotteilla on ominaisuuksia, kuten määrä. Käyttäjä pystyy sovelluksesta käsin katsomaan kaapin sisällön. Käyttäjä pystyy päivittämään tuotteet ja tuotteiden tiedot. Tiedot tallennetaan ja niihin voidaan jälleen palata uudelleen. 
+Luokat:
 - Fridge: Jääkaappi, jolla on käyttäjä ja jossa on tuotteita (fridgeItem)
 - FridgeItem: Tuote, jolla on nimi (String) ja määrä (int)
 - FridgeUser: Käyttäjä, jolla on nimi (String) ja lista jääkaappeja (Fridge). Käyttäjällä voi olla yksi tai useampi jääkaappi. (Lisäys TEHTY viikolle 6)
+
+### Viikolle 6 lisättyjä toiminnallisuuksia:
+- Käyttäjä voi vaihtaa uudemman jääkaapin oletusjääkaapiksi (default fridge) (TEHTY w06)
+- Käyttäjä voi poistaa jääkaappinsa (paitsi yksi jääkaappi pitää jäädä) (TEHTY w06)
 
 ## Jatkokehitysideoita
 Koska uudemmat jääkaapit voidaan rakentaa niin sanotuiksi monitoimilaitteiksi, eli niihin voidaan integroida esimerkiksi kameroita, äänitunnistusta, lukitusjärjestelmiä, ruuan pilaantumista tunnistavia järjestelmiä, parasta ennen -päiväyksen tunnistavia järjestelmiä, viivakoodin lukujärjestelmia yms., jää sovellukselle paljon jatkokehityspotentiaalia. Nämä upotetut järjestelmät vaativat tietenkin omat ohjaus- ja hallintasovelluksensa (embedded software), sekä integroidut sensorit (lämpömittari, kamera, hahmontunnistus, yms). JaakaappiTietokantaApp-sovelluksen on taivuttava näihin myöhempiin lisäyksiin sitten, kun niiden aika on, ei vielä tässä projektissa.
