@@ -1,6 +1,0 @@
-4;makaronilaatikko;1;Teppo;Teponkaappi1
-5;porkkana;2;Teppo;Teponkaappi1
-10;makkara;3;Tero;Teronkaappi3
-16;juusto;3;Tero;Teronkaappi3
-11;makkara;4;Tero;Teronkaappi6
-12;peruna;4;Tero;Teronkaappi3

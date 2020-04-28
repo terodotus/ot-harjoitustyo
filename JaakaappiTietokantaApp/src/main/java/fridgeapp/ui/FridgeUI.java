@@ -80,11 +80,13 @@ public class FridgeUI extends Application {
     }
     
     public void restoreFridgeListing() {
-        fridgesSectors.getChildren().clear();     
+        fridgesSectors.getChildren().clear();
+        fridgesSectors.getChildren().add(new Label("Fridges"));
         List<Fridge> fridges = fridgeService.getLoggedInAllFridges();
         fridges.forEach(f -> {
             fridgesSectors.getChildren().add(new Label(f.getFridgeName()));
-        });     
+        });
+          
     }
     
     public Scene loginScene(Stage primaryStage, Label loginMessage) {
@@ -201,6 +203,8 @@ public class FridgeUI extends Application {
         BorderPane mainPane = new BorderPane();
         fridgeScene = new Scene(mainPane, 800, 600);
         
+        Label fridgeCreationMessage = new Label();
+        
         HBox menuPane = new HBox(10);
         VBox menuPane2 = new VBox(10);
         Button changeFridgeButton = new Button("open other fridge");
@@ -211,13 +215,15 @@ public class FridgeUI extends Application {
         Button logoutButton = new Button("logout");
         Button changeDefaultFridgeButton = new Button("Change this to DefaultFridge");
         Button removeFridgeButton = new Button("remove this Fridge");
-        menuPane.getChildren().addAll(menuLabel, menuSpacer, newFridgeInput, addFridgeButton, logoutButton);
+        menuPane.getChildren().addAll(menuLabel, fridgeCreationMessage, newFridgeInput, addFridgeButton, logoutButton);
         menuPane2.getChildren().addAll(changeFridgeButton, changeDefaultFridgeButton, removeFridgeButton);
         
         changeFridgeButton.setOnAction(e-> {
             fridgeService.setLoggedInFridge(fridgeService.nextFridgeActivate());
             menuLabel.setText(fridgeService.getLoggedIn() + " logged in " + fridgeService.getLoggedInFridge());
             restoreFridge();
+            restoreFridgeListing();
+            fridgeCreationMessage.setText("");
         }); 
         
         removeFridgeButton.setOnAction(e-> {
@@ -225,6 +231,7 @@ public class FridgeUI extends Application {
             menuLabel.setText(fridgeService.getLoggedIn() + " logged in " + fridgeService.getLoggedInFridge());
             restoreFridge();
             restoreFridgeListing();
+            fridgeCreationMessage.setText("");
         }); 
         
         changeDefaultFridgeButton.setOnAction(e-> {
@@ -235,20 +242,35 @@ public class FridgeUI extends Application {
             }
             restoreFridge();
             restoreFridgeListing();
+            fridgeCreationMessage.setText("");
             ;
         }); 
+        
+        
 
         addFridgeButton.setOnAction(e -> {
-            String newFridgeName = newFridgeInput.getText().strip();
-            if (!newFridgeName.equals("set fridgeName") || newFridgeName.length() > 3 || !newFridgeName.contains(";")) {
-                try {
-                    boolean createNewFridgeForLoggedInUser = fridgeService.createNewFridgeForLoggedInUser(newFridgeName);
-                } catch (Exception ex) {
-                    ex.printStackTrace();
+            try {
+                String newFridgeName = newFridgeInput.getText().strip();
+                
+                if (newFridgeName.length() < 3 || newFridgeName.contains(";") || newFridgeName.contains(":") || newFridgeName.contains(" ") || newFridgeName.contains("set fridgeName")) {
+                    fridgeCreationMessage.setText("fridge name illegal (%#;&)");
+                    fridgeCreationMessage.setTextFill(Color.RED);
+                    
+                } else if (fridgeService.createNewFridgeForLoggedInUser(newFridgeName)) {
+                    fridgeCreationMessage.setText("");
+                    fridgeCreationMessage.setText("new fridge created");
+                    fridgeCreationMessage.setTextFill(Color.GREEN);
+                    
+                } else {
+                    fridgeCreationMessage.setText("fridge name not unique");        
+                    fridgeCreationMessage.setTextFill(Color.RED);
                 }
-            } 
-            newFridgeInput.setText("");
-            restoreFridgeListing();
+                
+                newFridgeInput.setText("");
+                restoreFridgeListing();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         });
 
         logoutButton.setOnAction(e-> {
@@ -262,33 +284,58 @@ public class FridgeUI extends Application {
         HBox.setHgrow(spacer, Priority.ALWAYS);
         TextField newItemInput = new TextField("set item");
         TextField newAmountInput = new TextField("set amount");
-        createForm.getChildren().addAll(newItemInput, newAmountInput, spacer, createItem);
+        
+        Label itemCreationMessage = new Label();
+        
+        createForm.getChildren().addAll(newItemInput, newAmountInput, itemCreationMessage, createItem);
         
         fridgeItemSectors = new VBox(10);
         fridgeItemSectors.setMaxWidth(580);
-        fridgeItemSectors.setMinWidth(580);
-        restoreFridge();
-        
+        fridgeItemSectors.setMinWidth(500);
         
         fridgesSectors = new VBox(10);
         fridgesSectors.setMaxWidth(400);
         fridgesSectors.setMinWidth(10);
-        fridgesScrollbar.setContent(fridgesSectors);
         
+        fridgesScrollbar.setContent(fridgesSectors);
         fridgeItemScrollbar.setContent(fridgeItemSectors);
+        
+        restoreFridge();
+        restoreFridgeListing();
+        
         mainPane.setBottom(createForm);
         mainPane.setTop(menuPane);
         mainPane.setLeft(menuPane2);
-        mainPane.setRight(fridgesSectors);
         
+        mainPane.setRight(fridgesScrollbar);
         mainPane.setCenter(fridgeItemScrollbar);
         
         createItem.setOnAction(e-> {
-            fridgeService.createFridgeItem(newItemInput.getText().trim(), Integer.valueOf(newAmountInput.getText().trim()));
-            newItemInput.setText(""); 
+            try {
+                String newItemName = newItemInput.getText().strip();
+                int newItemAmount = Integer.valueOf(newAmountInput.getText().strip());
+                
+                if (newItemName.length() < 3 || newItemName.contains(";") || newItemName.contains(":") || newItemName.contains(" ") || newItemName.contains("set item")) {
+                    itemCreationMessage.setText("item name illegal (%#;&)");
+                    itemCreationMessage.setTextFill(Color.RED);
+                    
+                } else { 
+                    fridgeService.createFridgeItem(newItemName, newItemAmount);
+                    itemCreationMessage.setText("");
+                }
+                    
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            } 
+            newItemInput.setText("");
             newAmountInput.setText("");
+           
+            restoreFridgeListing();
             restoreFridge();
+            
+                
         });
+        
         return fridgeScene;
     }
 

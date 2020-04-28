@@ -1,2 +1,0 @@
-Tero;Teronkaappi3;Teronkaappi6;set fridgeName;
-Teppo;Teponkaappi1;Teponkaappi2;Teponkaappi3;

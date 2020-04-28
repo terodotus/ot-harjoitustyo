@@ -28,26 +28,16 @@ public class FridgeService {
     public FridgeUser getLoggedIn() {
         return loggedIn;
     }
-    
-    public void removeLastFridgeOfLoggedInUser() {
-        if(loggedIn.getFridges().size() > 1) {
-            fridgeItemDao.removeAlItemsFromFridge(loggedIn.getUsername(), loggedIn.getFridges().get(loggedIn.getFridges().size()-1).getFridgeName());
-            loggedInFridge = this.nextFridgeActivate();
-            loggedIn.removeLastFridge();
-        }
-        try {
-            fridgeUserDao.updateUserFridges(loggedIn);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-    
+
     public List<Fridge> getLoggedInAllFridges() {
+        if (loggedIn == null) {
+            return new ArrayList<>();
+        }
         return loggedIn.getFridges();
     }
 
     public void removeLoggedInFridgeOfLoggedInUser() {
-        if(loggedIn.getFridges().size() > 1) {
+        if (loggedIn.getFridges().size() > 1) {
             String removableFridgeName = loggedInFridge.getFridgeName();
             loggedInFridge = this.nextFridgeActivate();
             fridgeItemDao.removeAlItemsFromFridge(loggedIn.getUsername(), removableFridgeName);

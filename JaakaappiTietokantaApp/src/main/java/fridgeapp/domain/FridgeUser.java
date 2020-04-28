@@ -52,8 +52,8 @@ public class FridgeUser {
     public void changeDefaultFridge(Fridge fridge) {
         List<Fridge> newFridgeList = new ArrayList();
         newFridgeList.add(fridge);
-        for(Fridge f: this.getFridges()) {
-            if(!f.getFridgeName().equals(fridge.getFridgeName())) {
+        for (Fridge f: this.getFridges()) {
+            if (!f.getFridgeName().equals(fridge.getFridgeName())) {
                 newFridgeList.add(f);
             }
         }
@@ -73,28 +73,18 @@ public class FridgeUser {
             return true;
         }
     }
-    
-    public boolean removeLastFridge() {
-        if(this.getFridges().size() < 2) {
-            return false;
-        } else {
-            int removable = this.fridges.size()-1;
-            this.fridges.remove(removable);
-            return true;
-        }
-    }
-    
+
     public boolean removeFridge(String fridgename) {
-        if(this.getFridges().size() < 2) {
+        if (this.getFridges().size() < 2) {
             return false;
         } else {
-            int removable = this.fridges.size()+2;
-            for(int i = 0; i < this.getFridges().size(); i++) {
+            int removable = this.fridges.size() + 2;
+            for (int i = 0; i < this.getFridges().size(); i++) {
                 if (this.fridges.get(i).getFridgeName().equals(fridgename)) {
-                   removable = i; 
+                    removable = i; 
                 }
             }
-            if(removable != this.fridges.size()+2) {
+            if (removable != this.fridges.size() + 2) {
                 this.fridges.remove(removable);
             }
             return true;

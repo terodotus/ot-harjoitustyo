@@ -47,9 +47,9 @@ public class FileFridgeItemDao implements FridgeItemDao {
 
     @Override
     public void removeAlItemsFromFridge(String username, String fridgeName) {
-        if(this.items.size() > 0) {
-            for (int i = (this.items.size() - 1); i >=0; i--) {
-                if(this.items.get(i).getUser().getUsername().equals(username) && this.items.get(i).getFridge().getFridgeName().equals(fridgeName)) {
+        if (this.items.size() > 0) {
+            for (int i = (this.items.size() - 1); i >= 0; i--) {
+                if (this.items.get(i).getUser().getUsername().equals(username) && this.items.get(i).getFridge().getFridgeName().equals(fridgeName)) {
                     this.items.remove(i);
                 }
             }
