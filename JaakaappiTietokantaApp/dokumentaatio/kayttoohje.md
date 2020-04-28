@@ -51,15 +51,15 @@ If you need to add something to your fridge, use the input text fields on bottom
  
 You may also need to update the amount of your item time to time. You may use the "set amount" -button, or even the create button with change amount.
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene3.jpg" width="600">
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene3_2804.jpg" width="600">
 
 if you have many fridges to manage, you may add them to the app by using the "add fridge" -button. Put the name of the new fridge to the text field to the left from the "add fridge" -button.
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene4.jpg" width="600">
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene4_2804.jpg" width="600">
 
 You can have as many fridges as you need.
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene5.jpg" width="600">
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene5_2804.jpg" width="600">
 
 You can add all your items to the fridge app.
 
