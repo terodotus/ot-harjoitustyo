@@ -35,7 +35,10 @@ public class FileFridgeUserDao implements FridgeUserDao {
         }
         
     }
-    
+
+/**
+ * method for saving current users information to the file;
+ */    
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (FridgeUser user : users) {
@@ -47,12 +50,20 @@ public class FileFridgeUserDao implements FridgeUserDao {
             }
         } 
     }
-    
+
+/**
+ * method for getting all users;
+ */    
     @Override
     public List<FridgeUser> getAll() {
         return users;
     }
-    
+
+/**
+ * method for getting a users by giving username;
+ * @param username (String)
+ * @return FridgeUser
+ */      
     @Override
     public FridgeUser findByUsername(String username) {
         return users.stream()
@@ -61,14 +72,23 @@ public class FileFridgeUserDao implements FridgeUserDao {
             .findFirst()
             .orElse(null);
     }
-    
+
+/**
+ * method for creating and saving a FridgeUser by giving user object;
+ * @param user (FridgeUser)
+ * @return user
+ */      
     @Override
     public FridgeUser create(FridgeUser user) throws Exception {
         users.add(user);
         save();
         return user;
     } 
-    
+
+/**
+ * method for updating and saving a user information by giving one user object;
+ * @param user (FridgeUser)
+ */      
     @Override
     public void updateUserFridges(FridgeUser user) throws Exception {
         for (FridgeUser fridgeUser: this.users) {

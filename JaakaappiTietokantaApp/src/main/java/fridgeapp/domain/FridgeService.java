@@ -28,7 +28,39 @@ public class FridgeService {
     public FridgeUser getLoggedIn() {
         return loggedIn;
     }
+    
+    public void removeLastFridgeOfLoggedInUser() {
+        if(loggedIn.getFridges().size() > 1) {
+            fridgeItemDao.removeAlItemsFromFridge(loggedIn.getUsername(), loggedIn.getFridges().get(loggedIn.getFridges().size()-1).getFridgeName());
+            loggedInFridge = this.nextFridgeActivate();
+            loggedIn.removeLastFridge();
+        }
+        try {
+            fridgeUserDao.updateUserFridges(loggedIn);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public List<Fridge> getLoggedInAllFridges() {
+        return loggedIn.getFridges();
+    }
 
+    public void removeLoggedInFridgeOfLoggedInUser() {
+        if(loggedIn.getFridges().size() > 1) {
+            String removableFridgeName = loggedInFridge.getFridgeName();
+            loggedInFridge = this.nextFridgeActivate();
+            fridgeItemDao.removeAlItemsFromFridge(loggedIn.getUsername(), removableFridgeName);
+            loggedInFridge = this.nextFridgeActivate();
+            loggedIn.removeFridge(removableFridgeName);
+        }
+        try {
+            fridgeUserDao.updateUserFridges(loggedIn);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
 /**
  * method returns current loggedInFridge of loggedInUser
  * @return loggedInFridge
@@ -37,8 +69,20 @@ public class FridgeService {
         return loggedInFridge;
     }
 
+/**
+ * method for changing loggedIn users default fridge
+ */       
+    public void changeDefaultFridge(Fridge fridge) throws Exception {
+        loggedIn.changeDefaultFridge(fridge);
+        fridgeUserDao.updateUserFridges(loggedIn);
+    }
+
+/**
+ * method for putting a fridge to currently active loggedInFridge of loggedInUser by giving that fridge as input;
+ * @param loggedInFridge (Fridge-object)
+ */      
     public void setLoggedInFridge(Fridge loggedInFridge) {
-        this.loggedInFridge = loggedInFridge;
+        this.loggedInFridge = this.nextFridgeActivate();
     }
 
 /**
@@ -46,6 +90,11 @@ public class FridgeService {
  * @return loggedIn
  */        
     public Fridge nextFridgeActivate() {
+        try {
+            fridgeUserDao.updateUserFridges(loggedIn);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
         Fridge nextFridge = loggedIn.getNextFridge(loggedInFridge.getFridgeName());
         return nextFridge;
     }

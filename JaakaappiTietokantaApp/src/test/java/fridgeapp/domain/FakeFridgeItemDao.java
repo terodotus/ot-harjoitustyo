@@ -62,6 +62,11 @@ public class FakeFridgeItemDao implements FridgeItemDao{
         }
         return returnable;
     }
+
+    @Override
+    public void removeAlItemsFromFridge(String username, String fridgeName) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

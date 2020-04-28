@@ -14,6 +14,8 @@ public interface FridgeItemDao {
     
     List<FridgeItem> getAll();
     
+    void removeAlItemsFromFridge(String username, String fridgeName);
+    
     void setAmount(int id, int amount) throws Exception;
     
 }

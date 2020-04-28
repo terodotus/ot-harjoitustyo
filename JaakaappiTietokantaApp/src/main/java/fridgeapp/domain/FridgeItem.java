@@ -36,15 +36,7 @@ public class FridgeItem {
         this.user = user;
         this.fridge = fridge;
     }
-    
-    public FridgeItem(int id, String content, int amount, FridgeUser user, String fridgeName) {
-        this.id = id;
-        this.content = content;
-        this.amount = amount;
-        this.user = user;
-        this.fridge = new Fridge(fridgeName);
-    }
-    
+
     public Fridge getFridge() {
         return fridge;
     }
@@ -87,6 +79,7 @@ public class FridgeItem {
     
 /**
  * method for giving String-form for fridgeItems ("content, amount")
+ * @return fridgeItem as String ("content, amount")
  */    
     @Override
     public String toString() {
@@ -95,6 +88,8 @@ public class FridgeItem {
 
 /**
  * method returning the equivalence of fridgeItems
+ * @param obj (other object)
+ * @return if the objects are the same
  */        
     @Override
     public boolean equals(Object obj) {

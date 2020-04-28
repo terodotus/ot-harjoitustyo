@@ -37,9 +37,27 @@ public class FridgeUser {
     public List<Fridge> getFridges() {
         return fridges;
     }
-    
+
+/**
+ * method for getting this.users first fridge
+ * @return this.users first fridge
+ */      
     public Fridge getDefaultFridge() {
         return this.getFridges().get(0);
+    }
+
+/**
+ * method for changing given fridge to the default fridge, so first fridge on the fridge list;
+ */      
+    public void changeDefaultFridge(Fridge fridge) {
+        List<Fridge> newFridgeList = new ArrayList();
+        newFridgeList.add(fridge);
+        for(Fridge f: this.getFridges()) {
+            if(!f.getFridgeName().equals(fridge.getFridgeName())) {
+                newFridgeList.add(f);
+            }
+        }
+        this.fridges = newFridgeList;
     }
 
 /**
@@ -52,6 +70,33 @@ public class FridgeUser {
             return false;
         } else {
             this.fridges.add(fridge);
+            return true;
+        }
+    }
+    
+    public boolean removeLastFridge() {
+        if(this.getFridges().size() < 2) {
+            return false;
+        } else {
+            int removable = this.fridges.size()-1;
+            this.fridges.remove(removable);
+            return true;
+        }
+    }
+    
+    public boolean removeFridge(String fridgename) {
+        if(this.getFridges().size() < 2) {
+            return false;
+        } else {
+            int removable = this.fridges.size()+2;
+            for(int i = 0; i < this.getFridges().size(); i++) {
+                if (this.fridges.get(i).getFridgeName().equals(fridgename)) {
+                   removable = i; 
+                }
+            }
+            if(removable != this.fridges.size()+2) {
+                this.fridges.remove(removable);
+            }
             return true;
         }
     }
