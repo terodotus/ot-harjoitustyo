@@ -1,7 +1,7 @@
 # Testing documentation
 
 ## Overview
-The FridgeApp testing is handled with automatized unit testing throughout the development phase and the app lifecycle. The aim is to go to test driven mode. In addition to automatized unit tests, there is manual system level testing ongoing all the time by the developer. 
+The FridgeApp testing is handled with automatized unit testing throughout the development phase and the app lifecycle. The aim was to go to test driven mode, and it succeeded. When adding new features, the automated tests quickly gave information if they still worked or not, so the developer could see if new feature broke something or not. To maintain test-driven mode, automated tests had to be updated constantly and all the time. In addition to automatized unit tests, there is manual system level testing ongoing all the time by the developer. 
 
 ## Unit testing and integration testing
 
