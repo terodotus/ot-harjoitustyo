@@ -1,4 +1,1 @@
-John;JohnsFridge1;JohnsFridge2;JohnsFridge3;JohnsFridge4;
-Tero;Teronkaappi3;Teronkaappi1;
-Teppo;Teponkaappi1;
-Turo;Turonkaappi6;
+John;JohnsFridge1;JohnsFridge3;JohnsFridge4;

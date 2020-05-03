@@ -1,14 +1,7 @@
-1;milk;1;John;JohnsFridge1
+1;milk;6;John;JohnsFridge1
 2;orangejuice;1;John;JohnsFridge1
 3;ham;3;John;JohnsFridge1
 4;potato;5;John;JohnsFridge1
 5;non-alcoholic-beer;2;John;JohnsFridge1
 6;cheese;2;John;JohnsFridge1
-7;maito;13;Tero;Teronkaappi1
-8;piimä;8;Tero;Teronkaappi1
-9;kinkku;5;Tero;Teronkaappi1
-10;maito;8;Teppo;Teponkaappi1
-11;liha;3;Tero;Teronkaappi1
-12;omena;45;Tero;Teronkaappi1
-13;maito;6;Tero;Teronkaappi3
-14;piimä;2;Tero;Teronkaappi3
+7;milk;4;John;JohnsFridge3
