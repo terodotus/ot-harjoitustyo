@@ -20,6 +20,6 @@
 | 26.4  |  4   | Studying and implementing Javadoc to the Fridgeapp, documentation |
 | 27.4  |  4   | Documentation, UI details, javadoc | 
 |  2.5  |  5   | UI improvents, exceptions handling | 
+|  3.5  |  4   | UI improvents, exceptions handling | 
 |    |    |  | 
-|    |    |  | 
-| yht   |  69  |  | 
+| yht   |  73  |  | 
