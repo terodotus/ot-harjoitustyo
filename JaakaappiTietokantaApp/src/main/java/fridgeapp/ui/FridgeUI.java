@@ -94,6 +94,7 @@ public class FridgeUI extends Application {
     
     public void restoreFridge() {
         fridgeItemSectors.getChildren().clear();
+        menuLabel.setText(fridgeService.getLoggedIn() + " logged in " + fridgeService.getLoggedInFridge());
         List<FridgeItem> actualItems = fridgeService.getActualContent();
         actualItems.forEach(item -> {
             fridgeItemSectors.getChildren().add(createFridgeSector(item));
@@ -171,6 +172,9 @@ public class FridgeUI extends Application {
         
         Button createNewUserButton = new Button("create");
         createNewUserButton.setPadding(new Insets(10));
+        
+        Button backButton = new Button("Back");
+        backButton.setPadding(new Insets(10));
 
         createNewUserButton.setOnAction(e -> {
             String username = newUsernameInput.getText();
@@ -191,7 +195,15 @@ public class FridgeUI extends Application {
             }
  
         });  
-        newUserPane.getChildren().addAll(userCreationMessage, newUsernamePane, newNamePane, createNewUserButton); 
+        newUserPane.getChildren().addAll(userCreationMessage, newUsernamePane, newNamePane, createNewUserButton, backButton); 
+        
+        backButton.setOnAction(e -> {
+            loginScene(primaryStage, loginMessage);
+            primaryStage.setScene(loginScene);
+            primaryStage.show();
+            newUsernameInput.setText("");
+            newNameInput.setText("");
+        });  
        
         newUserScene = new Scene(newUserPane, 400, 300);
         return newUserScene;
@@ -228,6 +240,9 @@ public class FridgeUI extends Application {
         
         Label fridgeCreationMessage = new Label();
         
+        Label defaultChangeMessage = new Label();
+        Label fridgeRemovalMessage = new Label();
+        
         HBox menuPane = new HBox(10);
         VBox menuPane2 = new VBox(10);
         Button changeFridgeButton = new Button("open other fridge");
@@ -238,39 +253,69 @@ public class FridgeUI extends Application {
         Button logoutButton = new Button("logout");
         Button changeDefaultFridgeButton = new Button("Make this DefaultFridge");
         Button removeFridgeButton = new Button("Remove this Fridge");
-        menuPane.getChildren().addAll(menuLabel, fridgeCreationMessage, newFridgeInput, addFridgeButton, menuSpacer, logoutButton);
-        menuPane2.getChildren().addAll(changeFridgeButton, changeDefaultFridgeButton, removeFridgeButton);
+        menuPane.getChildren().addAll(menuLabel, fridgeCreationMessage, changeFridgeButton, newFridgeInput, addFridgeButton, menuSpacer, logoutButton);
+        menuPane2.getChildren().addAll(changeDefaultFridgeButton, defaultChangeMessage, removeFridgeButton, fridgeRemovalMessage);
         
         Label itemCreationMessage = new Label();
         
         changeFridgeButton.setOnAction(e-> {
-            fridgeService.setLoggedInFridge(fridgeService.nextFridgeActivate());
-            menuLabel.setText(fridgeService.getLoggedIn() + " logged in " + fridgeService.getLoggedInFridge());
-            restoreFridge();
-            restoreFridgeListing();
-            fridgeCreationMessage.setText("");
-            itemCreationMessage.setText("");
+            if(fridgeService.nextFridgeActivate()) {
+                restoreFridge();
+                restoreFridgeListing();
+                fridgeCreationMessage.setText("");
+                itemCreationMessage.setText("");
+                defaultChangeMessage.setText("");
+                fridgeRemovalMessage.setText("");
+                fridgeCreationMessage.setText("");
+                menuLabel.setText(fridgeService.getLoggedIn() + " logged in " + fridgeService.getLoggedInFridge());
+            } else {
+                fridgeCreationMessage.setText("only one fridge existing");
+                fridgeCreationMessage.setTextFill(Color.RED);
+                restoreFridgeListing();
+                itemCreationMessage.setText("");
+                defaultChangeMessage.setText("");
+                fridgeRemovalMessage.setText("");
+            }
+            
         }); 
         
         removeFridgeButton.setOnAction(e-> {
-            fridgeService.removeLoggedInFridgeOfLoggedInUser();
-            menuLabel.setText(fridgeService.getLoggedIn() + " logged in " + fridgeService.getLoggedInFridge());
-            restoreFridge();
-            restoreFridgeListing();
-            fridgeCreationMessage.setText("");
-            itemCreationMessage.setText("");
+            if(fridgeService.removeLoggedInFridgeOfLoggedInUser()) {
+                menuLabel.setText(fridgeService.getLoggedIn() + " logged in " + fridgeService.getLoggedInFridge());
+                restoreFridge();
+                restoreFridgeListing();
+                fridgeCreationMessage.setText("");
+                itemCreationMessage.setText("");
+                defaultChangeMessage.setText("");
+                fridgeRemovalMessage.setText("fridge removed");
+                fridgeRemovalMessage.setTextFill(Color.GREEN);
+            } else {
+                fridgeRemovalMessage.setText("can not remove if only one fridge");
+                fridgeRemovalMessage.setTextFill(Color.RED);
+            }
         }); 
         
         changeDefaultFridgeButton.setOnAction(e-> {
             try {
-                fridgeService.changeDefaultFridge(fridgeService.getLoggedInFridge());
+                if(fridgeService.changeDefaultFridge(fridgeService.getLoggedInFridge())) {
+                    restoreFridge();
+                    restoreFridgeListing();
+                    fridgeCreationMessage.setText("");
+                    itemCreationMessage.setText("");
+                    defaultChangeMessage.setText("");
+                    fridgeRemovalMessage.setText("");
+                } else {
+                    defaultChangeMessage.setText("already default");
+                    defaultChangeMessage.setTextFill(Color.GREEN);
+                    itemCreationMessage.setText("");
+                    fridgeCreationMessage.setText("");
+                    fridgeRemovalMessage.setText("");
+                    restoreFridge();
+                }
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-            restoreFridge();
-            restoreFridgeListing();
-            fridgeCreationMessage.setText("");
-            itemCreationMessage.setText("");
+            
             ;
         }); 
         
@@ -299,7 +344,10 @@ public class FridgeUI extends Application {
                 
                 newFridgeInput.setText("");
                 itemCreationMessage.setText("");
+                defaultChangeMessage.setText("");
                 restoreFridgeListing();
+                restoreFridge();
+                fridgeRemovalMessage.setText("");
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -373,6 +421,7 @@ public class FridgeUI extends Application {
             } 
             newItemInput.setText("");
             newAmountInput.setText("");
+            fridgeRemovalMessage.setText("");
            
             restoreFridgeListing();
             restoreFridge();  

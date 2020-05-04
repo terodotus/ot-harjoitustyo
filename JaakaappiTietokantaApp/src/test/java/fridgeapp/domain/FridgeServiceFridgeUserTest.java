@@ -71,7 +71,8 @@ public class FridgeServiceFridgeUserTest {
         } catch (Exception ex) {
             Logger.getLogger(FridgeServiceFridgeUserTest.class.getName()).log(Level.SEVERE, null, ex);
         }
-        assertEquals("Pakastajankaappi2", service.nextFridgeActivate().getFridgeName());
+        service.nextFridgeActivate();
+        assertEquals("Pakastajankaappi2", service.getLoggedIn().getFridges().get(1).getFridgeName());
     }
     
 }

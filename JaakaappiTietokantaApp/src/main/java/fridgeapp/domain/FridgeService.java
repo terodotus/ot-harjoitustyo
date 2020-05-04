@@ -36,18 +36,21 @@ public class FridgeService {
         return loggedIn.getFridges();
     }
 
-    public void removeLoggedInFridgeOfLoggedInUser() {
+    public boolean removeLoggedInFridgeOfLoggedInUser() {
         if (loggedIn.getFridges().size() > 1) {
             String removableFridgeName = loggedInFridge.getFridgeName();
-            loggedInFridge = this.nextFridgeActivate();
+            this.nextFridgeActivate();
             fridgeItemDao.removeAlItemsFromFridge(loggedIn.getUsername(), removableFridgeName);
-            loggedInFridge = this.nextFridgeActivate();
+            this.nextFridgeActivate();
             loggedIn.removeFridge(removableFridgeName);
-        }
-        try {
-            fridgeUserDao.updateUserFridges(loggedIn);
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            try {
+                fridgeUserDao.updateUserFridges(loggedIn);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            return true;
+        } else {
+            return false;
         }
     }
     
@@ -62,31 +65,35 @@ public class FridgeService {
 /**
  * method for changing loggedIn users default fridge
  */       
-    public void changeDefaultFridge(Fridge fridge) throws Exception {
-        loggedIn.changeDefaultFridge(fridge);
-        fridgeUserDao.updateUserFridges(loggedIn);
-    }
-
-/**
- * method for putting a fridge to currently active loggedInFridge of loggedInUser by giving that fridge as input;
- * @param loggedInFridge (Fridge-object)
- */      
-    public void setLoggedInFridge(Fridge loggedInFridge) {
-        this.loggedInFridge = this.nextFridgeActivate();
-    }
-
-/**
- * method returns current next fridge of loggedInUser from fridges list of that user
- * @return loggedIn
- */        
-    public Fridge nextFridgeActivate() {
-        try {
+    public boolean changeDefaultFridge(Fridge fridge) throws Exception {
+        if (loggedIn.changeDefaultFridge(fridge)) {
             fridgeUserDao.updateUserFridges(loggedIn);
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            return true;
+        } else {
+            return false;
         }
-        Fridge nextFridge = loggedIn.getNextFridge(loggedInFridge.getFridgeName());
-        return nextFridge;
+    }
+
+/**
+ * method returns true if there is more than one fridge and also activates that to loggedIn;
+ * returns false if only one fridge existing
+ * @return Boolean
+ */        
+    public boolean nextFridgeActivate() {
+        
+        if (loggedIn.getFridges().size() > 1) {
+            Fridge nextFridge = loggedIn.getNextFridge(loggedInFridge.getFridgeName());
+            this.loggedInFridge = nextFridge;
+            try {
+                fridgeUserDao.updateUserFridges(loggedIn);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            return true;
+        } else {
+            return false;
+        }
+        
     }
 /**
  * method created a new fridgeItem if not yet existing in fridge with same name; returns true if creates
