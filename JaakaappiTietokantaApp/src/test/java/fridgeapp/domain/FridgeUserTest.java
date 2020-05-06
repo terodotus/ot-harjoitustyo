@@ -123,4 +123,25 @@ public class FridgeUserTest {
         assertEquals("Seppo", user1.toString());
     }
     
+    @Test
+    public void removeFridgeRemovesFridge() {
+        user1.addFridge(new Fridge("seponkaappi2"));
+        user1.removeFridge("seponkaappi1");
+        assertEquals(1, user1.getFridges().size());
+    }
+    
+    @Test
+    public void removeFridgeDoesNotRemoveFinalFridge() {
+        assertFalse(user1.removeFridge("seponkaappi1"));
+        assertEquals(1, user1.getFridges().size());
+    }
+    
+    @Test
+    public void changeDefaultFridgeWorks() {
+        Fridge fridge1 = new Fridge("seponkaappi2");
+        user1.addFridge(fridge1);
+        assertTrue(user1.changeDefaultFridge(fridge1));
+        assertEquals(fridge1, user1.getDefaultFridge());
+    }
+    
 }

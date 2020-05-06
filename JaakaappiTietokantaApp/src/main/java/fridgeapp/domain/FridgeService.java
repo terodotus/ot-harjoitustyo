@@ -29,6 +29,10 @@ public class FridgeService {
         return loggedIn;
     }
 
+/**
+ * method returns all fridges as a list of current loggedIn user
+ * @return list of fridges
+ */    
     public List<Fridge> getLoggedInAllFridges() {
         if (loggedIn == null) {
             return new ArrayList<>();
@@ -128,22 +132,6 @@ public class FridgeService {
         return true;
     }
 
- /**
- * method to login with username(String) and fridgeName(String); returns true if login; return false if username does not exist
- * @return true
- * @param username (String)
- * @param fridgeName (String)
- * @see FridgeUserDao
- */       
-    public boolean login(String username, String fridgeName) {
-        FridgeUser user = fridgeUserDao.findByUsername(username);
-        if (user == null) {
-            return false;
-        }
-        loggedIn = user;
-        loggedInFridge = user.getFridgeByFridgeName(fridgeName);
-        return true;
-    }
 /**
  * method for logout user;
  * @see FridgeUserDao

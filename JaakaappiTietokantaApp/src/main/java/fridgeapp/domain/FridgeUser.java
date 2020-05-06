@@ -10,13 +10,7 @@ import java.util.List;
 public class FridgeUser {
     private String username;
     private List<Fridge> fridges;
-
-    public FridgeUser(String username, Fridge fridge) {
-        this.username = username;
-        this.fridges = new ArrayList();
-        this.fridges.add(fridge);
-    }
-    
+  
     public FridgeUser(String username, String fridgeName) {
         this.username = username;
         this.fridges = new ArrayList();

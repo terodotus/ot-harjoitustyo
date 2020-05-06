@@ -45,6 +45,11 @@ public class FileFridgeItemDao implements FridgeItemDao {
         return items.size() + 1;
     }
 
+/**
+ * method totally empties the given fridge which is given by unique username and unique fridge name;
+ * @param username (String)
+ * @param fridgename (String)
+ */      
     @Override
     public void removeAlItemsFromFridge(String username, String fridgeName) {
         if (this.items.size() > 0) {

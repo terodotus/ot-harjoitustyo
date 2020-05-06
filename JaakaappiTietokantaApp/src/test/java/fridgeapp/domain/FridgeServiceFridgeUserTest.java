@@ -75,4 +75,41 @@ public class FridgeServiceFridgeUserTest {
         assertEquals("Pakastajankaappi2", service.getLoggedIn().getFridges().get(1).getFridgeName());
     }
     
+    @Test
+    public void userCanBeAdded() {
+        assertTrue(service.createUser("Helvi", "Helvinkaappi1"));
+        service.login("Helvi");
+        assertEquals("Helvi", service.getLoggedIn().getUsername());
+    }
+    
+    @Test
+    public void changeDefaultFridgeWorks() {
+        assertTrue(service.createUser("Helvi", "Helvinkaappi1"));
+        service.login("Helvi");
+        try {
+            assertTrue(service.createNewFridgeForLoggedInUser("Helvinkaappi2"));
+        } catch (Exception ex) {
+            Logger.getLogger(FridgeServiceFridgeUserTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        service.nextFridgeActivate();
+        try {
+            service.changeDefaultFridge(service.getLoggedInFridge());
+        } catch (Exception ex) {
+            Logger.getLogger(FridgeServiceFridgeUserTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        assertEquals("Helvinkaappi2", service.getLoggedIn().getDefaultFridge().getFridgeName());
+    }
+    
+    @Test
+    public void getAllFridgesOfLoggedInWorks() {
+        assertTrue(service.createUser("Helvi", "Helvinkaappi1"));
+        service.login("Helvi");
+        try {
+            assertTrue(service.createNewFridgeForLoggedInUser("Helvinkaappi2"));
+        } catch (Exception ex) {
+            Logger.getLogger(FridgeServiceFridgeUserTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        assertEquals(2, service.getLoggedInAllFridges().size());
+    }
+    
 }
