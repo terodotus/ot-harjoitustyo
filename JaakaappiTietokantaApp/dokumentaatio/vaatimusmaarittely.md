@@ -12,8 +12,16 @@ Kun uusi käyttäjä luodaan on käyttäjä nimeää itselleen oletusjääkaapin
 Valikoista löytyy lisäksi seuraavat toiminnot:
 
 ### Login Scene:
+- Käyttäjä voi kirjautua ohjelmaan olemassaolevalla käyttäjätunnuksella.
+- Mikäli syöte on virheellinen, tulostuu käyttäjälle viesti: "user does not exist"
+- Jos käyttäjätunnusta ei ole, käyttäjä voi siirtyä luomaan sellaisen, siirtymällä "New User Sceneen" napilla "create a new fridge user". 
 
 ### New User Scene:
+- Käyttäjä voi luoda itselleen käyttäjänimen ja ensimmäisen jääkaapin, oletusjääkaapin, eli default fridgen. Käyttäjä täyttää usernamen ja fridge namen ja painaa "create". Ohjelma palaa login sceneen, jonne tulostuu "new user created"
+- Mikäli käyttäjä yrittää luoda tunnuksen, joka on jo olemassa, tulostuu viesti: "Username has to be unique".
+- Mikäli käyttäjänimi on lian lyhyt tai sisältää laittomia merkkejä, tulostuu "username or fridge name too short or contains illegal characters (%#;&)
+- Mikäli käyttäjä huomaa virheellisesti tulleensa new user sceneen (muistaakin tunnuksensa tms), eikä haluakaan luoda uutta käyttäjää, pääsee sieltä pois napilla "back" ilman, että tarvitsee luoda uutta käyttäjää.
+
 
 ### Fridge Scene:
 - avoinna oleva jääkaappi voidaan muuttaa oletusjääkaapiksi (default fridge) napista "make this default fridge". Jos kyseinen kaappi on jo oletuskaappi, tulostetaan viesti "already default fridge", muussa tapauksessa kyseisestä kaapista tehdään default fridge.
@@ -21,6 +29,7 @@ Valikoista löytyy lisäksi seuraavat toiminnot:
 - näkyvissä olevaan jääkaappiin voidaan lisätä tuotteita alhaalta "create item" - osiossa. Käyttäjä antaa itemin nimen (String) ja määrän (int). Mikäli käyttäjä antaa vääränlaisen syötteen (liian lyhyt nimi (<3), nimessä kiellettyjä mekkejä (esim ";"), int ei ole int, tms.), tulostuu käyttäjälle viesti: "item input illegal"
 - Käyttäjä voi lisätä ja nimetä uuden jääkaapin antamalla sen nimen (String), ja painamalla nappia "add new fridge". Ohjelma lisää jääkaapin ja näyttää sen listauksessa vasemmalla (fridges). Mikäli käyttäjä antaa virheellisen syötteen (liian lyhyt nimi, jääkaapilla sama nimi kuin jo olevalla jääkaapilla, etc). Tulostuu käyttäjälle viesti: "fridge name illegal (%#;&)"
 - Näkyvillä olevassa jääkaapissa voi tuotteen määrää paivittää suoraan "set amount"-napilla lisäämällä uuden määrän tekstikenttään. Määrä päivitetään käyttäjän toiveiden mukaan. Mikäli syöte on vääränlainen (ei int), tulostuu "amount change message", eli esimerkiksi "item input illegal (%;&)".
+- Käyttäjä voi kirjautua ulos jääkaapista painamalla "logout"-nappia. Ohjelma palaa "login"-nakymään. Koko ohjelman voi sitten sulkea oikean yläkulman "x"-napista.
 
 <img src = "https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/UserInterface_06052020.jpg" width=900 >
 
