@@ -21,5 +21,8 @@
 | 27.4  |  4   | Documentation, UI details, javadoc | 
 |  2.5  |  5   | UI improvents, exceptions handling | 
 |  3.5  |  4   | UI improvents, exceptions handling | 
+|  5.5  |  4   | documentation | 
+|  6.5  |  4   | testing | 
 |    |    |  | 
-| yht   |  73  |  | 
+|    |    |  | 
+| yht   |  81  |  | 

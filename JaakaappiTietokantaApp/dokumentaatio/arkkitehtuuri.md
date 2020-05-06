@@ -7,15 +7,20 @@ Sovellus toimii kolmella tasolla ja lisäksi on tietenkin ohjelman käynnistäv�
 
 ## User Interface
 Käyttöliittymä tarjoaa mahdollisuuden luoda käyttäjän, kirjautua ohjelmaan ja hallita omien jääkaappien sisältöjä. Kukin näistä toiminnoista on omassa näkymässään.
-Status: osin toteutettu. Vasta erittäin yksinkertainen käyttöliittymä.
+Katso tarkemmin alla "Sovelluslogiikka", sekä UI: [Vaatimusmäärittely](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/vaatimusmaarittely.md)
 
 ## Sovelluslogiikka
 Ohjelman tärkeimmät käsitteet ovat fridgeUser, fridge ja fridgeItem. FridgeUser kuvaa ohjelman käyttäjää, jolla on tiettyjä ominaisuuksia. Fridge kuvaa jääkaappia, joita voi yhdellä käyttäjällä olla useita. FridgeItem kuvaa yksittäistä tuotetta jääkaapissa, jolla on ominaisuuksia, kuten esimerkiksi määrä. Tuotteita voi olla monta käyttäjän monessa jääkaapissa.
 
+### Luokat:
+- Fridge: Jääkaappi, jolla on nimi (String). Jääkaappi liittyy tiettyyn käyttäjään ja jaakaapissa on tuotteita (fridgeItem)
+- FridgeItem: Tuote, jolla on id (int), nimi (String), kayttäjä (FridgeUser), Jääkaappi (Fridge), ja määrä (int)
+- FridgeUser: Käyttäjä, jolla on nimi (String) ja lista jääkaappeja (Fridge). Käyttäjällä voi olla yksi tai useampi jääkaappi. 
+
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeAppLuokkakaavio_2704.jpg" width=900 >
 
 ## Tietojen pysyväistallennus
-Tietojen pysyväistallennus on toistaiseksi hoidettu samassa kansiossa olevien tekstitiedostojen avulla. Saatetaan muuttaa H2 tietokannanhallintajärjestelmää hyödyntäväksi tietokannaksi. Käyttäjästä tallennetaan username sekä eri jääkaappien nimet user.txt-tiedostoon. Fridge itemit tallennetaan fridgeitems.txt-tiedostoon, jonne tallentuu kunkin itemin id, content, amount, user, ja fridge eli missä jääkaapissa tuote on.
+Tietojen pysyväistallennus on toistaiseksi hoidettu samassa kansiossa olevien tekstitiedostojen avulla. Olisi mahdollista muuttaa H2 tietokannanhallintajärjestelmää hyödyntäväksi tietokannaksi, mitä tutkittiin, mutta todettiin, että on toistaiseksi tarpeetonta ja aiheuttaa monien järjestelmien käytön yhteydessä aika paljon hankaluuksia. Jos ohjelmaa laajennetaan tietokanta tulee kuitenkin tarpeelliseksi. Käyttäjästä tallennetaan username sekä eri jääkaappien nimet user.txt-tiedostoon. Fridge itemit tallennetaan fridgeitems.txt-tiedostoon, jonne tallentuu kunkin itemin id, content, amount, user, ja fridge eli missä jääkaapissa tuote on.
 
 ## Tiedostot
 Users are saved to the users.txt file:
