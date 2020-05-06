@@ -7,7 +7,7 @@ Sovellus toimii kolmella tasolla ja lisäksi on tietenkin ohjelman käynnistäv�
 
 ## User Interface
 Käyttöliittymä tarjoaa mahdollisuuden luoda käyttäjän, kirjautua ohjelmaan ja hallita omien jääkaappien sisältöjä. Kukin näistä toiminnoista on omassa näkymässään.
-Status: osin toteutettu. Vasta erittäin yksinkertainen käyttöliittymä.
+Katso tarkemmin [Vaatimusmäärittely](https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/vaatimusmaarittely.md)
 
 ## Sovelluslogiikka
 Ohjelman tärkeimmät käsitteet ovat fridgeUser, fridge ja fridgeItem. FridgeUser kuvaa ohjelman käyttäjää, jolla on tiettyjä ominaisuuksia. Fridge kuvaa jääkaappia, joita voi yhdellä käyttäjällä olla useita. FridgeItem kuvaa yksittäistä tuotetta jääkaapissa, jolla on ominaisuuksia, kuten esimerkiksi määrä. Tuotteita voi olla monta käyttäjän monessa jääkaapissa.
