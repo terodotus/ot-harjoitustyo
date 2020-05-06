@@ -17,7 +17,7 @@ Jääkaapissa on tuotteita. Tuotteilla on ominaisuuksia, kuten määrä. Käytt�
 ## Käyttöliittymäluonnos
 Kun uusi käyttäjä luodaan on käyttäjä nimeää itselleen oletusjääkaapin (default fridge), jonka voi ottaa käyttöön ja kustomoida omanlaisekseen. Oletusjääkaapin voi kirjauduttuaan vaihtaa. Kirjauduttuaan ohjelmaan, käyttäjä voi myös lisätä jääkaappeja tarvittaessa (esimerkiksi kesämökin jääkaappi, tai työtilan jääkaappi, alakerran jääkaappi jne.). Näiden jääkaappien näkymien välillä voi siirtyä valitsemalla valikosta "open other fridge". Kaikkien jääkaappien listaus näkyy jääkaappinäkymässä vasemmalla ("Fridges", katso kuva alla). Avoinna oleva jääkaappi näkyy keskellä. Ylhäällä on tieto siitä, mikä jääkaappi on näkyvissa (esim. "John logged in JohnsFridge1"). 
 
-Valikoista löytyy lisäksi seuraavat toiminnot:
+Eri näkymien eli scenejen valikoista löytyvät seuraavat toiminnot:
 
 ### Login Scene:
 - Käyttäjä voi kirjautua ohjelmaan olemassaolevalla käyttäjätunnuksella.
