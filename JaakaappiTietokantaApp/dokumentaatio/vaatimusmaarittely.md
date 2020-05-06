@@ -6,6 +6,14 @@ Jääkaapin sisällön ajantasaisuudesta huolehtiva sovellus on todellinen klass
 ## Käyttäjät
 Koska yhdellä jääkaapilla on yleensä varsin rajallinen määrä käyttäjia, on sovelluksella alkuvaiheessa vain yksi käyttäjärooli, eli normaali käyttäjä. Koska jääkaappien käyttäjillä kuitenkin saattaa olla tarvetta erilaisille rooleille tai vastuille, saatetaan sovellukselle myöhemmin lisätä pääkäyttäjä-rooli tai esimerkiksi eräänlainen katsoja-rooli, joka mahdollistaisi jääkaapin sisällön tarkastelun, mutta ei muutosten tekemistä sisältöön.
 
+## Perusversion tarjoama toiminnallisuus
+Jääkaapissa on tuotteita. Tuotteilla on ominaisuuksia, kuten määrä. Käyttäjä pystyy sovelluksesta käsin katsomaan kaapin sisällön. Käyttäjä pystyy päivittämään tuotteet ja tuotteiden tiedot. Käyttäjä voi lisätä ja poistaa jääkaappeja. Tiedot tallennetaan ja niihin voidaan jälleen palata uudelleen. 
+
+### Luokat:
+- Fridge: Jääkaappi, jolla on nimi (String). Jääkaappi liittyy tiettyyn käyttäjään ja jaakaapissa on tuotteita (fridgeItem)
+- FridgeItem: Tuote, jolla on id (int), nimi (String), kayttäjä (FridgeUser), Jääkaappi (Fridge), ja määrä (int)
+- FridgeUser: Käyttäjä, jolla on nimi (String) ja lista jääkaappeja (Fridge). Käyttäjällä voi olla yksi tai useampi jääkaappi. 
+
 ## Käyttöliittymäluonnos
 Kun uusi käyttäjä luodaan on käyttäjä nimeää itselleen oletusjääkaapin (default fridge), jonka voi ottaa käyttöön ja kustomoida omanlaisekseen. Oletusjääkaapin voi kirjauduttuaan vaihtaa. Kirjauduttuaan ohjelmaan, käyttäjä voi myös lisätä jääkaappeja tarvittaessa (esimerkiksi kesämökin jääkaappi, tai työtilan jääkaappi, alakerran jääkaappi jne.). Näiden jääkaappien näkymien välillä voi siirtyä valitsemalla valikosta "open other fridge". Kaikkien jääkaappien listaus näkyy jääkaappinäkymässä vasemmalla ("Fridges", katso kuva alla). Avoinna oleva jääkaappi näkyy keskellä. Ylhäällä on tieto siitä, mikä jääkaappi on näkyvissa (esim. "John logged in JohnsFridge1"). 
 
@@ -32,18 +40,6 @@ Valikoista löytyy lisäksi seuraavat toiminnot:
 - Käyttäjä voi kirjautua ulos jääkaapista painamalla "logout"-nappia. Ohjelma palaa "login"-nakymään. Koko ohjelman voi sitten sulkea oikean yläkulman "x"-napista.
 
 <img src = "https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/UserInterface_06052020.jpg" width=900 >
-
-## Perusversion tarjoama toiminnallisuus
-Jääkaapissa on tuotteita. Tuotteilla on ominaisuuksia, kuten määrä. Käyttäjä pystyy sovelluksesta käsin katsomaan kaapin sisällön. Käyttäjä pystyy päivittämään tuotteet ja tuotteiden tiedot. Tiedot tallennetaan ja niihin voidaan jälleen palata uudelleen. 
-Luokat:
-- Fridge: Jääkaappi, jolla on käyttäjä ja jossa on tuotteita (fridgeItem)
-- FridgeItem: Tuote, jolla on nimi (String) ja määrä (int)
-- FridgeUser: Käyttäjä, jolla on nimi (String) ja lista jääkaappeja (Fridge). Käyttäjällä voi olla yksi tai useampi jääkaappi. (Lisäys TEHTY viikolle 6)
-
-### Viikolle 6 lisättyjä toiminnallisuuksia:
-- Käyttäjä voi vaihtaa uudemman jääkaapin oletusjääkaapiksi (default fridge) (TEHTY w06)
-- Käyttäjä voi poistaa valitsemansa jääkaappin jääkaappiensa joukosta. Samalla poistuvat kaikki siellä olevat sisällöt (paitsi yksi jääkaappi pitää jäädä) (TEHTY w06)
-- käsiteltävän jääkaapin kaikki sisältö on näkyvillä, mutta myös muiden saman käyttäjän jääkaappien listaus on näkyvillä ja päivittyy, kun jääkaappeja poistetaan tai lisätään (TEHTY w06)
 
 ## Jatkokehitysideoita
 Koska uudemmat jääkaapit voidaan rakentaa niin sanotuiksi monitoimilaitteiksi, eli niihin voidaan integroida esimerkiksi kameroita, äänitunnistusta, lukitusjärjestelmiä, ruuan pilaantumista tunnistavia järjestelmiä, parasta ennen -päiväyksen tunnistavia järjestelmiä, viivakoodin lukujärjestelmia yms., jää sovellukselle paljon jatkokehityspotentiaalia. Nämä upotetut järjestelmät vaativat tietenkin omat ohjaus- ja hallintasovelluksensa (embedded software), sekä integroidut sensorit (lämpömittari, kamera, hahmontunnistus, yms). JaakaappiTietokantaApp-sovelluksen on taivuttava näihin myöhempiin lisäyksiin sitten, kun niiden aika on, ei vielä tässä projektissa.
