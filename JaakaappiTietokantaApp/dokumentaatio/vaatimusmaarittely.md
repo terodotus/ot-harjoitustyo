@@ -27,7 +27,7 @@ Eri näkymien eli scenejen valikoista löytyvät seuraavat toiminnot:
 ### New User Scene:
 - Käyttäjä voi luoda itselleen käyttäjänimen ja ensimmäisen jääkaapin, oletusjääkaapin, eli default fridgen. Käyttäjä täyttää usernamen ja fridge namen ja painaa "create". Ohjelma palaa login sceneen, jonne tulostuu "new user created"
 - Mikäli käyttäjä yrittää luoda tunnuksen, joka on jo olemassa, tulostuu viesti: "Username has to be unique".
-- Mikäli käyttäjänimi on lian lyhyt tai sisältää laittomia merkkejä, tulostuu "username or fridge name too short or contains illegal characters (%#;&)
+- Mikäli käyttäjänimi tai oletusjääkaapin nimi (default fridge name) on lian lyhyt tai sisältää laittomia merkkejä, tulostuu "username or fridge name too short or contains illegal characters (%#;&)
 - Mikäli käyttäjä huomaa virheellisesti tulleensa new user sceneen (muistaakin tunnuksensa tms), eikä haluakaan luoda uutta käyttäjää, pääsee sieltä pois (takaisin "Login Sceneen") napilla "back" ilman, että tarvitsee luoda uutta käyttäjää.
 
 
