@@ -6,14 +6,14 @@ The FridgeApp testing is handled with automatized unit testing throughout the de
 ## Unit testing and integration testing
 
 ### Code coverage
-Statement (line) covrage is measured by using the Jacoco. Status is as follows:
+Statement (line) covrage is measured by using the Jacoco. Status is 90%:
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/JacocoTestCoverage_07052020.jpg" width=950 >
 
 ## Checkstyle
-Checkstyle current results are good, no errors in other classes but in UI and there only three errors (too long methods) which will be solved soon:
+Checkstyle results are good, no errors at all in other classes but in UI and there long methods which was allowed in this phase.
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/Checkstyle_2704.jpg" width=500 >
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/Checkstyle_07052020.jpg" width=500 >
 
 ## System testing
 
