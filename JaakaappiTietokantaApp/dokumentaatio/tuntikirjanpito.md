@@ -23,6 +23,7 @@
 |  3.5  |  4   | UI improvents, exceptions handling | 
 |  5.5  |  4   | documentation | 
 |  6.5  |  4   | testing | 
-|    |    |  | 
-|    |    |  | 
-| yht   |  81  |  | 
+|  7.5  |  5   | test coverage | 
+|    |    |  |
+|    |    |  |
+| yht   |  86  |  | 
