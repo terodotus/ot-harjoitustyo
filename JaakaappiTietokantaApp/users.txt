@@ -1,3 +1,0 @@
-John;JohnsFridge1;
-Tero;Teronkaappi2;
-William;BillysFridge1;
