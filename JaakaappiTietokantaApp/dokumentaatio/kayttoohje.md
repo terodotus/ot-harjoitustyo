@@ -69,4 +69,8 @@ You may remove any fridge no longer in use or not needed
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene8_07052020.jpg" width="600">
 
+App is giving feedback on all illegal inputs, so you may use it without fear.
+
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene14_07052020.jpg" width="600">
+
 When you want to close the fridge app, press the "logout" -button in the fridge scene. You will end up to the login scene where you can close the fridge app by pressing the "x" in the upper right corner of the scene. 
