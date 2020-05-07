@@ -1,7 +1,17 @@
-8;kakku;5;Tero;Teronkaappi2
+8;kakku;2;Tero;Teronkaappi2
 9;idut;3;Tero;Teronkaappi2
 10;neilikka;3;Tero;Teronkaappi2
 4;milk;2;John;JohnsFridge1
 5;orangejuice;2;John;JohnsFridge1
 6;ham;1;John;JohnsFridge1
 7;non-alcoholic beer;3;John;JohnsFridge1
+8;ham;2;John;JohnsFridge4
+9;non alcoholic beer;2;John;JohnsFridge4
+10;orange juice;3;John;JohnsFridge4
+11;yoghurt;2;John;JohnsFridge4
+12;cheese;1;John;JohnsFridge4
+13;apple;2;John;JohnsFridge4
+14;butter;1;John;JohnsFridge4
+15;chicken nuggets;5;John;JohnsFridge4
+16;pizza;1;John;JohnsFridge4
+17;milk;2;John;JohnsFridge4

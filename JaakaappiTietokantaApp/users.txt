@@ -1,3 +1,3 @@
-John;JohnsFridge1;JohnsFridge2;JohnsFridge3;JohnsFridge4;
+John;JohnsFridge1;
 Tero;Teronkaappi2;
 William;BillysFridge1;
