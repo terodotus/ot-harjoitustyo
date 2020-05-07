@@ -25,7 +25,7 @@ After having a username, you may login with your username.
 
 
 ## Create a new user
-You need to have a username to use the fridgeapp. This can be done in the create a new user -scene.
+You need to have a username to use the fridgeapp. This can be done in the create a new user -scene. In case you notice that you already have username, you may just press the "back"-button, and go back to login scene.
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserScene2_07052020.jpg" width="400">
 
