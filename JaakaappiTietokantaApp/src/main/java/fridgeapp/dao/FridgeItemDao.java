@@ -18,7 +18,7 @@ public interface FridgeItemDao {
     
     void setAmount(int id, int amount) throws Exception;
     
-    Fridge getByUsernameAndFridgeName (String userName, String fridgename);
+    Fridge getByUsernameAndFridgeName(String userName, String fridgename);
     
     int getFridgeNumberByUsernameAndFridgeName(String userName, String fridgename);
     
