@@ -169,7 +169,7 @@ public class FridgeUI extends Application {
         newNamePane.getChildren().addAll(newNameLabel, newNameInput);        
         
         Label userCreationMessage = new Label();
-        
+        userCreationMessage.setText(""); 
         Button createNewUserButton = new Button("create");
         createNewUserButton.setPadding(new Insets(10));
         
@@ -203,6 +203,7 @@ public class FridgeUI extends Application {
             primaryStage.show();
             newUsernameInput.setText("");
             newNameInput.setText("");
+            userCreationMessage.setText(""); 
         });  
        
         newUserScene = new Scene(newUserPane, 400, 300);
