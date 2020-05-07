@@ -393,7 +393,7 @@ public class FridgeUI extends Application {
         
         createItem.setOnAction(e-> {
             try {
-                String newItemName = newItemInput.getText().strip();
+                String newItemName = newItemInput.getText().trim();
                 String newAmountInputString = newAmountInput.getText().trim();
                 
                 boolean amountInputNumeric = true;
@@ -404,7 +404,7 @@ public class FridgeUI extends Application {
                     }
                 }
                 
-                if (amountInputNumeric==false || newItemName.length() < 3 || newItemName.contains(";") || newItemName.contains(":") || newItemName.contains(" ") || newItemName.contains("set item")) {
+                if (amountInputNumeric==false || newItemName.length() < 3 || newItemName.contains(";") || newItemName.contains(":") ||  newItemName.contains("set item")) {
                     itemCreationMessage.setText("item input illegal (%#;&)");
                     itemCreationMessage.setTextFill(Color.RED);
                     fridgeCreationMessage.setText("");
