@@ -11,7 +11,7 @@ Statement (line) covrage is measured by using the Jacoco. Status is as follows:
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/JacocoTestCoverage_07052020.jpg" width=950 >
 
 ## Checkstyle
-Checkstyle current results are good, no errors in other classes but in UI and there only three errors (too long methods) which will be solved soon:
+Checkstyle results are good, no errors at all in other classes but in UI and there long methods which was allowed in this phase.
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/Checkstyle_07052020.jpg" width=500 >
 
