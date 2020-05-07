@@ -63,7 +63,7 @@ You can have as many fridges as you need. They are all visible on the right.
 
 You can add all your items to the fridge app.
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene7_07052020.jpg" width="600">
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene15_07052020.jpg" width="600">
 
 You may remove any fridge no longer in use or not needed
 
