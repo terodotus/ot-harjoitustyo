@@ -59,10 +59,14 @@ if you have many fridges to manage, you may add them to the app by using the "ad
 
 You can have as many fridges as you need. They are all visible on the right.
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene5_2804.jpg" width="600">
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene5_07052020.jpg" width="600">
 
 You can add all your items to the fridge app.
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene7_2804.jpg" width="600">
+
+You may remove any fridge no longer in use or not needed
+
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/FridgeScene8_07052020.jpg" width="600">
 
 When you want to close the fridge app, press the "logout" -button in the fridge scene. You will end up to the login scene where you can close the fridge app by pressing the "x" in the upper right corner of the scene. 
