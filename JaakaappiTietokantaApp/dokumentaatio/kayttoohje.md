@@ -21,7 +21,7 @@ In log in scene, you may log in to the fridgeapp. That is possible after having 
 
 After having a username, you may login with your username.
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/loginScene2.jpg" width="400">
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserScene2_07052020.jpg" width="400">
 
 
 ## Create a new user
@@ -31,11 +31,11 @@ You need to have a username to use the fridgeapp. This can be done in the create
 
 If you try to use illegal characters or too short username or fridge name, an error message is given:
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserSceneError.jpg" width="400">
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserSceneError_07052020.jpg" width="400">
 
 In case, you try to create a user that already exists, an error message is given as well:
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserSceneUniqueUserName.jpg" width="400">
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserSceneUniqueUserName_07052020.jpg" width="400">
 
 
 
