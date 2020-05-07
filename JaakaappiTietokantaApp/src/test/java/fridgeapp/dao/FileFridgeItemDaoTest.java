@@ -100,4 +100,9 @@ public class FileFridgeItemDaoTest {
         assertEquals("TestaajanKaappi1", fridgeItemDao.getByUsernameAndFridgeName("testaaja", "TestaajanKaappi1").getFridgeName());
     }
     
+    @Test
+    public void getFridgeNumberByUsernameAndFridgeNameReturnsRight() {
+        assertEquals(0, fridgeItemDao.getFridgeNumberByUsernameAndFridgeName("testaaja", "TestaajanKaappi1"));
+    }
+    
 }

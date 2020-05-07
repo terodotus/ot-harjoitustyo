@@ -76,10 +76,22 @@ public class FridgeServiceFridgeUserTest {
     }
     
     @Test
+    public void nextFridgeActivateReturnsFalseIfOnlyOneFridge() {
+        service.login("Elvi");
+        assertFalse(service.nextFridgeActivate());
+    }
+    
+    @Test
     public void userCanBeAdded() {
         assertTrue(service.createUser("Helvi", "Helvinkaappi1"));
         service.login("Helvi");
         assertEquals("Helvi", service.getLoggedIn().getUsername());
+    }
+    
+    @Test
+    public void existingUserCanNotBeAdded() {
+        service.createUser("Helvi", "Helvinkaappi1");
+        assertFalse(service.createUser("Helvi", "Helvinkaappi1"));
     }
     
     @Test
@@ -110,6 +122,21 @@ public class FridgeServiceFridgeUserTest {
             Logger.getLogger(FridgeServiceFridgeUserTest.class.getName()).log(Level.SEVERE, null, ex);
         }
         assertEquals(2, service.getLoggedInAllFridges().size());
+    }
+    
+    @Test
+    public void getAllFridgesOfLoggedInreturnsEmptyList() {
+        assertEquals(0, service.getLoggedInAllFridges().size());
+    }
+    
+    @Test
+    public void changeDefaultFridgeReturnsFalse() {
+        service.login("Elvi");
+        try {
+            assertFalse(service.changeDefaultFridge(service.getLoggedInFridge()));
+        } catch (Exception ex) {
+            Logger.getLogger(FridgeServiceFridgeUserTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

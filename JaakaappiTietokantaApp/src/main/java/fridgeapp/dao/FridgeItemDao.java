@@ -20,4 +20,6 @@ public interface FridgeItemDao {
     
     Fridge getByUsernameAndFridgeName (String userName, String fridgename);
     
+    int getFridgeNumberByUsernameAndFridgeName(String userName, String fridgename);
+    
 }

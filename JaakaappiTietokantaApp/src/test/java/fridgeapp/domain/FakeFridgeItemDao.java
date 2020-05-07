@@ -83,6 +83,17 @@ public class FakeFridgeItemDao implements FridgeItemDao{
         }
         return returnable;
     }
+
+    @Override
+    public int getFridgeNumberByUsernameAndFridgeName(String userName, String fridgename) {
+        int number = 0;
+        for (int i = 0; i < this.items.size(); i++) {
+            if (this.items.get(i).getUser().getUsername().equals(userName) && this.items.get(i).getFridge().getFridgeName().equals(fridgename)) {
+                number = i;
+            }
+        }
+        return number;
+    }
     
     
 }
