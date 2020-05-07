@@ -18,7 +18,7 @@
 ### Release
 * [week 5 release](https://github.com/terodotus/ot-harjoitustyo/releases/tag/week5)
 * [week 6 release](https://github.com/terodotus/ot-harjoitustyo/releases/tag/week6)
-* [week 7 release]()
+* [week 7 release](https://github.com/terodotus/ot-harjoitustyo/releases/tag/week7)
 
 ### Komentorivitoiminnot
 #### Testaus
