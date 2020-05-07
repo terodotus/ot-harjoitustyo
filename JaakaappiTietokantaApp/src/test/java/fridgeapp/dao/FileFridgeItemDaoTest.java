@@ -87,6 +87,17 @@ public class FileFridgeItemDaoTest {
         assertEquals(2, items.size());
         fridgeItemDao.create(testedItem);
         assertEquals(2, items.size());
-    }   
+    }  
+    
+    @Test
+    public void removeAllItemsFromFridgeWorks() {
+        fridgeItemDao.removeAlItemsFromFridge("testaaja", "TestaajanKaappi1");
+        assertEquals(0, fridgeItemDao.getAll().size());
+    }
+    
+    @Test
+    public void getByUsernameAndFridgeNameReturnsRight() {
+        assertEquals("TestaajanKaappi1", fridgeItemDao.getByUsernameAndFridgeName("testaaja", "TestaajanKaappi1").getFridgeName());
+    }
     
 }

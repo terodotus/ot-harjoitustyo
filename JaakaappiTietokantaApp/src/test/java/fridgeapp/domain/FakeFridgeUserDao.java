@@ -38,5 +38,5 @@ public class FakeFridgeUserDao implements FridgeUserDao{
             }
         }
     }
-
+    
 }

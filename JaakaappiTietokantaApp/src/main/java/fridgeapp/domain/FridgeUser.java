@@ -44,7 +44,7 @@ public class FridgeUser {
  * method for changing given fridge to the default fridge, so first fridge on the fridge list;
  */      
     public boolean changeDefaultFridge(Fridge fridge) {
-        if(this.getFridges().size() < 2 || fridge.equals(this.getFridges().get(0))) {
+        if (this.getFridges().size() < 2 || fridge.equals(this.getFridges().get(0))) {
             return false;
         } else {
             List<Fridge> newFridgeList = new ArrayList();

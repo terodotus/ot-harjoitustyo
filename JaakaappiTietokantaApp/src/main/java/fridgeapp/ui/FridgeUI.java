@@ -62,10 +62,10 @@ public class FridgeUI extends Application {
             String newAmountString = newAmountInput.getText();
             
             boolean amountInputNumeric = true;
-            if (newAmountString.length()==0) {
+            if (newAmountString.length() == 0) {
                 amountInputNumeric = false;
             } else {
-                for (int i=0; i < newAmountString.length(); i++) {
+                for (int i = 0; i < newAmountString.length(); i++) {
                     char a = newAmountString.charAt(i);
                     if (a < '0' || a > '9') {
                         amountInputNumeric = false;
@@ -73,7 +73,7 @@ public class FridgeUI extends Application {
                 }
             }    
             
-            if (amountInputNumeric==false) {
+            if (amountInputNumeric == false) {
                 amountChangeMessage.setText("item input illegal (%#;&)");
                 amountChangeMessage.setTextFill(Color.RED);
                 newAmountInput.setText("");
@@ -260,7 +260,7 @@ public class FridgeUI extends Application {
         Label itemCreationMessage = new Label();
         
         changeFridgeButton.setOnAction(e-> {
-            if(fridgeService.nextFridgeActivate()) {
+            if (fridgeService.nextFridgeActivate()) {
                 restoreFridge();
                 restoreFridgeListing();
                 fridgeCreationMessage.setText("");
@@ -281,7 +281,7 @@ public class FridgeUI extends Application {
         }); 
         
         removeFridgeButton.setOnAction(e-> {
-            if(fridgeService.removeLoggedInFridgeOfLoggedInUser()) {
+            if (fridgeService.removeLoggedInFridgeOfLoggedInUser()) {
                 menuLabel.setText(fridgeService.getLoggedIn() + " logged in " + fridgeService.getLoggedInFridge());
                 restoreFridge();
                 restoreFridgeListing();
@@ -298,7 +298,7 @@ public class FridgeUI extends Application {
         
         changeDefaultFridgeButton.setOnAction(e-> {
             try {
-                if(fridgeService.changeDefaultFridge(fridgeService.getLoggedInFridge())) {
+                if (fridgeService.changeDefaultFridge(fridgeService.getLoggedInFridge())) {
                     restoreFridge();
                     restoreFridgeListing();
                     fridgeCreationMessage.setText("");
@@ -397,14 +397,14 @@ public class FridgeUI extends Application {
                 String newAmountInputString = newAmountInput.getText().trim();
                 
                 boolean amountInputNumeric = true;
-                for (int i=0; i < newAmountInputString.length(); i++) {
+                for (int i = 0; i < newAmountInputString.length(); i++) {
                     char a = newAmountInputString.charAt(i);
                     if (a < '0' || a > '9') {
                         amountInputNumeric = false;
                     }
                 }
                 
-                if (amountInputNumeric==false || newItemName.length() < 3 || newItemName.contains(";") || newItemName.contains(":") ||  newItemName.contains("set item")) {
+                if (amountInputNumeric == false || newItemName.length() < 3 || newItemName.contains(";") || newItemName.contains(":") ||  newItemName.contains("set item")) {
                     itemCreationMessage.setText("item input illegal (%#;&)");
                     itemCreationMessage.setTextFill(Color.RED);
                     fridgeCreationMessage.setText("");

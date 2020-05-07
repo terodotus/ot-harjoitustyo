@@ -144,4 +144,10 @@ public class FridgeUserTest {
         assertEquals(fridge1, user1.getDefaultFridge());
     }
     
+    @Test
+    public void changeDefaultFridgeReturnsFalseIfOnlyOneFridge() {
+        Fridge fridge1 = user1.getDefaultFridge();
+        assertFalse(user1.changeDefaultFridge(fridge1));
+    }
+    
 }

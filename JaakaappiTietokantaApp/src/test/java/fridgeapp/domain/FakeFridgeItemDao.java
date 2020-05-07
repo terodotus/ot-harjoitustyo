@@ -65,7 +65,23 @@ public class FakeFridgeItemDao implements FridgeItemDao{
 
     @Override
     public void removeAlItemsFromFridge(String username, String fridgeName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (this.items.size() > 0) {
+            for (int i = (this.items.size() - 1); i >= 0; i--) {
+                if (this.items.get(i).getUser().getUsername().equals(username) && this.items.get(i).getFridge().getFridgeName().equals(fridgeName)) {
+                    this.items.remove(i);
+                }
+            }
+        }
+    }
+    
+    public Fridge getByUsernameAndFridgeName(String userName, String fridgename) {
+        Fridge returnable = null;
+        for (FridgeItem item: this.items) {
+            if (item.getUser().getUsername().equals(userName) && item.getFridge().getFridgeName().equals(fridgename)) {
+                returnable = item.getFridge();
+            }
+        }
+        return returnable;
     }
     
     

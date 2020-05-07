@@ -129,7 +129,7 @@ public class FileFridgeItemDao implements FridgeItemDao {
  * @param userName (String)
  * @param fridgename (String)
  * @return int (fridge number)
- */        
+ */ 
     public int getFridgeNumberByUsernameAndFridgeName(String userName, String fridgename) {
         int number = 0;
         for (int i = 0; i < this.items.size(); i++) {

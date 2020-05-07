@@ -144,6 +144,19 @@ public class FridgeServiceFridgeItemTest {
         assertEquals("Teuvonkaappi1", fridge.getFridgeName());
     }
     
+    @Test
+    public void removeLoggedInFridgeOfLoggedInUserIfOnlyOneFridgeReturnsFalse() throws Exception {
+        service.login("Teuvo");
+        assertFalse(service.removeLoggedInFridgeOfLoggedInUser());
+    }
+    
+    @Test
+    public void removeLoggedInFridgeOfLoggedInUserWorks() throws Exception {
+        service.login("Teuvo");
+        service.createNewFridgeForLoggedInUser("Teuvonkaappi2");
+        assertTrue(service.removeLoggedInFridgeOfLoggedInUser());
+    }
+    
     
     
 }
