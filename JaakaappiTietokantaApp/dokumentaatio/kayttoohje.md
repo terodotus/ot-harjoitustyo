@@ -27,7 +27,7 @@ After having a username, you may login with your username.
 ## Create a new user
 You need to have a username to use the fridgeapp. This can be done in the create a new user -scene.
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserScene2.jpg" width="400">
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserScene2_07052020.jpg" width="400">
 
 If you try to use illegal characters or too short username or fridge name, an error message is given:
 
