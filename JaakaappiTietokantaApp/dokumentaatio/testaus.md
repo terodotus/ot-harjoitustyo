@@ -6,7 +6,7 @@ The FridgeApp testing is handled with automatized unit testing throughout the de
 ## Unit testing and integration testing
 
 ### Code coverage
-Statement (line) covrage is measured by using the Jacoco. Status is as follows:
+Statement (line) covrage is measured by using the Jacoco. Status is 90%:
 
 <img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/JacocoTestCoverage_07052020.jpg" width=950 >
 
