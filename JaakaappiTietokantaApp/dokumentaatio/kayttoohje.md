@@ -21,7 +21,7 @@ In log in scene, you may log in to the fridgeapp. That is possible after having 
 
 After having a username, you may login with your username.
 
-<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/newUserScene2_07052020.jpg" width="400">
+<img src="https://github.com/terodotus/ot-harjoitustyo/blob/master/JaakaappiTietokantaApp/dokumentaatio/Kuvat/loginScene2.jpg" width="400">
 
 
 ## Create a new user
